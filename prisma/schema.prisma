@@ -1,0 +1,208 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+}
+
+enum PostStatus {
+  DRAFT
+  SCHEDULED
+  PUBLISHED
+  ARCHIVED
+}
+
+enum CommentStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  SPAM
+}
+
+enum BanType {
+  EMAIL
+  IP
+}
+
+model Author {
+  id        String   @id @default(cuid())
+  slug      String   @unique
+  name      String
+  email     String?  @unique
+  bio       String?  @db.Text
+  avatarUrl String?
+  twitter   String?
+  linkedin  String?
+  website   String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  posts     PostAuthor[]
+  revisions PostRevision[]
+
+  @@map("authors")
+}
+
+model Post {
+  id                  String     @id @default(cuid())
+  slug                String     @unique
+  title               String
+  excerpt             String?    @db.Text
+  content             Json
+  contentHtml         String?    @db.Text
+
+  metaTitle           String?
+  metaDescription     String?
+  focusKeyword        String?
+  canonicalUrl        String?
+
+  status              PostStatus @default(DRAFT)
+  publishedAt         DateTime?
+  scheduledAt         DateTime?
+
+  featuredImageUrl    String?
+  featuredImageAlt    String?
+  listingThumbnailUrl String?
+
+  isFeatured          Boolean    @default(false)
+  isPinned            Boolean    @default(false)
+  showTableOfContents Boolean    @default(true)
+
+  readTimeMinutes     Int        @default(5)
+  viewCount           Int        @default(0)
+
+  createdAt           DateTime   @default(now())
+  updatedAt           DateTime   @updatedAt
+
+  authors    PostAuthor[]
+  categories PostCategory[]
+  tags       PostTag[]
+  comments   Comment[]
+  revisions  PostRevision[]
+
+  @@index([status, publishedAt])
+  @@index([isFeatured])
+  @@index([isPinned])
+  @@map("posts")
+}
+
+model PostAuthor {
+  postId    String
+  authorId  String
+  sortOrder Int    @default(0)
+
+  post   Post   @relation(fields: [postId], references: [id], onDelete: Cascade)
+  author Author @relation(fields: [authorId], references: [id], onDelete: Cascade)
+
+  @@id([postId, authorId])
+  @@map("post_authors")
+}
+
+model Category {
+  id        String   @id @default(cuid())
+  name      String
+  slug      String   @unique
+  parentId  String?
+  parent    Category?  @relation("CategoryHierarchy", fields: [parentId], references: [id])
+  children  Category[] @relation("CategoryHierarchy")
+  posts     PostCategory[]
+  createdAt DateTime @default(now())
+
+  @@map("categories")
+}
+
+model PostCategory {
+  postId     String
+  categoryId String
+
+  post     Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+  category Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+  @@id([postId, categoryId])
+  @@map("post_categories")
+}
+
+model Tag {
+  id        String   @id @default(cuid())
+  name      String
+  slug      String   @unique
+  posts     PostTag[]
+  createdAt DateTime @default(now())
+
+  @@map("tags")
+}
+
+model PostTag {
+  postId String
+  tagId  String
+
+  post Post @relation(fields: [postId], references: [id], onDelete: Cascade)
+  tag  Tag  @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([postId, tagId])
+  @@map("post_tags")
+}
+
+model PostRevision {
+  id        String   @id @default(cuid())
+  postId    String
+  authorId  String?
+  title     String
+  excerpt   String?  @db.Text
+  content   Json
+  metadata  Json?
+  createdAt DateTime @default(now())
+
+  post   Post    @relation(fields: [postId], references: [id], onDelete: Cascade)
+  author Author? @relation(fields: [authorId], references: [id], onDelete: SetNull)
+
+  @@index([postId, createdAt])
+  @@map("post_revisions")
+}
+
+model Comment {
+  id          String        @id @default(cuid())
+  postId      String
+  parentId    String?
+  authorName  String
+  authorEmail String
+  content     String        @db.Text
+  status      CommentStatus @default(PENDING)
+  ipAddress   String?
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  post    Post      @relation(fields: [postId], references: [id], onDelete: Cascade)
+  parent  Comment?  @relation("CommentReplies", fields: [parentId], references: [id], onDelete: Cascade)
+  replies Comment[] @relation("CommentReplies")
+
+  @@index([postId, status])
+  @@index([status])
+  @@map("comments")
+}
+
+model CommentBan {
+  id        String   @id @default(cuid())
+  type      BanType
+  value     String
+  reason    String?
+  createdAt DateTime @default(now())
+
+  @@unique([type, value])
+  @@map("comment_bans")
+}
+
+model MediaAsset {
+  id        String   @id @default(cuid())
+  filename  String
+  url       String
+  altText   String?
+  mimeType  String?
+  size      Int?
+  createdAt DateTime @default(now())
+
+  @@map("media_assets")
+}
