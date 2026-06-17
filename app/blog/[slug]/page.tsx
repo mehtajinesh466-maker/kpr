@@ -24,8 +24,10 @@ interface PageProps {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  
   const post = await getPostBySlug(params.slug);
   if (!post) return { title: "Post Not Found" };
+  console.log(post.contentHtml);
 
   return {
     title: post.metaTitle ?? post.title,
@@ -134,6 +136,12 @@ export default async function BlogPostPage({ params }: PageProps) {
             />
           </div>
         )}
+
+        <div
+  dangerouslySetInnerHTML={{
+    __html: post.contentHtml ?? "",
+  }}
+/>
 
         {/* prose scoped only to article body content */}
        <RenderedContent html={post.contentHtml ?? `<p>${post.excerpt ?? ""}</p>`} />
