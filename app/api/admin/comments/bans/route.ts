@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { checkAdminAuth } from "@/lib/admin-auth";
-import { BanType } from "@/lib/generated/prisma/client";
+import { BanType } from "@prisma/client";
 
 // GET /api/admin/comments/bans
 export async function GET(request: NextRequest) {

@@ -1,5 +1,5 @@
 import "dotenv/config";
-import { PrismaClient, PostStatus } from "../lib/generated/prisma/client";
+import { PrismaClient, PostStatus } from "@prisma/client";
 import { seedArticles, seedCategories } from "./seed-data";
 import { slugify } from "../lib/slug";
 import { toTipTapDoc } from "../lib/blog";

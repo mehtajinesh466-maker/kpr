@@ -7,6 +7,13 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  experimental: {
+    serverComponentsExternalPackages: ["@prisma/client", "prisma"],
+    outputFileTracingIncludes: {
+      "/api/**/*": ["./node_modules/.prisma/client/**/*"],
+      "/*": ["./node_modules/.prisma/client/**/*"],
+    },
+  },
   images: {
     unoptimized: true,
     remotePatterns: [

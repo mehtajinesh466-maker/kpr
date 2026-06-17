@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { checkAdminAuth } from "@/lib/admin-auth";
-import { CommentStatus } from "@/lib/generated/prisma/client";
+import { CommentStatus } from "@prisma/client";
 
 // GET /api/admin/comments
 export async function GET(request: NextRequest) {

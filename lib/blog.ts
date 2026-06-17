@@ -1,5 +1,5 @@
 import { prisma } from "@/lib/prisma";
-import { PostStatus, Prisma } from "@/lib/generated/prisma/client";
+import { PostStatus, Prisma } from "@prisma/client";
 
 export const postListInclude = {
   authors: {

@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { checkAdminAuth } from "@/lib/admin-auth";
-import { PostStatus } from "@/lib/generated/prisma/client";
+import { PostStatus } from "@prisma/client";
 
 interface RouteParams {
   params: { id: string };

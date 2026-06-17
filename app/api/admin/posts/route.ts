@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { checkAdminAuth } from "@/lib/admin-auth";
 import { uniqueSlug } from "@/lib/slug";
-import { PostStatus } from "@/lib/generated/prisma/client";
+import { PostStatus } from "@prisma/client";
 
 // GET /api/admin/posts
 export async function GET(request: NextRequest) {

@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { prisma } from "@/lib/prisma";
-import { PostStatus } from "@/lib/generated/prisma/client";
+import { PostStatus } from "@prisma/client";
 import { postListInclude } from "@/lib/blog";
 import { serializePost } from "@/lib/blog-serialize";
 import { Card, CardContent } from "@/components/ui/card";
