@@ -74,26 +74,19 @@ export const RenderedContent: React.FC<RenderedContentProps> = ({ html }) => {
   };
 
   const options: HTMLReactParserOptions = {
-    replace: (node: any) => {
-      if (node.type === "tag" && BLOCK_SHORTCODE_TAGS.includes(node.name)) {
-        const content = extractText(node);
-        if (!SHORTCODE_REGEX.test(content)) return undefined;
-        const trimmed = content.trim();
-        if (!trimmed.match(/^\[\s*(chess-diagram|calculator)\s+[^\]]+\]$/)) return undefined;
-        return <>{parseShortcodes(trimmed)}</>;
-      }
+  replace: (node: any) => {
+    // Only process text nodes containing shortcodes
+    if (
+      node.type === "text" &&
+      typeof node.data === "string" &&
+      SHORTCODE_REGEX.test(node.data)
+    ) {
+      return <>{parseShortcodes(node.data)}</>;
+    }
 
-      if (
-        node.type === "text" &&
-        typeof node.data === "string" &&
-        SHORTCODE_REGEX.test(node.data)
-      ) {
-        return <>{parseShortcodes(node.data)}</>;
-      }
-
-      return undefined;
-    },
-  };
+    return undefined;
+  },
+};
 
   return (
     <div className="prose prose-slate lg:prose-xl dark:prose-invert max-w-none prose-headings:font-bold prose-headings:text-gray-900 prose-ol:list-decimal prose-ul:list-disc prose-li:marker:text-gray-900">

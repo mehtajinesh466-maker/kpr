@@ -137,11 +137,7 @@ export default async function BlogPostPage({ params }: PageProps) {
           </div>
         )}
 
-        <div
-  dangerouslySetInnerHTML={{
-    __html: post.contentHtml ?? "",
-  }}
-/>
+        
 
         {/* prose scoped only to article body content */}
        <RenderedContent html={post.contentHtml ?? `<p>${post.excerpt ?? ""}</p>`} />
