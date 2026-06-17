@@ -14,6 +14,9 @@ import {
   Search, ListFilter, UserX, AlertCircle, Plus, Undo2
 } from "lucide-react";
 import { toast } from "sonner";
+import Link from "next/link";
+
+type CommentStatus = "PENDING" | "APPROVED" | "REJECTED" | "SPAM";
 
 interface Comment {
   id: string;
@@ -22,7 +25,7 @@ interface Comment {
   authorName: string;
   authorEmail: string;
   content: string;
-  status: "PENDING" | "APPROVED" | "REJECTED" | "SPAM";
+  status: CommentStatus;
   ipAddress: string | null;
   createdAt: string;
   post: { title: string; slug: string };
@@ -88,7 +91,7 @@ export default function AdminCommentsPage() {
   }, [activeTab, activeStatusFilter]);
 
   // Single comment moderation action
-  const handleModerateSingle = async (id: string, status: "APPROVED" | "REJECTED" | "SPAM") => {
+  const handleModerateSingle = async (id: string, status: CommentStatus) => {
     try {
       const response = await fetch(`/api/admin/comments/${id}`, {
         method: "PUT",
@@ -104,7 +107,7 @@ export default function AdminCommentsPage() {
   };
 
   // Bulk comment moderation
-  const handleModerateBulk = async (status: "APPROVED" | "REJECTED" | "SPAM") => {
+  const handleModerateBulk = async (status: CommentStatus) => {
     if (selectedIds.length === 0) return;
     try {
       const response = await fetch("/api/admin/comments", {

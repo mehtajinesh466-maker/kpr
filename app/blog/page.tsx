@@ -34,6 +34,11 @@ export default async function BlogPage() {
     categories = serializeCategories(cats);
   } catch (error) {
     console.error("Blog page data fetch failed:", error);
+    if (!process.env.DATABASE_URL) {
+      console.error(
+        "DATABASE_URL is not set. Add your Neon pooled connection string in Vercel → Settings → Environment Variables, then redeploy."
+      );
+    }
   }
 
   return (
