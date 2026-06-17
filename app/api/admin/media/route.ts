@@ -1,12 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { checkAdminAuth } from "@/lib/admin-auth";
-import { v2 as cloudinary } from "cloudinary";
 
-// Configure Cloudinary
-cloudinary.config({
-  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-});
+
 
 // POST /api/admin/media — upload image to Cloudinary (unsigned)
 export async function POST(request: NextRequest) {
@@ -40,11 +36,25 @@ export async function POST(request: NextRequest) {
     const dataUri = `data:${file.type || "image/png"};base64,${base64}`;
 
     // Upload to Cloudinary using unsigned upload with the preset
-    const result = await cloudinary.uploader.upload(dataUri, {
-      upload_preset: uploadPreset,
-      folder: "chesseasy-blog",
-      resource_type: "image",
-    });
+   const uploadFormData = new FormData();
+
+uploadFormData.append("file", dataUri);
+uploadFormData.append("upload_preset", uploadPreset);
+uploadFormData.append("folder", "chesseasy-blog");
+
+const uploadResponse = await fetch(
+  `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`,
+  {
+    method: "POST",
+    body: uploadFormData,
+  }
+);
+
+const result = await uploadResponse.json();
+
+if (!uploadResponse.ok) {
+  throw new Error(result.error?.message || "Cloudinary upload failed");
+}
 
     const cloudinaryUrl = result.secure_url;
 
