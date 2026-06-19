@@ -8,17 +8,23 @@ import { Table } from "@tiptap/extension-table";
 import TableRow from "@tiptap/extension-table-row";
 import TableCell from "@tiptap/extension-table-cell";
 import TableHeader from "@tiptap/extension-table-header";
-import Image from "@tiptap/extension-image";
 import Link from "@tiptap/extension-link";
 import Highlight from "@tiptap/extension-highlight";
 import TaskList from "@tiptap/extension-task-list";
 import TaskItem from "@tiptap/extension-task-item";
 import Youtube from "@tiptap/extension-youtube";
+import TextAlign from "@tiptap/extension-text-align";
+import { TextStyle, FontFamily, FontSize } from "@tiptap/extension-text-style";
+import { ResizableImage } from "./extensions/resizable-image";
+import { Column, ColumnBlock } from "./extensions/columns";
+import { RenderedContent } from "@/components/blog/RenderedContent";
 import {
   Bold, Italic, Strikethrough, Heading1, Heading2, Heading3, Heading4,
   List, ListOrdered, CheckSquare, Quote, Table as TableIcon,
   Image as ImageIcon, Video, Link2, Code, FileCode, Check, Copy,
-  Grid, PlusCircle, MinusCircle, Layout, ArrowRightLeft, Sparkles
+  Grid, PlusCircle, MinusCircle, Layout, ArrowRightLeft, Sparkles,
+  AlignLeft, AlignCenter, AlignRight, AlignJustify, Columns as ColumnsIcon,
+  Eye, Edit3
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -107,6 +113,8 @@ export function TipTapEditor({ initialContent, onChange }: TipTapEditorProps) {
   const [youtubeDialogOpen, setYoutubeDialogOpen] = useState(false);
   const [youtubeUrl, setYoutubeUrl] = useState("");
 
+  const [isPreview, setIsPreview] = useState(false);
+
   const editor = useEditor({
     extensions: [
       StarterKit,
@@ -114,12 +122,18 @@ export function TipTapEditor({ initialContent, onChange }: TipTapEditorProps) {
       TableRow,
       TableCell,
       TableHeader,
-      Image.configure({ inline: true, allowBase64: true }),
+      ResizableImage.configure({ inline: true, allowBase64: true }),
       Link.configure({ openOnClick: false }),
       Highlight.configure({ multicolor: true }),
       TaskList,
       TaskItem.configure({ nested: true }),
-      Youtube.configure({ width: 640, height: 360 })
+      Youtube.configure({ width: 640, height: 360 }),
+      TextAlign.configure({ types: ['heading', 'paragraph'] }),
+      TextStyle,
+      FontFamily,
+      FontSize,
+      ColumnBlock,
+      Column
     ],
     content: initialContent,
     onUpdate: ({ editor }) => {
@@ -233,8 +247,33 @@ export function TipTapEditor({ initialContent, onChange }: TipTapEditorProps) {
           </Button>
         </div>
 
-        {/* Headings */}
-        <div className="flex items-center gap-0.5 border-r border-gray-200 pr-1.5 mr-1">
+        {/* Headings and Typography */}
+        <div className="flex items-center gap-1 border-r border-gray-200 pr-1.5 mr-1">
+          <select 
+            onChange={(e) => editor.chain().focus().setFontFamily(e.target.value).run()}
+            className="h-8 text-sm border-gray-300 rounded-md bg-transparent focus:outline-none"
+            defaultValue=""
+          >
+            <option value="" disabled>Font</option>
+            <option value="Arial">Arial</option>
+            <option value="Times New Roman">Times New Roman</option>
+            <option value="Courier New">Courier</option>
+            <option value="Georgia">Georgia</option>
+          </select>
+          <select 
+            onChange={(e) => editor.chain().focus().setFontSize(e.target.value).run()}
+            className="h-8 text-sm border-gray-300 rounded-md bg-transparent focus:outline-none"
+            defaultValue=""
+          >
+            <option value="" disabled>Size</option>
+            <option value="12px">12px</option>
+            <option value="14px">14px</option>
+            <option value="16px">16px</option>
+            <option value="18px">18px</option>
+            <option value="20px">20px</option>
+            <option value="24px">24px</option>
+            <option value="32px">32px</option>
+          </select>
           <Button
             type="button" variant="ghost" size="icon" className={`h-8 w-8 rounded-lg ${editor.isActive("heading", { level: 1 }) ? "bg-slate-200 text-blue-600" : ""}`}
             onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
@@ -286,6 +325,35 @@ export function TipTapEditor({ initialContent, onChange }: TipTapEditorProps) {
             onClick={() => editor.chain().focus().toggleBlockquote().run()}
           >
             <Quote className="w-4 h-4" />
+          </Button>
+        </div>
+
+        {/* Alignment & Layouts */}
+        <div className="flex items-center gap-0.5 border-r border-gray-200 pr-1.5 mr-1">
+          <Button
+            type="button" variant="ghost" size="icon" className={`h-8 w-8 rounded-lg ${editor.isActive({ textAlign: 'left' }) ? "bg-slate-200 text-blue-600" : ""}`}
+            onClick={() => editor.chain().focus().setTextAlign('left').run()}
+          >
+            <AlignLeft className="w-4 h-4" />
+          </Button>
+          <Button
+            type="button" variant="ghost" size="icon" className={`h-8 w-8 rounded-lg ${editor.isActive({ textAlign: 'center' }) ? "bg-slate-200 text-blue-600" : ""}`}
+            onClick={() => editor.chain().focus().setTextAlign('center').run()}
+          >
+            <AlignCenter className="w-4 h-4" />
+          </Button>
+          <Button
+            type="button" variant="ghost" size="icon" className={`h-8 w-8 rounded-lg ${editor.isActive({ textAlign: 'right' }) ? "bg-slate-200 text-blue-600" : ""}`}
+            onClick={() => editor.chain().focus().setTextAlign('right').run()}
+          >
+            <AlignRight className="w-4 h-4" />
+          </Button>
+          <Button
+            type="button" variant="ghost" size="icon" className={`h-8 w-8 rounded-lg ${editor.isActive('columnBlock') ? "bg-slate-200 text-blue-600" : ""}`}
+            onClick={() => editor.chain().focus().setColumnBlock().run()}
+            title="Insert 2 Columns"
+          >
+            <ColumnsIcon className="w-4 h-4" />
           </Button>
         </div>
 
@@ -415,38 +483,57 @@ export function TipTapEditor({ initialContent, onChange }: TipTapEditorProps) {
           </Button>
         </div>
 
+        {/* Preview Toggle */}
+        <div className="flex items-center gap-1.5 ml-auto">
+          <Button
+            type="button" variant={isPreview ? "default" : "outline"} size="sm" className="h-8 flex items-center gap-1.5 font-bold"
+            onClick={() => setIsPreview(!isPreview)}
+          >
+            {isPreview ? <Edit3 className="w-3.5 h-3.5" /> : <Eye className="w-3.5 h-3.5" />} 
+            {isPreview ? "Edit" : "Preview"}
+          </Button>
+        </div>
+
       </div>
 
       {/* Bubble Menu for quick inline actions (Tiptap v3 format) */}
-      <BubbleMenu editor={editor} options={{ placement: 'top', offset: 8 }}>
-        <div className="bg-slate-900 text-white rounded-xl shadow-lg border border-slate-800 p-1 flex gap-0.5 items-center">
-          <button
-            type="button"
-            onClick={() => editor.chain().focus().toggleBold().run()}
-            className={`p-1.5 rounded-lg hover:bg-slate-800 transition-colors ${editor.isActive("bold") ? "text-blue-400" : ""}`}
-          >
-            <Bold className="w-4 h-4" />
-          </button>
-          <button
-            type="button"
-            onClick={() => editor.chain().focus().toggleItalic().run()}
-            className={`p-1.5 rounded-lg hover:bg-slate-800 transition-colors ${editor.isActive("italic") ? "text-blue-400" : ""}`}
-          >
-            <Italic className="w-4 h-4" />
-          </button>
-          <button
-            type="button"
-            onClick={() => setLinkDialogOpen(true)}
-            className={`p-1.5 rounded-lg hover:bg-slate-800 transition-colors ${editor.isActive("link") ? "text-blue-400" : ""}`}
-          >
-            <Link2 className="w-4 h-4" />
-          </button>
-        </div>
-      </BubbleMenu>
+      {!isPreview && (
+        <BubbleMenu editor={editor} options={{ placement: 'top', offset: 8 }}>
+          <div className="bg-slate-900 text-white rounded-xl shadow-lg border border-slate-800 p-1 flex gap-0.5 items-center">
+            <button
+              type="button"
+              onClick={() => editor.chain().focus().toggleBold().run()}
+              className={`p-1.5 rounded-lg hover:bg-slate-800 transition-colors ${editor.isActive("bold") ? "text-blue-400" : ""}`}
+            >
+              <Bold className="w-4 h-4" />
+            </button>
+            <button
+              type="button"
+              onClick={() => editor.chain().focus().toggleItalic().run()}
+              className={`p-1.5 rounded-lg hover:bg-slate-800 transition-colors ${editor.isActive("italic") ? "text-blue-400" : ""}`}
+            >
+              <Italic className="w-4 h-4" />
+            </button>
+            <button
+              type="button"
+              onClick={() => setLinkDialogOpen(true)}
+              className={`p-1.5 rounded-lg hover:bg-slate-800 transition-colors ${editor.isActive("link") ? "text-blue-400" : ""}`}
+            >
+              <Link2 className="w-4 h-4" />
+            </button>
+          </div>
+        </BubbleMenu>
+      )}
 
       {/* Editor Content Area */}
-      <div className="flex-1 bg-white min-h-[450px]">
-        <EditorContent editor={editor} />
+      <div className={`flex-1 bg-white min-h-[450px] ${isPreview ? 'p-6' : ''}`}>
+        {isPreview ? (
+          <div className="preview-content">
+            <RenderedContent html={editor.getHTML()} />
+          </div>
+        ) : (
+          <EditorContent editor={editor} />
+        )}
       </div>
 
       {/* dialogs container */}

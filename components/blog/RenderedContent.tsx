@@ -25,9 +25,7 @@ const BLOCK_SHORTCODE_TAGS = ["p", "h1", "h2", "h3", "h4", "h5", "h6"];
 export const RenderedContent: React.FC<RenderedContentProps> = ({ html }) => {
   const decodedHtml = html
     .replace(/&#91;/g, "[")
-    .replace(/&#93;/g, "]")
-    .replace(/&quot;/g, '"')
-    .replace(/&amp;/g, "&");
+    .replace(/&#93;/g, "]");
 
   const parseShortcodes = (str: string): React.ReactNode => {
     const parts: React.ReactNode[] = [];
