@@ -92,7 +92,7 @@ export function AboutUs() {
                 <span className="text-xs font-black text-slate-400 uppercase tracking-[0.3em]">Who We Are?</span>
               </div>
 
-              <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tighter leading-[1.1]">
+              <h2 className="text-2xl md:text-4xl font-black text-slate-900 tracking-tighter leading-[1.1]">
                 Professional Chess Coaching <br />
                 <span className="inline-block bg-[#FFB800] text-black px-5 py-2 rounded-[2rem] shadow-lg transform -rotate-1 mt-2">At KPR Chess Academy</span>
               </h2>
