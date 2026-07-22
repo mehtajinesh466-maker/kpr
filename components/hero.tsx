@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { MessageCircle, ChevronRight } from "lucide-react";
+import Link from "next/link";
 
 export function Hero() {
   return (
@@ -26,19 +27,20 @@ export function Hero() {
 
       <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
         
-        {/* 2. LEFT SIDE IMAGE - Rounded & Tilted */}
+        {/* 2. LEFT SIDE IMAGE PLACEHOLDER */}
         <motion.div
           initial={{ opacity: 0, x: -50, rotate: -5 }}
           animate={{ opacity: 1, x: 0, rotate: -3 }}
           transition={{ duration: 1, ease: "easeOut" }}
           className="hidden lg:block w-72 h-[480px] relative shrink-0"
         >
-          <div className="w-full h-full rounded-[4rem] overflow-hidden border-4 border-white/20 shadow-2xl shadow-black/50">
+          <div className="w-full h-full rounded-[4rem] overflow-hidden border-4 border-white/20 shadow-2xl shadow-black/50 bg-gradient-to-tr from-[#7A0C0C] to-red-950 flex flex-col items-center justify-center text-white text-center">
+            {/* Replace the src path below with your own image asset */}
             <Image
-              src="/ach1.jpeg"
-              alt="Kid playing chess"
+              src="/4.jpeg" 
+              alt="KPR Chess Academy Left Illustration"
               fill
-              className="object-cover hover:scale-110 transition-transform duration-700 rounded-[4rem]"
+              className="object-cover opacity-100 hover:scale-105 transition-transform duration-500 rounded-[4rem]"
             />
           </div>
         </motion.div>
@@ -50,9 +52,9 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-4xl md:text-5xl font-black text-white tracking-tighter leading-[1.1]">
-              More growth, <span className="text-[#FFB800]">less work</span> <br />
-              Get your time back
+            <h1 className="text-4xl md:text-5xl lg:text-5xl font-black text-white tracking-tighter leading-[1.1]">
+              Empower Your Mind With <br />
+              <span className="text-[#7A0C0C] block mt-2">KPR Chess Academy</span>
             </h1>
           </motion.div>
 
@@ -62,37 +64,38 @@ export function Hero() {
             transition={{ delay: 0.3 }}
             className="text-slate-200 text-lg md:text-xl font-medium leading-relaxed opacity-90 drop-shadow-md"
           >
-            Time is money, and our chess academy solutions help you save both. 
-            Automate your learning, master strategic thinking, and watch 
-            as your skills reach new heights.
+            Structured chess coaching in Mylapore & Pallikaranai, Chennai. Develop critical logic, tournament confidence, and positional mastery under FIDE-rated coaches.
           </motion.p>
 
           {/* THE AMBER/YELLOW CTA */}
-          <motion.button
-            whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(255, 184, 0, 0.4)" }}
-            whileTap={{ scale: 0.95 }}
-            className="group bg-[#FFB800] text-black px-12 py-5 rounded-full font-black text-xl shadow-xl transition-all flex items-center gap-3"
-          >
-            Join Our Academy
-            <div className="bg-black/10 p-1 rounded-full group-hover:translate-x-1 transition-transform">
-                <ChevronRight size={20} />
-            </div>
-          </motion.button>
+          <Link href="/contact" className="w-full sm:w-auto">
+            <motion.button
+              whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(122, 12, 12, 0.4)" }}
+              whileTap={{ scale: 0.95 }}
+              className="group w-full bg-[#7A0C0C] text-[#FFB800] border border-[#FFB800]/20 px-12 py-5 rounded-full font-black text-xl shadow-xl transition-all flex items-center justify-center gap-3"
+            >
+              Book Free Demo
+              <div className="bg-white/10 p-1 rounded-full group-hover:translate-x-1 transition-transform">
+                  <ChevronRight size={20} className="text-[#FFB800]" />
+              </div>
+            </motion.button>
+          </Link>
         </div>
 
-        {/* 4. RIGHT SIDE IMAGE - Rounded & Tilted */}
+        {/* 4. RIGHT SIDE IMAGE PLACEHOLDER */}
         <motion.div
           initial={{ opacity: 0, x: 50, rotate: 5 }}
           animate={{ opacity: 1, x: 0, rotate: 3 }}
           transition={{ duration: 1, ease: "easeOut" }}
           className="hidden lg:block w-72 h-[480px] relative shrink-0"
         >
-          <div className="w-full h-full rounded-[4rem] overflow-hidden border-4 border-white/20 shadow-2xl shadow-black/50">
+          <div className="w-full h-full rounded-[4rem] overflow-hidden border-4 border-white/20 shadow-2xl shadow-black/50 bg-gradient-to-tr from-slate-900 to-slate-950 flex flex-col items-center justify-center text-white text-center">
+            {/* Replace the src path below with your own image asset */}
             <Image
-              src="/ach2.jpeg"
-              alt="Adult teaching chess"
+              src="/2.jpeg" 
+              alt="KPR Chess Academy Right Illustration"
               fill
-              className="object-cover hover:scale-110 transition-transform duration-700 rounded-[4rem]"
+              className="object-cover opacity-100 hover:scale-105 transition-transform duration-500 rounded-[4rem]"
             />
           </div>
         </motion.div>

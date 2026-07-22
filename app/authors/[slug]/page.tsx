@@ -3,69 +3,41 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
-import { prisma } from "@/lib/prisma";
-import { PostStatus } from "@prisma/client";
-import { postListInclude } from "@/lib/blog";
-import { serializePost } from "@/lib/blog-serialize";
+import { staticPosts } from "@/lib/static-posts";
 import { Card, CardContent } from "@/components/ui/card";
 import { Calendar, Clock } from "lucide-react";
 import { formatReadTime } from "@/lib/read-time";
-
-export const dynamic = "force-dynamic";
 
 interface PageProps {
   params: { slug: string };
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const author = await prisma.author.findUnique({ where: { slug: params.slug } });
+  const allAuthors = staticPosts.flatMap((p) => p.authors);
+  const author = allAuthors.find((a) => a.slug === params.slug);
   if (!author) return { title: "Author Not Found" };
 
   return {
     title: `${author.name} - Author Archive`,
-    description: author.bio ?? `Articles by ${author.name} at Chesseasy Academy.`,
+    description: author.bio ?? `Articles by ${author.name} at KPR Chess Academy.`,
   };
 }
 
-export default async function AuthorArchivePage({ params }: PageProps) {
-  const author = await prisma.author.findUnique({
-    where: { slug: params.slug },
-    include: {
-      posts: {
-        where: {
-          post: {
-            status: PostStatus.PUBLISHED,
-            publishedAt: { lte: new Date() },
-          },
-        },
-        include: {
-          post: { include: postListInclude },
-        },
-        orderBy: { post: { publishedAt: "desc" } },
-      },
-    },
-  });
-
+export default function AuthorArchivePage({ params }: PageProps) {
+  const allAuthors = staticPosts.flatMap((p) => p.authors);
+  const author = allAuthors.find((a) => a.slug === params.slug);
   if (!author) notFound();
 
-  const posts = author.posts.map((pa) => serializePost(pa.post));
+  const posts = staticPosts.filter((p) => p.authors.some((a) => a.slug === params.slug));
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen bg-white">
       <Navbar />
 
       <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16">
         <div className="flex items-start gap-6 mb-12">
-          <div className="w-20 h-20 rounded-full bg-blue-100 flex items-center justify-center text-2xl font-bold text-blue-600">
-            {author.avatarUrl ? (
-              <img
-                src={author.avatarUrl}
-                alt={author.name}
-                className="w-full h-full rounded-full object-cover"
-              />
-            ) : (
-              author.name.charAt(0)
-            )}
+          <div className="w-20 h-20 rounded-full bg-red-100 flex items-center justify-center text-2xl font-bold text-[#7A0C0C]">
+            {author.name.charAt(0)}
           </div>
           <div>
             <h1 className="text-3xl font-bold text-gray-900">{author.name}</h1>
@@ -81,7 +53,7 @@ export default async function AuthorArchivePage({ params }: PageProps) {
         <div className="space-y-6">
           {posts.map((post) => (
             <Link key={post.id} href={`/blog/${post.slug}`}>
-              <Card className="hover:shadow-md transition-shadow">
+              <Card className="hover:shadow-md transition-shadow border border-slate-100">
                 <CardContent className="p-6">
                   <h2 className="text-xl font-bold text-gray-900 mb-2">{post.title}</h2>
                   <p className="text-gray-600 line-clamp-2 mb-3">{post.excerpt}</p>

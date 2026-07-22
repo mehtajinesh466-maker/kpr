@@ -3,51 +3,49 @@
 import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
 import { motion } from "framer-motion";
-import { 
-  ChevronRight, 
-  Zap, 
-  Map, 
-  AlertOctagon, 
-  Target, 
-  Trophy, 
-  CheckCircle2, 
-  Users, 
-  BookOpen,
-  ArrowDown,
-  Crown,
-  Sparkles
-} from "lucide-react";
+import { ChevronRight, Star, BookOpen, Brain, Trophy, Target, Users, Heart, Sparkles, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function IntermediatePage() {
-  const curriculum = [
-    { num: "01", title: "Tactical Motifs", desc: "Fork, Pin, Skewer, Discovery, and the deadly Zwischenzug." },
-    { num: "02", title: "Opening Principles", desc: "Controlling the center, rapid development, and King safety." },
-    { num: "03", title: "Middlegame Plans", desc: "Pawn structures, piece activity, and aggressive attack ideas." },
-    { num: "04", title: "Endgame Basics", desc: "King & Pawn endings, Rook technique, and winning converted games." },
+export default function BeginnersPage() {
+  const learnItems = [
+    "Board setup & piece identification",
+    "How every piece moves & captures",
+    "Rules of Check, Checkmate & Stalemate",
+    "Special moves: Castling, En Passant, Promotion",
+    "First tactics: Fork, Pin & Basic Combinations",
+    "Playing a complete game from start to finish",
   ];
 
-  const improvements = [
-    { icon: <AlertOctagon size={28} />, title: "Eliminate Blunders", desc: "Learn to scan for threats before every move — the single biggest rating booster for intermediate players." },
-    { icon: <Zap size={28} />, title: "Spot Tactics Faster", desc: "Pattern training trains your eye to find winning combinations in seconds, not minutes — crucial for blitz." },
-    { icon: <Map size={28} />, title: "Read Positions", desc: "Understanding imbalances lets you form logical plans instead of just reacting to your opponent's moves." },
-  ];
-
-  const trainingPillars = [
-    { num: "01", title: "Puzzle Sessions", desc: "Daily tactical puzzles organized by theme. Repetition builds pattern recognition that stays with you forever." },
-    { num: "02", title: "Game Analysis", desc: "Your actual games reviewed by coaches — knowing where and why you went wrong is the fastest way to grow." },
-    { num: "03", title: "Practical Play", desc: "Supervised games with real-time coaching feedback transforms practice into measurable tournament skill." },
+  const benefits = [
+    { icon: <Brain size={28} />, title: "Logical Thinking", desc: "Chess trains the brain to think ahead, evaluate options, and make calculated decisions — skills that transfer to academics and life." },
+    { icon: <Target size={28} />, title: "Focus & Patience", desc: "Long games build concentration spans rare in today's digital age. Chess players learn to sit with difficulty and think it through." },
+    { icon: <Trophy size={28} />, title: "Competitive Foundation", desc: "Early structured learning gives your child a solid base for school, state, and national level tournament participation." },
+    { icon: <Star size={28} />, title: "Creative Problem-Solving", desc: "No two chess positions are the same. Students learn to think creatively and adapt — a skill classrooms rarely teach." },
+    { icon: <Heart size={28} />, title: "Sportsmanship", desc: "Learning to win and lose gracefully builds emotional resilience and mutual respect that shapes character." },
+    { icon: <BookOpen size={28} />, title: "Academic Performance", desc: "Studies link chess training to improvements in math, reading comprehension, and memory in school-age children." },
   ];
 
   const whoFor = [
-    { icon: "♟", title: "Knows Basic Rules", desc: "You understand how pieces move but lack a structured strategic roadmap." },
-    { icon: "🎮", title: "Played Casual Games", desc: "You've played online but don't quite understand why you keep losing games." },
-    { icon: "📊", title: "Wants Improvement", desc: "You're hungry for growth and ready for systematic, high-level learning." },
-    { icon: "🏅", title: "Tournament Curious", desc: "You want to enter your first school or club tournament with real confidence." },
+    { icon: "🧒", title: "Age 5 & Above", desc: "Designed with young learners in mind — fun, engaging, and age-appropriate pacing." },
+    { icon: "🎯", title: "Absolute Beginners", desc: "Never touched a chess piece? Perfect. We start from the very first move." },
+    { icon: "👨‍👩‍👧", title: "Parent-Guided", desc: "Parents can co-learn and reinforce lessons at home for faster progress." },
+    { icon: "🏫", title: "School Students", desc: "Structured for busy school schedules with flexible session timings." },
   ];
 
-  const milestoneCredentials = ["Tournament Ready", "Tactical Expert", "Position Evaluation", "Opening Repertoire"];
+  const courseSteps = [
+    { num: "01", title: "Concept Modules", desc: "Each session covers one core concept clearly — no overwhelm, just clean progressive learning." },
+    { num: "02", title: "Fun Puzzles", desc: "Interactive puzzles after each module lock in understanding through active practice — not passive watching." },
+    { num: "03", title: "Guided Games", desc: "Play real games under coach guidance so mistakes are corrected in real-time, not discovered weeks later." },
+  ];
+
+  const parentTips = [
+    "Set a consistent practice schedule at home",
+    "Play casual games together — no pressure",
+    "Ask your child to explain what they learned",
+    "Celebrate progress, not just wins",
+    "Attend milestone assessments to track growth",
+  ];
 
   return (
     <main className="bg-white text-slate-900 font-sans overflow-x-hidden">
@@ -57,7 +55,7 @@ export default function IntermediatePage() {
       <section className="relative min-h-[90vh] flex items-center justify-center pt-8 pb-16 px-6 overflow-hidden">
         {/* Background Gradients & Chess grid */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-[url('/bg1.avif')] bg-cover bg-center opacity-[0.08] grayscale" />
+          <div className="absolute inset-0 bg-[url('/bg3.jpg')] bg-cover bg-center opacity-[0.08] grayscale" />
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#7A0C0C]/5 rounded-full blur-[140px]" />
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#FFB800]/2 rounded-full blur-[120px]" />
           <div className="absolute inset-0 opacity-[0.08]" 
@@ -74,7 +72,7 @@ export default function IntermediatePage() {
               className="inline-flex items-center gap-2 bg-[#7A0C0C]/5 border border-[#7A0C0C]/10 rounded-full px-5 py-2"
             >
               <Sparkles size={12} className="text-[#7A0C0C]" />
-              <span className="text-[10px] font-black tracking-widest uppercase text-[#7A0C0C]">Intermediate Program</span>
+              <span className="text-[10px] font-black tracking-widest uppercase text-[#7A0C0C]">Beginner Program</span>
             </motion.div>
 
             <motion.h1 
@@ -83,8 +81,9 @@ export default function IntermediatePage() {
               transition={{ delay: 0.1 }}
               className="text-4xl md:text-6xl lg:text-[70px] font-[900] tracking-tighter leading-[1.05] uppercase text-slate-900"
             >
-              Move Beyond <br className="hidden md:block" />
-              The <span className="text-[#7A0C0C] bg-gradient-to-r from-red-700 to-red-900 bg-clip-text text-transparent">Basics</span>
+              Start Your <br className="hidden md:block" />
+              <span className="text-[#7A0C0C] bg-gradient-to-r from-red-700 to-red-900 bg-clip-text text-transparent">Chess Journey</span> <br />
+              From Scratch
             </motion.h1>
 
             <motion.p 
@@ -93,7 +92,7 @@ export default function IntermediatePage() {
               transition={{ delay: 0.2 }}
               className="text-slate-600 font-medium text-sm md:text-base max-w-xl mx-auto lg:mx-0 leading-relaxed"
             >
-              Structured improvement, tactical refinement, and tournament preparation under expert FIDE Master guidance in Chennai.
+              Our beginner coaching at Mylapore and Pallikaranai is designed specifically for young learners taking their first steps on the board. Zero experience needed.
             </motion.p>
 
             <motion.div 
@@ -104,7 +103,7 @@ export default function IntermediatePage() {
             >
               <Link href="/contact" className="w-full sm:w-auto">
                 <button className="group w-full flex items-center justify-center gap-3 bg-[#7A0C0C] hover:bg-[#5E0909] text-[#FFB800] border border-[#FFB800]/20 px-8 py-4 rounded-full font-black text-xs uppercase tracking-widest transition-all shadow-xl shadow-red-950/20 active:scale-95">
-                  Enroll In Intermediate
+                  Start Free Class
                   <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
                 </button>
               </Link>
@@ -116,7 +115,7 @@ export default function IntermediatePage() {
             </motion.div>
           </div>
 
-          {/* Hero Right Visual */}
+          {/* Hero Right Visual (Glassmorphic Chess Dashboard Panel) */}
           <div className="lg:col-span-5 relative flex justify-center">
             <motion.div 
               initial={{ opacity: 0, scale: 0.9 }}
@@ -131,27 +130,27 @@ export default function IntermediatePage() {
               {/* Header inside Panel */}
               <div className="flex justify-between items-center z-10">
                 <span className="text-[9px] font-black uppercase tracking-widest text-[#7A0C0C]">KPR Academy</span>
-                <span className="bg-[#7A0C0C] text-[#FFB800] border border-[#FFB800]/20 text-[8px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Tactical Mastery</span>
+                <span className="bg-[#7A0C0C] text-[#FFB800] border border-[#FFB800]/20 text-[8px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Live Coaching</span>
               </div>
 
               {/* Center Image */}
               <div className="relative w-full h-[60%] my-4 rounded-[2rem] overflow-hidden border border-slate-200 bg-slate-900">
                 <Image 
-                  src="/inter.avif" 
-                  alt="Intermediate Chess training" 
+                  src="/beg.jpeg" 
+                  alt="Chess training illustration" 
                   fill 
                   className="object-cover opacity-90"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4">
-                  <p className="text-white font-black text-sm uppercase tracking-tight">Positional Training</p>
-                  <p className="text-white/60 text-[9px] font-semibold mt-1">Calculated paths & FIDE standards.</p>
+                  <p className="text-white font-black text-sm uppercase tracking-tight">Structured Foundations</p>
+                  <p className="text-white/60 text-[9px] font-semibold mt-1">Nurturing chess minds step-by-step.</p>
                 </div>
               </div>
 
               {/* Bottom stats inside Panel */}
               <div className="grid grid-cols-3 gap-2 border-t border-slate-200 pt-4 z-10">
-                {[["600-1400", "Rating Target"], ["FIDE Clock", "Equipment"], ["12 Modules", "Duration"]].map(([n, l]) => (
+                {[["Age 5+", "Target Group"], ["Zero", "Prior Base"], ["4 Weeks", "First Win"]].map(([n, l]) => (
                   <div key={l} className="text-center">
                     <p className="text-slate-900 font-black text-xs">{n}</p>
                     <p className="text-slate-500 text-[7px] font-bold uppercase tracking-wider mt-0.5">{l}</p>
@@ -163,18 +162,18 @@ export default function IntermediatePage() {
         </div>
       </section>
 
-      {/* ── 2. ELIGIBILITY / WHO IS IT FOR (LIGHT PANEL) ── */}
+      {/* ── 2. WHO IS IT FOR (LIGHT PANEL) ── */}
       <section className="py-24 px-6 bg-slate-50 border-y border-slate-100">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-xl mx-auto space-y-4 mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#7A0C0C]/10 border border-[#7A0C0C]/25">
-              <span className="text-[9px] font-black text-[#7A0C0C] uppercase tracking-widest">♟ Eligibility</span>
+              <span className="text-[9px] font-black text-[#7A0C0C] uppercase tracking-widest">♟ Target Audience</span>
             </div>
             <h2 className="text-3xl md:text-5xl font-[900] tracking-tighter uppercase text-slate-900">
-              You Know the Rules. <span className="text-[#7A0C0C]">Now Win.</span>
+              Built For <span className="text-[#7A0C0C]">Complete Starters</span>
             </h2>
             <p className="text-slate-500 text-xs md:text-sm font-medium leading-relaxed">
-              For players ready to step into structured calculation, opening planning, and deep analysis.
+              Our beginner coaching at Mylapore and Pallikaranai is designed specifically for young learners taking their first steps on the board.
             </p>
           </div>
 
@@ -200,47 +199,51 @@ export default function IntermediatePage() {
         </div>
       </section>
 
-      {/* ── 3. CURRICULUM SECTION (SPLIT) ── */}
+      {/* ── 3. WHAT YOU LEARN (SPLIT SECTION) ── */}
       <section id="curriculum" className="py-24 px-6 bg-white">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           
-          {/* Left: Modules */}
-          <div className="lg:col-span-7 space-y-8">
+          {/* Left: Checklist Info */}
+          <div className="lg:col-span-6 space-y-8">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#7A0C0C]/10 border border-[#7A0C0C]/25">
-              <span className="text-[9px] font-black text-[#7A0C0C] uppercase tracking-widest">📚 Course Content</span>
+              <span className="text-[9px] font-black text-[#7A0C0C] uppercase tracking-widest">📚 Syllabus Details</span>
             </div>
             <h2 className="text-3xl md:text-5xl font-[900] tracking-tighter uppercase leading-none text-slate-950">
-              Tactical Skills You <span className="text-[#7A0C0C]">Will Master</span>
+              What You Will <span className="text-[#7A0C0C]">Learn</span>
             </h2>
             <p className="text-slate-500 text-xs md:text-sm font-medium leading-relaxed">
-              Move beyond instinct. We teach you a real chess language — pattern recognition, calculated plans, and professional evaluation.
+              Nurtured by FIDE rated mentors, KPR's foundational syllabus introduces kids to structural board coordinates, movements, and initial strategies.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-              {curriculum.map((item, i) => (
-                <motion.div key={i} className="flex items-start gap-4 p-6 bg-slate-50 border border-slate-100 rounded-[2rem] shadow-sm hover:shadow-md transition-all duration-300">
-                  <div className="w-10 h-10 rounded-xl bg-slate-950 text-[#FFB800] flex items-center justify-center font-black text-xs shrink-0">{item.num}</div>
-                  <div>
-                    <p className="font-black text-slate-900 text-sm mb-1">{item.title}</p>
-                    <p className="text-slate-500 text-[11px] font-medium leading-relaxed">{item.desc}</p>
-                  </div>
-                </motion.div>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {learnItems.map((item, i) => (
+                <motion.li 
+                  key={i} 
+                  initial={{ opacity: 0, x: -20 }} 
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }} 
+                  transition={{ delay: i * 0.05 }}
+                  className="flex items-start gap-3 text-slate-600 font-semibold text-xs leading-relaxed"
+                >
+                  <CheckCircle2 size={16} className="text-[#7A0C0C] shrink-0 mt-0.5" />
+                  <span>{item}</span>
+                </motion.li>
               ))}
-            </div>
+            </ul>
           </div>
 
-          {/* Right: Quote / Info Box */}
-          <div className="lg:col-span-5 space-y-8">
+          {/* Right: Modern Dashboard Quote Block */}
+          <div className="lg:col-span-6 space-y-8">
             <div className="bg-gradient-to-br from-red-50/40 to-slate-50/50 border border-slate-100 rounded-[2.5rem] p-8 md:p-10 shadow-xl relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#7A0C0C]/5 rounded-full blur-2xl" />
               <p className="text-4xl text-[#7A0C0C] font-serif leading-none mb-4">“</p>
               <p className="text-base md:text-lg font-bold text-slate-800 italic leading-relaxed relative z-10">
-                A tactical player doesn't just react — they create threats. This program rewires how you see the board.
+                Every grandmaster was once a beginner who chose not to quit. Our job is to make that first chapter so exciting, your child will never want to stop.
               </p>
             </div>
-            <div className="grid grid-cols-3 gap-4">
-              {[["50+", "Tactics Mastery"], ["12", "Syllabus Modules"], ["3×", "Speed Calculations"]].map(([n, l]) => (
-                <div key={l} className="text-center p-4 bg-slate-50 rounded-3xl border border-slate-100 shadow-sm">
-                  <p className="text-2xl font-black text-[#7A0C0C] tracking-tighter">{n}</p>
+            <div className="flex gap-8 md:gap-12 pl-4">
+              {[["8+", "Structured Modules"], ["100%", "Beginner Friendly"], ["5★", "Student Rating"]].map(([n, l]) => (
+                <div key={l} className="space-y-1">
+                  <p className="text-3xl md:text-4xl font-black text-[#7A0C0C] tracking-tight">{n}</p>
                   <p className="text-[8px] font-black uppercase tracking-widest text-slate-400 mt-1">{l}</p>
                 </div>
               ))}
@@ -249,59 +252,59 @@ export default function IntermediatePage() {
         </div>
       </section>
 
-      {/* ── 4. WHAT CHANGES FOR YOU (LIGHT MODERN GRID) ── */}
+      {/* ── 4. BENEFITS SECTION (LIGHT MODERN GRID) ── */}
       <section className="py-24 px-6 bg-slate-50 border-y border-slate-100">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-xl mx-auto space-y-4 mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-slate-200">
-              <span className="text-[9px] font-black text-slate-500 uppercase tracking-widest">⚡ Progress Track</span>
+              <span className="text-[9px] font-black text-slate-500 uppercase tracking-widest">🧠 Lifelong Impact</span>
             </div>
             <h2 className="text-3xl md:text-5xl font-[900] tracking-tighter uppercase leading-none text-slate-900">
-              What <span className="text-[#7A0C0C]">Changes</span> For You
+              Why Chess <span className="text-[#7A0C0C]">Changes</span> Kids
             </h2>
             <p className="text-slate-500 text-xs md:text-sm font-medium leading-relaxed">
-              Concrete measurable improvements that happen when you follow this structured program consistently.
+              Chess develops cognitive capabilities, planning skills, and focus that serve children throughout their academic lives.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {improvements.map((item, i) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {benefits.map((b, i) => (
               <motion.div 
                 key={i} 
                 initial={{ opacity: 0, y: 30 }} 
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }} 
                 transition={{ delay: i * 0.08 }}
-                className="bg-white border border-slate-100 rounded-[2rem] p-8 hover:border-[#7A0C0C]/40 hover:shadow-2xl hover:shadow-red-950/5 transition-all duration-500 text-center flex flex-col items-center"
+                className="bg-white border border-slate-100 rounded-[2rem] p-8 hover:border-[#7A0C0C]/40 hover:shadow-2xl hover:shadow-red-950/5 transition-all duration-500"
               >
                 <div className="w-12 h-12 rounded-2xl bg-[#7A0C0C]/10 border border-[#7A0C0C]/20 flex items-center justify-center text-[#7A0C0C] mb-6">
-                  {item.icon}
+                  {b.icon}
                 </div>
-                <h3 className="text-slate-950 font-black text-base uppercase tracking-tight mb-3">{item.title}</h3>
-                <p className="text-slate-500 font-semibold text-xs leading-relaxed">{item.desc}</p>
+                <h3 className="text-slate-950 font-black text-base uppercase tracking-tight mb-3">{b.title}</h3>
+                <p className="text-slate-500 font-semibold text-xs leading-relaxed">{b.desc}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── 5. HOW WE TRAIN YOU (3-PILLAR ROADMAP) ── */}
+      {/* ── 5. HOW IT WORKS (ROADMAP) ── */}
       <section className="py-24 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-xl mx-auto space-y-4 mb-20">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#7A0C0C]/10 border border-[#7A0C0C]/25">
-              <span className="text-[9px] font-black text-[#7A0C0C] uppercase tracking-widest">🎯 Training pillars</span>
+              <span className="text-[9px] font-black text-[#7A0C0C] uppercase tracking-widest">🗂 Roadmaps</span>
             </div>
             <h2 className="text-3xl md:text-5xl font-[900] tracking-tighter uppercase leading-none text-slate-950">
-              How We <span className="text-[#7A0C0C]">Train You</span>
+              How the <span className="text-[#7A0C0C]">Program Works</span>
             </h2>
             <p className="text-slate-500 text-xs md:text-sm font-medium leading-relaxed">
-              A three-pillar methodology used by competitive coaches worldwide — adapted for online learning.
+              Our structured modules ensure children actively learn through play, guided assessments, and direct coach interaction.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {trainingPillars.map((s, i) => (
+            {courseSteps.map((s, i) => (
               <motion.div 
                 key={i} 
                 initial={{ opacity: 0, y: 30 }} 
@@ -322,59 +325,85 @@ export default function IntermediatePage() {
         </div>
       </section>
 
-      {/* ── 6. ACHIEVEMENT GOAL ── */}
+      {/* ── 6. PARENT SUPPORT & PROMISE ── */}
       <section className="py-24 px-6 bg-slate-50 border-t border-slate-100">
-        <div className="max-w-7xl mx-auto flex flex-col items-center">
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }} 
-            whileInView={{ opacity: 1, y: 0 }} 
-            viewport={{ once: true }} 
-            className="w-full max-w-4xl bg-gradient-to-b from-[#7A0C0C] to-red-950 border border-[#7A0C0C]/40 rounded-[3rem] p-12 md:p-16 shadow-2xl relative overflow-hidden text-white text-center"
-          >
-            <div className="w-12 h-12 bg-[#FFB800] rounded-2xl flex items-center justify-center mx-auto mb-6"><Crown className="text-black" size={24} /></div>
-            <h3 className="text-2xl md:text-4xl font-black text-[#FFB800] uppercase tracking-tight mb-4">Your Achievement Goal</h3>
-            <p className="text-slate-200 text-xs md:text-sm font-semibold leading-relaxed max-w-xl mx-auto mb-8">
-              By the end of this program, you'll be fully ready to enter school or club-level tournaments with confidence — knowing how to prepare, plan, and compete like a pro.
-            </p>
-            <div className="flex flex-wrap gap-3 justify-center">
-              {milestoneCredentials.map((tag) => (
-                <span key={tag} className={`px-6 py-2.5 rounded-full text-[9px] font-black uppercase tracking-wider
-                  ${tag === "Tournament Ready" ? "bg-[#FFB800] text-black shadow-md" : "bg-white/5 border border-white/10 text-slate-300"}`}>
-                  {tag}
-                </span>
-              ))}
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+          
+          {/* Left Column: Parents details */}
+          <div className="lg:col-span-7 space-y-8">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#7A0C0C]/10 border border-[#7A0C0C]/25">
+              <span className="text-[9px] font-black text-[#7A0C0C] uppercase tracking-widest">👨‍👩‍👧 Family Co-Learning</span>
             </div>
-          </motion.div>
+            <h2 className="text-3xl md:text-5xl font-[900] tracking-tighter uppercase leading-none text-slate-950">
+              How Parents Can <span className="text-[#7A0C0C]">Support</span>
+            </h2>
+            <p className="text-slate-500 text-xs md:text-sm font-medium leading-relaxed">
+              You do not need to play chess to support your child. FIDE Master TV Kumar recommends simple habits to boost their progress.
+            </p>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {parentTips.map((tip, i) => (
+                <li key={i} className="flex items-start gap-3 text-slate-600 font-semibold text-xs leading-relaxed">
+                  <CheckCircle2 size={16} className="text-[#7A0C0C] shrink-0 mt-0.5" />
+                  <span>{tip}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Right Column: Milestone Promise Card (Crimson Highlight) */}
+          <div className="lg:col-span-5">
+            <motion.div 
+              initial={{ opacity: 0, x: 30 }} 
+              whileInView={{ opacity: 1, x: 0 }} 
+              viewport={{ once: true }} 
+              className="bg-gradient-to-b from-[#7A0C0C] to-red-950 border border-[#7A0C0C]/40 rounded-[3rem] p-8 md:p-10 shadow-2xl relative overflow-hidden text-white"
+            >
+              <div className="text-4xl mb-4">🏅</div>
+              <h3 className="text-xl font-black text-[#FFB800] uppercase tracking-tight mb-4">The Milestone Promise</h3>
+              <p className="text-slate-200 text-xs font-semibold leading-relaxed">
+                At KPR Chess Academy, we guarantee your child will learn to play complete games, record notation, handle tournament clocks, and spot direct tactics.
+              </p>
+              <div className="mt-8 pt-6 border-t border-white/10 flex gap-8">
+                {[["4+", "Weeks to first win"], ["∞", "Lifetime Skill"]].map(([n, l]) => (
+                  <div key={l} className="space-y-1">
+                    <p className="text-2xl font-black text-[#FFB800] tracking-tight">{n}</p>
+                    <p className="text-[7px] font-black uppercase tracking-widest text-slate-300 mt-1">{l}</p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* ── 7. CTA SECTION ── */}
+      {/* ── 7. CTA SECTION (IMMERSIVE DARK CALLOUT FOR CONTRAST) ── */}
       <section className="relative py-32 px-6 bg-slate-950 overflow-hidden text-center">
+        {/* Background Radial Glow */}
         <div className="absolute inset-0 z-0">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-[#7A0C0C]/10 rounded-full blur-[120px] pointer-events-none" />
         </div>
 
         <div className="relative z-10 max-w-3xl mx-auto space-y-8">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#7A0C0C]/15 border border-[#7A0C0C]/30">
-            <span className="text-[9px] font-black text-[#FFB800] uppercase tracking-widest">♟ Get Started</span>
+            <span className="text-[9px] font-black text-[#FFB800] uppercase tracking-widest">♟ Join Today</span>
           </div>
           <h2 className="text-4xl md:text-6xl font-[900] tracking-tighter uppercase leading-none text-white">
-            Stop Plateauing. <br />
-            <span className="text-[#7A0C0C] bg-gradient-to-r from-red-500 to-red-700 bg-clip-text text-transparent">Start Growing.</span>
+            Ready to Make <br />
+            Your <span className="text-[#7A0C0C] bg-gradient-to-r from-red-500 to-red-700 bg-clip-text text-transparent">First Move?</span>
           </h2>
           <p className="text-slate-400 text-xs md:text-sm font-medium leading-relaxed max-w-xl mx-auto">
-            The gap between a casual player and a tournament threat is just structured practice. Let's close that gap together.
+            Begin your child's strategic learning today. Visit KPR Chess Academy at Mylapore or Pallikaranai, or book a free trial online.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
             <Link href="/contact" className="w-full sm:w-auto">
               <button className="group w-full flex items-center justify-center gap-4 bg-[#7A0C0C] hover:bg-[#5E0909] text-[#FFB800] border border-[#FFB800]/20 px-10 py-5 rounded-full font-black text-xs uppercase tracking-widest transition-all shadow-2xl shadow-red-950/20 active:scale-95">
-                Join Intermediate Level
+                Join Beginners Program
                 <ChevronRight size={18} className="text-[#FFB800] group-hover:translate-x-1 transition-transform" />
               </button>
             </Link>
             <Link href="/contact" className="w-full sm:w-auto">
               <button className="w-full bg-white/5 hover:bg-white/10 text-white border border-white/10 px-8 py-5 rounded-full font-black text-xs uppercase tracking-widest transition-all">
-                Book Free Trial Class
+                Book Free Demo Class
               </button>
             </Link>
           </div>

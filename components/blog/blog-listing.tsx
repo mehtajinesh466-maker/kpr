@@ -88,7 +88,7 @@ function PostCard({ post, featured = false }: { post: SerializedPost; featured?:
         <CardContent className="p-6">
           <div className="flex flex-wrap items-center gap-3 text-sm text-gray-500 mb-3">
             {primaryCategory && (
-              <span className="bg-blue-100 text-blue-600 px-2 py-1 rounded-full text-xs font-medium">
+              <span className="bg-red-50 text-[#7A0C0C] px-2 py-1 rounded-full text-xs font-medium">
                 {primaryCategory.name}
               </span>
             )}
@@ -102,7 +102,7 @@ function PostCard({ post, featured = false }: { post: SerializedPost; featured?:
             </div>
           </div>
 
-          <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-700 transition-colors line-clamp-2">
+          <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#7A0C0C] transition-colors line-clamp-2">
             {post.title}
           </h3>
 
@@ -113,7 +113,7 @@ function PostCard({ post, featured = false }: { post: SerializedPost; featured?:
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2 text-sm text-gray-500">
               <User className="w-4 h-4" />
-              <span>{primaryAuthor?.name ?? "Chesseasy"}</span>
+              <span>{primaryAuthor?.name ?? "KPR Chess"}</span>
               {post.commentCount > 0 && (
                 <span className="flex items-center gap-1 ml-2">
                   <MessageCircle className="w-3 h-3" />
@@ -123,7 +123,7 @@ function PostCard({ post, featured = false }: { post: SerializedPost; featured?:
             </div>
             <Button
               variant="ghost"
-              className="text-blue-600 hover:text-blue-700 hover:bg-blue-50 group/btn"
+              className="text-[#7A0C0C] hover:text-[#5E0909] hover:bg-red-50/50 group/btn"
             >
               Read Article
               <ArrowRight className="w-4 h-4 ml-1 group-hover/btn:translate-x-1 transition-transform" />
@@ -170,7 +170,7 @@ export function BlogListing({ posts, featuredPosts, categories }: BlogListingPro
   return (
     <>
       {featuredPosts.length > 0 && (
-        <section className="relative py-16 bg-gradient-to-br from-blue-50 to-purple-50/30">
+        <section className="relative py-16 bg-[#FCF5F5] border-y border-red-100/50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
             <FadeIn>
               <div className="flex items-center justify-between mb-12">
@@ -234,7 +234,7 @@ export function BlogListing({ posts, featuredPosts, categories }: BlogListingPro
                           onClick={() => setActiveCategory(category.slug)}
                           className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-left transition-all duration-300 group ${
                             activeCategory === category.slug
-                              ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-500/25"
+                              ? "bg-[#7A0C0C] text-[#FFB800] border border-[#FFB800]/20 shadow-lg shadow-red-950/20"
                               : "text-gray-700 hover:bg-gray-50"
                           }`}
                         >
@@ -243,7 +243,7 @@ export function BlogListing({ posts, featuredPosts, categories }: BlogListingPro
                             className={`text-xs px-2 py-1 rounded-full ${
                               activeCategory === category.slug
                                 ? "bg-white/20 text-white"
-                                : "bg-gray-100 text-gray-600 group-hover:bg-blue-100 group-hover:text-blue-600"
+                                : "bg-gray-100 text-gray-600 group-hover:bg-red-50 group-hover:text-[#7A0C0C]"
                             }`}
                           >
                             {category.count}
@@ -270,7 +270,7 @@ export function BlogListing({ posts, featuredPosts, categories }: BlogListingPro
                           onClick={() => setSortBy(option.id)}
                           className={`w-full text-left px-3 py-2 rounded-xl transition-all duration-300 ${
                             sortBy === option.id
-                              ? "bg-blue-50 text-blue-700 font-medium"
+                              ? "bg-red-50 text-[#7A0C0C] font-medium"
                               : "text-gray-700 hover:bg-gray-50"
                           }`}
                         >

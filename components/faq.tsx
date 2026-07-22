@@ -38,7 +38,7 @@ export function FAQ() {
         {/* HEADING UI - RESPONSIVE SIZES */}
         <div className="flex flex-col items-center text-center space-y-4 md:space-y-6 mb-12 md:mb-20">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 md:px-6 md:py-2 rounded-full bg-slate-50 border border-slate-100 shadow-sm">
-            <HelpCircle className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#FFB800]" />
+            <HelpCircle className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#7A0C0C]" />
             <span className="text-[10px] md:text-xs font-black text-slate-500 uppercase tracking-widest">Support Center</span>
           </div>
 
@@ -47,7 +47,7 @@ export function FAQ() {
             <h2 className="text-3xl lg:text-5xl font-black text-slate-900 tracking-tighter leading-none">
               Common
             </h2>
-            <div className="inline-block bg-[#FFB800] text-black px-6 md:px-12 py-2.5 md:py-5 rounded-[1.5rem] md:rounded-[2.5rem] shadow-xl shadow-amber-200/20">
+            <div className="inline-block bg-[#7A0C0C] text-[#FFB800] px-6 md:px-12 py-2.5 md:py-5 rounded-[1.5rem] md:rounded-[2.5rem] shadow-xl shadow-red-950/15">
               <span className="text-3xl lg:text-5xl font-black tracking-tighter leading-none">
                 Questions
               </span>

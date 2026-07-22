@@ -69,7 +69,7 @@ export function NavbarSearch() {
           }}
           onFocus={() => setShowDropdown(true)}
           placeholder="Search articles..."
-          className="w-full pl-9 pr-8 py-1.5 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent rounded-full text-slate-800 dark:text-slate-200 text-xs transition-all"
+          className="w-full pl-9 pr-8 py-1.5 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 focus:outline-none focus:ring-2 focus:ring-red-700 focus:border-transparent rounded-full text-slate-800 dark:text-slate-200 text-xs transition-all"
         />
         <Search className="absolute left-3 top-2.5 w-3.5 h-3.5 text-slate-400" />
         {loading && (
@@ -93,19 +93,19 @@ export function NavbarSearch() {
                     setShowDropdown(false);
                     setQuery("");
                   }}
-                  className="flex flex-col gap-0.5 px-3 py-2 hover:bg-purple-50/50 dark:hover:bg-purple-950/20 rounded-lg transition-colors group"
+                  className="flex flex-col gap-0.5 px-3 py-2 hover:bg-red-50/50 dark:hover:bg-red-950/20 rounded-lg transition-colors group"
                 >
-                  <span className="text-xs font-bold text-slate-800 dark:text-slate-200 group-hover:text-purple-600 dark:group-hover:text-purple-400 line-clamp-1">
+                  <span className="text-xs font-bold text-slate-800 dark:text-slate-200 group-hover:text-red-700 dark:group-hover:text-red-400 line-clamp-1">
                     {item.title}
                   </span>
                   <span className="text-[10px] text-slate-400 line-clamp-1">
-                    {item.excerpt || "ChessEasy Tutorial"}
+                    {item.excerpt || "KPR Chess Tutorial"}
                   </span>
                 </Link>
               ))}
               <button
                 onClick={handleSubmit}
-                className="w-full flex items-center justify-between px-3 py-2 text-xs font-bold text-purple-600 hover:bg-purple-50/50 dark:hover:bg-purple-950/20 rounded-lg transition-colors text-left"
+                className="w-full flex items-center justify-between px-3 py-2 text-xs font-bold text-red-700 hover:bg-red-50/50 dark:hover:bg-red-950/20 rounded-lg transition-colors text-left"
               >
                 <span>View all matching articles</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -117,7 +117,7 @@ export function NavbarSearch() {
             </div>
           ) : (
             <div className="px-3 py-4 text-center text-xs text-slate-400 flex items-center justify-center gap-2">
-              <Loader2 className="w-3.5 h-3.5 animate-spin text-purple-600" />
+              <Loader2 className="w-3.5 h-3.5 animate-spin text-red-700" />
               Searching...
             </div>
           )}

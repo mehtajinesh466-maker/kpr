@@ -7,15 +7,22 @@ import { Check, Trophy, BookOpen, X, Star, Zap, ChevronRight } from 'lucide-reac
 
 const courses = [
   {
-    title: "Chess Foundations",
-    level: "Level 1",
-    rating: "0-300 Rating",
-    subtitle: "Building the core logic and board vision - (24 Classes)",
-    image: "/1.jpg",
+    title: "BEGINNER PROGRAM",
+    level: "PROGRAM 01",
+    rating: "0-600 Rating",
+    subtitle: "Learn the fundamentals of board coordinates, piece movements, and standard starting positions.",
+    focus: "Spatial",
+    mastery: 85,
+    image: "/memory.png",
     theme: {
-      bg: "bg-[#FFFFFF]", text: "text-[#2563EB]", btn: "bg-[#2563EB]", btnShadow: "shadow-[0_6px_0_#1E40AF]", accent: "bg-[#2563EB]/10", border: "border-[#2563EB]", halo: "from-[#2563EB]/20"
+      gradient: "from-[#7A0C0C] to-red-800",
+      btn: "bg-[#7A0C0C] hover:bg-[#5E0909] text-white",
+      progress: "bg-[#7A0C0C]",
+      check: "text-[#7A0C0C]",
+      border: "border-[#7A0C0C]/20"
     },
-    points: ["Piece Movement Fundamentals", "Coordinates & Notations", "Checkmate Patterns", "Mini Chess Games"],
+    iconType: "board",
+    points: ["Piece Movement & Values", "Board Coordinates", "Checkmate Basics", "Mini Chess Scenarios"],
     months: [
       { name: "Month 1", topics: ["Understanding the Chessboard", "Piece Movement Fundamentals", "Capturing & Defending Pieces", "Chess Coordinates & Notation", "Piece Values", "Mini Chess Games", "Board Vision Activities", "Basic Chess Rules"] },
       { name: "Month 2", topics: ["Check, Checkmate & Stalemate", "Basic Checkmate Patterns", "King Safety Fundamentals", "Introduction to Tactical Thinking", "Attack vs Defense", "Finding Threats", "Simple Chess Puzzles", "Weekly Practice Tournament"] },
@@ -23,15 +30,22 @@ const courses = [
     ]
   },
   {
-    title: "Developing Player",
-    level: "Level 2",
-    rating: "300-600 Rating",
-    subtitle: "Mastering Opening Principles & Basic Tactics - (48 Classes)",
-    image: "/2.jpg",
+    title: "INTERMEDIATE PROGRAM",
+    level: "PROGRAM 02",
+    rating: "600-1400 Rating",
+    subtitle: "Master typical opening plans, tactical combinations, and fundamental king & pawn endgames.",
+    focus: "Logic",
+    mastery: 75,
+    image: "/problem.png",
     theme: {
-      bg: "bg-[#FFFFFF]", text: "text-[#D97706]", btn: "bg-[#F59E0B]", btnShadow: "shadow-[0_6px_0_#B45309]", accent: "bg-[#F59E0B]/10", border: "border-[#F59E0B]", halo: "from-[#F59E0B]/20"
+      gradient: "from-[#A81A1A] to-amber-600",
+      btn: "bg-[#A81A1A] hover:bg-[#8C1414] text-white",
+      progress: "bg-[#A81A1A]",
+      check: "text-[#A81A1A]",
+      border: "border-[#A81A1A]/20"
     },
-    points: ["Opening Strategy", "Forks, Pins & Skewers", "King & Pawn Endgames", "Game Analysis Basics"],
+    iconType: "pieces",
+    points: ["Tactical Motifs (Forks/Pins)", "Opening Repertoire Plans", "King & Pawn Endgames", "Tournament Strategy"],
     months: [
       { name: "Month 1", topics: ["Three Stages of Chess", "Opening Principles", "Center Control", "Piece Development", "Common Beginner Mistakes", "Fast Checkmate Traps", "Game Analysis Basics", "Weekly Tournament Preparation"] },
       { name: "Month 2", topics: ["Forks & Pins", "Skewers & Double Attacks", "Discovered Attacks", "Removing the Defender", "Attraction & Deflection", "Tactical Puzzle Solving"] },
@@ -40,100 +54,26 @@ const courses = [
     ]
   },
   {
-    title: "Improving Competitor",
-    level: "Level 3",
-    rating: "600-1000 Rating",
-    subtitle: "Pattern Recognition & Positional Foundations - (48 Classes)",
-    image: "/3.jpg",
+    title: "ADVANCED PROGRAM",
+    level: "PROGRAM 03",
+    rating: "1400+ Rating",
+    subtitle: "Develop deep variation calculations, position evaluations, and tournament mental toughness.",
+    focus: "Tactics",
+    mastery: 70,
+    image: "/creative.png",
     theme: {
-      bg: "bg-[#FFFFFF]", text: "text-[#16A34A]", btn: "bg-[#10B981]", btnShadow: "shadow-[0_6px_0_#047857]", accent: "bg-[#10B981]/10", border: "border-[#10B981]", halo: "from-[#10B981]/20"
+      gradient: "from-[#D97706] to-[#FFB800]",
+      btn: "bg-[#D97706] hover:bg-[#B45309] text-white",
+      progress: "bg-[#D97706]",
+      check: "text-[#D97706]",
+      border: "border-[#D97706]/20"
     },
-    points: ["Visualization Training", "Positional Foundations", "Converting Advantages", "Candidate Move Selection"],
+    iconType: "trophy",
+    points: ["Multi-Variation Calculation", "Pawn Structure Imbalances", "Positional Sacrifices", "Calculation Under Pressure"],
     months: [
       { name: "Month 1-2", topics: ["Checkmate Pattern Library", "Common Tactical Patterns", "Visualization Training", "Calculation Basics", "Candidate Move Selection", "Blindfold Exercises"] },
       { name: "Month 3-4", topics: ["Positional Foundations", "Strong vs Weak Squares", "Open Files & Outposts", "Good & Bad Bishops", "Piece Activity", "Imbalance Assessment"] },
       { name: "Month 5-6", topics: ["Endgame Technique", "Transition to Endgame", "Practical Defense", "Converting Advantages", "Tournament Game Analysis", "Decision Making Exercises"] }
-    ]
-  },
-  {
-    title: "Intermediate Player",
-    level: "Level 4",
-    rating: "1000-1400 Rating",
-    subtitle: "Strategy, Planning & Endgame Systems - (48 Classes)",
-    image: "/4.jpg",
-    theme: {
-      bg: "bg-[#FFFFFF]", text: "text-[#7C3AED]", btn: "bg-[#8B5CF6]", btnShadow: "shadow-[0_6px_0_#6D28D9]", accent: "bg-[#8B5CF6]/10", border: "border-[#7C3AED]", halo: "from-[#7C3AED]/20"
-    },
-    points: ["Lucena & Philidor Positions", "Pawn Structure Mastery", "Sacrificial Ideas", "Strategic Decision Making"],
-    months: [
-      { name: "Month 1", topics: ["Universal Opening Concepts", "Understanding Pawn Structures", "Typical Middlegame Plans", "Strategic Thinking"] },
-      { name: "Month 2", topics: ["Essential Endgame Systems", "Lucena Position", "Philidor Position", "Active Rook Concepts"] },
-      { name: "Month 3", topics: ["Building Attacks", "Creating Tactical Opportunities", "Sacrificial Ideas", "Initiative & Tempo"] },
-      { name: "Month 4-6", topics: ["Positional Play Workshop", "Weakness Creation", "Long-Term Planning", "Practical Tournament Positions", "Calculation Training"] }
-    ]
-  },
-  {
-    title: "Advanced Intermediate",
-    level: "Level 5",
-    rating: "1400-1800 Rating",
-    subtitle: "Refining Dynamic Play & Repertoire - (48 Classes)",
-    image: "/5.jpg",
-    theme: {
-      bg: "bg-[#FFFFFF]", text: "text-[#EC4899]", btn: "bg-[#F472B6]", btnShadow: "shadow-[0_6px_0_#BE185D]", accent: "bg-[#F472B6]/10", border: "border-[#F472B6]", halo: "from-[#F472B6]/20"
-    },
-    points: ["Opening Repertoire Dev", "Dynamic vs Static Evaluation", "Grandmaster Game Studies", "Tournament Simulation"],
-    months: [
-      { name: "Month 1-2", topics: ["Opening Repertoire Development", "Understanding Opening Structures", "Opening Traps & Gambits", "Dynamic vs Static Positions", "Pawn Breaks", "Initiative Management"] },
-      { name: "Month 3-4", topics: ["Advanced Tactical Training", "Combination Building", "Defensive Resources", "Strategic Planning", "Evaluating Positions", "Exchange Decisions"] },
-      { name: "Month 5-6", topics: ["Grandmaster Game Studies", "Modern Chess Concepts", "Tournament Simulation", "Calculation Tests", "Performance Review", "Improvement Planning"] }
-    ]
-  },
-  {
-    title: "Tournament Player",
-    level: "Level 6",
-    rating: "1800-2200 Rating",
-    subtitle: "High-level Technique & Master Theory - (48 Classes)",
-    image: "6.png",
-    theme: {
-      bg: "bg-[#FFFFFF]", text: "text-[#6366F1]", btn: "bg-[#6366F1]", btnShadow: "shadow-[0_6px_0_#4338CA]", accent: "bg-[#6366F1]/10", border: "border-[#6366F1]", halo: "from-[#6366F1]/20"
-    },
-    points: ["Advanced Endgame Theory", "Visualization Mastery", "Positional Sacrifices", "Practical Decision Making"],
-    months: [
-      { name: "Month 1-2", topics: ["Advanced Endgame Theory", "Minor Piece Endgames", "Technical Conversions", "Rook Endgame Mastery"] },
-      { name: "Month 3-4", topics: ["Advanced Tactical Themes", "Complex Calculations", "Visualization Mastery", "Pattern Expansion"] },
-      { name: "Month 5-6", topics: ["Strategic Mastery", "Positional Sacrifices", "Deep Planning", "Practical Decision Making"] }
-    ]
-  },
-  {
-    title: "Expert Program",
-    level: "Level 7",
-    rating: "2200+ Rating",
-    subtitle: "Deep Calculation & Professional Prep - (48 Classes)",
-    image: "/7.png",
-    theme: {
-      bg: "bg-[#FFFFFF]", text: "text-[#0891B2]", btn: "bg-[#22D3EE]", btnShadow: "shadow-[0_6px_0_#0E7490]", accent: "bg-[#22D3EE]/10", border: "border-[#0891B2]", halo: "from-[#22D3EE]/20"
-    },
-    points: ["Multi-Variation Analysis", "Professional Opening Prep", "Novelty Creation", "Tournament Psychology"],
-    months: [
-      { name: "Month 1-2", topics: ["Deep Calculation Methods", "Candidate Move Systems", "Multi-Variation Analysis", "Strategic Evaluation", "Complex Imbalances", "Dynamic Compensation"] },
-      { name: "Month 3-4", topics: ["Advanced Pawn Structures", "Strategic Transformations", "Space & Restriction", "Advanced Combination Play", "Attack Construction", "Defensive Calculation"] },
-      { name: "Month 5-6", topics: ["Professional Opening Preparation", "Repertoire Building", "Novelty Creation", "Engine-Assisted Analysis", "Tournament Psychology", "Self-Analysis Systems"] }
-    ]
-  },
-  {
-    title: "Elite Master",
-    level: "Level 8",
-    rating: "Master Program",
-    subtitle: "The ultimate track to Professional Mastery - (72 Classes)",
-    image: "/8.png",
-    theme: {
-      bg: "bg-[#FFFFFF]", text: "text-[#B45309]", btn: "bg-[#FBBF24]", btnShadow: "shadow-[0_6px_0_#B45309]", accent: "bg-[#FBBF24]/10", border: "border-[#B45309]", halo: "from-[#FBBF24]/20"
-    },
-    points: ["Master-Level Calculation", "Modern Opening Research", "Psychological Prep", "FIDE Improvement Program"],
-    months: [
-      { name: "Month 1-3", topics: ["Master-Level Calculation", "Strategic Excellence", "Modern Opening Research", "Deep Middlegame Understanding"] },
-      { name: "Month 4-6", topics: ["Advanced Endgame Mastery", "Psychological Preparation", "Opponent-Based Preparation", "High-Level Tournament Training"] },
-      { name: "Month 7-9", topics: ["Professional Chess Development", "Building Personal Style", "Advanced Game Annotation", "Performance Analytics", "FIDE Rating Improvement Program"] }
     ]
   }
 ];
@@ -148,22 +88,30 @@ export default function CoursesSection() {
   }, [activeMonth, selectedCourse]);
 
   useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSelectedCourse(null);
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
+  useEffect(() => {
     document.body.style.overflow = selectedCourse ? 'hidden' : 'unset';
   }, [selectedCourse]);
 
   return (
-    <section className="bg-white py-16 md:py-24 px-4">
+    <section className="bg-slate-50/50 py-16 md:py-24 px-4 font-sans">
       <div className="container mx-auto max-w-7xl">
         
         {/* --- HEADER --- */}
         <div className="flex flex-col items-center text-center space-y-4 md:space-y-6 mb-16">
-          <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} className="inline-flex items-center gap-2 bg-slate-50 border border-slate-100 text-slate-500 px-5 py-2 rounded-full shadow-sm">
-            <Star size={14} className="text-[#F59E0B] fill-[#F59E0B]" />
-            <span className="text-[10px] font-black uppercase tracking-widest">The ChessEasy Roadmap</span>
+          <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} className="inline-flex items-center gap-2 bg-white border border-slate-200 text-slate-500 px-5 py-2 rounded-full shadow-sm">
+            <Star size={14} className="text-[#7A0C0C] fill-[#7A0C0C]" />
+            <span className="text-[10px] font-black uppercase tracking-widest text-[#7A0C0C]">The KPR Chess Roadmap</span>
           </motion.div>
           <div className="flex flex-wrap items-center justify-center gap-2 md:gap-4">
             <h2 className="text-3xl md:text-5xl font-[1000] text-slate-900 tracking-tighter leading-none">Curriculum Built for</h2>
-            <div className="inline-block bg-[#FFB800] text-black px-6 md:px-10 py-2.5 md:py-4 rounded-[1.5rem] md:rounded-[2rem] shadow-xl shadow-amber-200/20">
+            <div className="inline-block bg-[#7A0C0C] text-[#FFB800] px-6 md:px-10 py-2.5 md:py-4 rounded-[1.5rem] md:rounded-[2rem] shadow-xl shadow-red-950/15">
                 <span className="text-3xl md:text-5xl font-black tracking-tighter leading-none">Success</span>
             </div>
           </div>
@@ -173,7 +121,7 @@ export default function CoursesSection() {
         </div>
 
         {/* --- GRID --- */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {courses.map((course, idx) => (
             <motion.div
               key={idx}
@@ -181,42 +129,85 @@ export default function CoursesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.05 }}
-              className={`flex flex-col bg-white rounded-[3rem] border-2 ${course.theme.border} transition-all relative group h-full overflow-hidden hover:shadow-2xl hover:-translate-y-2 duration-500`}
+              className="flex flex-col bg-white rounded-[2rem] border border-slate-100 transition-all relative group h-full overflow-hidden hover:shadow-2xl hover:-translate-y-1 duration-300"
             >
-              <div className={`${course.theme.btn} p-6 flex items-center justify-between`}>
-                <div className="bg-white/20 backdrop-blur-md border border-white/30 text-white text-[9px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest">
+              {/* TOP HEADER BOX WITH GRADIENT & DOT GRID */}
+              <div className={`relative h-[200px] bg-gradient-to-br ${course.theme.gradient} p-6 flex flex-col justify-between overflow-hidden shrink-0`}>
+                {/* Technical Dot Grid Overlay */}
+                <div className="absolute inset-0 opacity-[0.12] pointer-events-none" 
+                     style={{ 
+                       backgroundImage: `radial-gradient(white 1px, transparent 1px)`, 
+                       backgroundSize: '16px 16px' 
+                     }} 
+                />
+                
+                {/* PROGRAM PILL */}
+                <div className="z-10 bg-black/20 backdrop-blur-md border border-white/20 text-white text-[9px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest w-fit">
                   {course.level}
                 </div>
-                <div className="text-white text-[10px] font-black italic">{course.rating}</div>
-              </div>
 
-              <div className="p-8 flex flex-col flex-grow">
-                <div className="h-32 flex items-center justify-center mb-6 relative">
-                  <div className="relative w-32 h-32 group-hover:scale-110 transition-transform duration-700">
-                    <Image src={course.image} alt={course.title} fill className="object-contain" />
-                  </div>
+                {/* GRAPHIC / IMAGE IN HEADER */}
+                <div className="absolute right-6 top-1/2 -translate-y-1/2 w-28 h-28 flex items-center justify-center">
+                  <Image 
+                    src={course.image} 
+                    alt={course.title} 
+                    width={112}
+                    height={112}
+                    className="object-contain group-hover:scale-110 transition-transform duration-500" 
+                  />
                 </div>
 
-                <h3 className="text-xl font-black text-slate-900 mb-4 h-14 flex items-center leading-tight">
+                <div className="z-10 text-white/70 text-[10px] font-black uppercase tracking-widest">{course.rating}</div>
+              </div>
+
+              {/* CARD DETAILS */}
+              <div className="p-8 flex flex-col flex-grow">
+                <h3 className="text-2xl font-[900] text-slate-900 tracking-tight mb-3">
                   {course.title}
                 </h3>
                 
-                <ul className="space-y-3 mb-10 flex-grow">
+                <p className="text-slate-500 text-xs font-semibold leading-relaxed mb-6">
+                  {course.subtitle}
+                </p>
+
+                {/* OUTCOMES SUBTITLE */}
+                <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-4">
+                  Learning Outcomes
+                </div>
+                
+                <ul className="space-y-3.5 mb-8 flex-grow">
                   {course.points.map((point, pIdx) => (
                     <li key={pIdx} className="flex items-start gap-3">
-                      <div className={`mt-1 w-4 h-4 rounded-full ${course.theme.btn} flex items-center justify-center shrink-0`}>
-                        <Check size={10} className="text-white" strokeWidth={4} />
+                      <div className={`mt-0.5 w-4 h-4 rounded-full border-2 border-current ${course.theme.check} flex items-center justify-center shrink-0`}>
+                        <Check size={10} strokeWidth={4} />
                       </div>
-                      <span className="text-slate-600 text-[13px] font-bold leading-tight">{point}</span>
+                      <span className="text-slate-800 text-xs font-bold leading-tight">{point}</span>
                     </li>
                   ))}
                 </ul>
 
+                {/* COGNITIVE FOCUS & MASTERY CURVE CONTAINER */}
+                <div className="bg-slate-50 border border-slate-100 rounded-2xl p-4 flex justify-between items-center mb-6">
+                  <div>
+                    <div className="text-[8px] font-black text-slate-400 uppercase tracking-widest">Cognitive Focus</div>
+                    <div className="text-xs font-black text-slate-800 mt-0.5">{course.focus}</div>
+                  </div>
+                  <div className="text-right">
+                    <div className="text-[8px] font-black text-slate-400 uppercase tracking-widest">Mastery Curve</div>
+                    <div className="flex items-center gap-2 mt-1">
+                      <div className="w-16 h-1.5 bg-slate-200 rounded-full overflow-hidden">
+                        <div className={`h-full ${course.theme.progress} rounded-full`} style={{ width: `${course.mastery}%` }} />
+                      </div>
+                      <span className="text-[10px] font-black text-slate-800">{course.mastery}%</span>
+                    </div>
+                  </div>
+                </div>
+
                 <button 
                   onClick={() => { setSelectedCourse(course); setActiveMonth(0); }}
-                  className={`w-full py-4 bg-[#FFB800] hover:bg-[#FFA500] text-black rounded-2xl font-black text-[11px] uppercase tracking-widest shadow-lg shadow-amber-200/40 active:scale-95 transition-all flex items-center justify-center gap-2`}
+                  className={`w-full py-4 rounded-2xl font-black text-[11px] uppercase tracking-widest transition-all duration-300 active:scale-95 flex items-center justify-center gap-2 ${course.theme.btn}`}
                 >
-                  <BookOpen size={16} /> Explore Syllabus
+                  View Full Page <ChevronRight size={14} strokeWidth={3} />
                 </button>
               </div>
             </motion.div>
@@ -242,7 +233,7 @@ export default function CoursesSection() {
                             <Trophy size={14} className="text-[#FFB800]" />
                             <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#FFB800]">{selectedCourse.level} Mastery</span>
                         </div>
-                        <h2 className="text-2xl md:text-4xl font-black tracking-tighter leading-none">{selectedCourse.title} Curriculum</h2>
+                        <h2 className="text-2xl md:text-5xl font-black tracking-tighter leading-none">{selectedCourse.title} Curriculum</h2>
                         <p className="text-xs md:text-sm font-medium text-slate-400 mt-2 max-w-xl line-clamp-1">{selectedCourse.subtitle}</p>
                     </div>
 
@@ -259,7 +250,7 @@ export default function CoursesSection() {
                             {selectedCourse.months.map((month, mIdx) => (
                                 <button key={mIdx} onClick={() => setActiveMonth(mIdx)}
                                     className={`whitespace-nowrap px-6 py-3.5 rounded-2xl text-[11px] font-black uppercase tracking-widest transition-all text-center md:text-left ${
-                                        activeMonth === mIdx ? "bg-[#FFB800] text-black shadow-lg shadow-amber-200/50" : "bg-slate-50 text-slate-400 hover:bg-slate-100"
+                                        activeMonth === mIdx ? "bg-[#7A0C0C] text-[#FFB800] border border-[#FFB800]/20 shadow-lg shadow-red-950/20" : "bg-slate-50 text-slate-400 hover:bg-slate-100"
                                     }`}
                                 >
                                     {month.name}
@@ -273,10 +264,10 @@ export default function CoursesSection() {
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 pb-12">
                             {selectedCourse.months[activeMonth].topics.map((topic, tIdx) => (
                                 <motion.div key={tIdx} initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: tIdx * 0.03 }}
-                                    className="bg-white p-5 rounded-[2rem] shadow-sm border border-slate-100 flex items-center gap-5 group hover:border-[#FFB800] transition-all"
+                                    className="bg-white p-5 rounded-[2rem] shadow-sm border border-slate-100 flex items-center gap-5 group hover:border-[#7A0C0C] transition-all"
                                 >
-                                    <div className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center p-2.5 shrink-0 group-hover:bg-amber-50 transition-colors">
-                                        <Zap size={20} className="text-slate-300 group-hover:text-[#FFB800] transition-colors" />
+                                    <div className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center p-2.5 shrink-0 group-hover:bg-red-50 transition-colors">
+                                        <Zap size={20} className="text-slate-300 group-hover:text-[#7A0C0C] transition-colors" />
                                     </div>
                                     <h5 className="font-bold text-slate-800 text-sm md:text-base leading-snug">{topic}</h5>
                                 </motion.div>
@@ -286,7 +277,7 @@ export default function CoursesSection() {
                 </div>
 
                 <div className="hidden md:block py-3 bg-white border-t border-slate-100 text-center shrink-0">
-                     <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.4em]">ChessEasy Academy Curriculum © 2025</p>
+                     <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.4em]">KPR Chess Academy Curriculum © 2026</p>
                 </div>
               </motion.div>
             </div>

@@ -11,161 +11,149 @@ import {
   ChevronRight,
 } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
+
+export function KPRLogo({ className = "h-8 md:h-10" }: { className?: string }) {
+  return (
+    <div className={`flex items-center gap-2.5 font-sans ${className}`}>
+      <img src="/logo.png" alt="KPR Chess Academy Logo" className="h-full w-auto object-contain" />
+    </div>
+  );
+}
 
 export function Footer() {
-  const amber = "#FFB800";
-
   return (
-    <footer className="bg-[#0A0F1C] text-gray-300 relative overflow-hidden border-t border-white/5">
-      {/* Subtle Background Pattern */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
-            backgroundSize: "40px 40px",
-          }}
-        ></div>
+    <footer className="bg-[#0B0202] text-slate-300 relative overflow-hidden border-t border-red-950/30 font-sans">
+      {/* Background Decorative Glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-[#7A0C0C]/5 rounded-full blur-[120px] pointer-events-none -z-10" />
+      <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-[#FFB800]/2 rounded-full blur-[100px] pointer-events-none -z-10" />
+
+      {/* ── TOP NEWSLETTER CTA PANEL ── */}
+      <div className="max-w-7xl mx-auto px-6 pt-16 pb-8 border-b border-white/5">
+        <div className="bg-gradient-to-r from-red-950/20 to-slate-900/40 border border-white/5 rounded-[2.5rem] p-8 md:p-10 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-2xl">
+          <div className="space-y-2 text-center lg:text-left">
+            <h3 className="text-xl md:text-2xl font-black text-white tracking-tight">Stay updated with KPR Academy</h3>
+            <p className="text-xs md:text-sm text-slate-400 font-medium">Subscribe to receive weekly chess tactical sheets, tournament schedules, and news.</p>
+          </div>
+          <div className="w-full lg:w-auto flex flex-col sm:flex-row gap-3 items-center shrink-0">
+            <input 
+              type="email" 
+              placeholder="Enter your email address" 
+              className="w-full sm:w-80 bg-black/40 border border-white/10 rounded-full px-6 py-4 text-xs font-bold text-white placeholder-slate-500 focus:outline-none focus:border-[#FFB800] transition-colors"
+            />
+            <button className="w-full sm:w-auto bg-[#7A0C0C] text-[#FFB800] border border-[#FFB800]/20 hover:bg-[#5E0909] px-8 py-4 rounded-full font-black text-xs uppercase tracking-wider transition-all duration-300 shadow-lg active:scale-95">
+              Subscribe
+            </button>
+          </div>
+        </div>
       </div>
 
-      <div className="container mx-auto px-6 py-16 relative z-10">
-        {/* Main Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
+      {/* ── MAIN FOOTER CONTENT ── */}
+      <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
           
-          {/* 1. Brand Section */}
+          {/* Column 1: Brand Info */}
           <div className="lg:col-span-4 space-y-6">
             <Link href="/" className="inline-block">
-              <Image
-                src="/chesseasy.png"
-                alt="ChessEasy Academy"
-                width={200}
-                height={60}
-                className="h-12 w-auto object-contain"
-              />
+              <KPRLogo className="h-12" />
             </Link>
-            <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
-              Elevate your strategic thinking with world-class chess programs. 
-              From absolute beginners to emerging Grandmasters, we guide every move of your journey!
+            <p className="text-slate-400 text-xs md:text-sm leading-relaxed max-w-sm font-medium">
+              Chennai's premier coaching academy for strategic development. Nurturing beginners, intermediates, and advanced competitors into local and international champions.
             </p>
-            
-            {/* Social Links - Themed to Amber */}
-            <div className="flex space-x-3">
-              {[Facebook, Instagram, Youtube].map((Icon, i) => (
-                <Link
-                  key={i}
-                  href="#"
-                  className="p-3 rounded-xl bg-white/5 hover:bg-[#FFB800] hover:text-black transition-all duration-300 group"
+            <div className="flex space-x-3 pt-2">
+              {[Facebook, Instagram, Youtube].map((Icon, idx) => (
+                <Link 
+                  key={idx} 
+                  href="#" 
+                  className="w-10 h-10 rounded-full bg-white/5 border border-white/5 flex items-center justify-center text-slate-400 hover:bg-[#7A0C0C] hover:border-[#FFB800]/30 hover:text-[#FFB800] transition-all duration-300"
                 >
-                  <Icon size={18} />
+                  <Icon size={16} />
                 </Link>
               ))}
             </div>
           </div>
 
-          {/* 2. Navigation Sections */}
-          <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-3 gap-8">
-            
-            {/* Quick Links */}
-            <div>
-              <h4 className="text-white font-black uppercase text-xs tracking-[0.2em] mb-8 flex items-center gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#FFB800]" />
-                Navigation
-              </h4>
-              <ul className="space-y-4">
-                {[
-                  { href: "/", label: "Home" },
-                  { href: "/curriculum", label: "Curriculum" },
-                  { href: "/about", label: "About Us" },
-                  { href: "/achievements", label: "Achievements" },
-                  { href: "/blog", label: "Blog" },
-                  { href: "/calculators", label: "Calculators" },
-                  { href: "/gallery", label: "Gallery" },
-                  { href: "/contact", label: "Contact" },
-                ].map((link) => (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-gray-400 hover:text-[#FFB800] transition-colors flex items-center group"
-                    >
-                      <ChevronRight size={12} className="mr-2 opacity-0 group-hover:opacity-100 transition-all -ml-4 group-hover:ml-0" />
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Programs */}
-            <div>
-              <h4 className="text-white font-black uppercase text-xs tracking-[0.2em] mb-8 flex items-center gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#FFB800]" />
-                Training
-              </h4>
-              <ul className="space-y-4">
-                {[
-                  "Beginner Level",
-                  "Intermediate Level",
-                  "Advanced Strategy",
-                  "1-on-1 Coaching",
-                  "Tournament Prep",
-                ].map((item) => (
-                  <li key={item} className="text-sm text-gray-400 hover:text-white transition-colors cursor-pointer">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Contact Details */}
-            <div>
-              <h4 className="text-white font-black uppercase text-xs tracking-[0.2em] mb-8 flex items-center gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#FFB800]" />
-                Get In Touch
-              </h4>
-              <div className="space-y-5">
-                <div className="flex items-start space-x-3 group">
-                  <MapPin size={18} className="text-[#FFB800] shrink-0 mt-0.5" />
-                  <p className="text-sm leading-relaxed text-gray-400">
-                    SH Mount P.O <br />
-                    Kottayam, Kerala, India.
-                  </p>
-                </div>
-                <div className="flex items-center space-x-3 group">
-                  <Phone size={18} className="text-[#FFB800] shrink-0" />
-                  <Link href="tel:+917012980842" className="text-sm text-gray-400 hover:text-white">
-                    +91 70129 80842
+          {/* Column 2: Navigation Links */}
+          <div className="lg:col-span-2 space-y-6 md:pl-4">
+            <h4 className="text-white text-xs font-black uppercase tracking-[0.2em] flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#7A0C0C]" /> Navigation
+            </h4>
+            <ul className="space-y-3.5">
+              {[
+                { href: "/", label: "Home Page" },
+                { href: "/about", label: "About KPR" },
+                { href: "/curriculum", label: "Programs" },
+                { href: "/achievements", label: "Champions" },
+                { href: "/blog", label: "Articles" },
+              ].map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="text-xs md:text-sm text-slate-400 hover:text-[#FFB800] transition-colors font-medium">
+                    {link.label}
                   </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 3: Levels */}
+          <div className="lg:col-span-2 space-y-6">
+            <h4 className="text-white text-xs font-black uppercase tracking-[0.2em] flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#7A0C0C]" /> Classes
+            </h4>
+            <ul className="space-y-3.5">
+              {[
+                "Beginner Level",
+                "Intermediate Level",
+                "Advanced Theory",
+                "1-on-1 Coaching",
+                "Tactics Workshops"
+              ].map((lvl) => (
+                <li key={lvl} className="text-xs md:text-sm text-slate-400 hover:text-[#FFB800] transition-colors font-medium cursor-pointer">
+                  {lvl}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 4: Contact details */}
+          <div className="lg:col-span-4 space-y-6">
+            <h4 className="text-white text-xs font-black uppercase tracking-[0.2em] flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#7A0C0C]" /> Address & Info
+            </h4>
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
+                <MapPin size={16} className="text-[#FFB800] shrink-0 mt-0.5" />
+                <div className="text-xs leading-relaxed text-slate-400 font-medium">
+                  <p className="mb-1"><strong className="text-white">Mylapore:</strong> Near Amma Hotel, Alamelu Mangapuram, Chennai</p>
+                  <p><strong className="text-white">Pallikaranai:</strong> No-10, Balaji Dental Clinic, Rajesh Nagar, 4th Cross Street, Chennai</p>
                 </div>
-                <div className="flex items-center space-x-3 group">
-                  <Mail size={18} className="text-[#FFB800] shrink-0" />
-                  <Link href="mailto:info@chesseasy.com" className="text-sm text-gray-400 hover:text-white">
-                    info@chesseasy.com
-                  </Link>
-                </div>
-                
-                {/* Brand CTA Button */}
-                <Link href="/contact" className="block pt-4">
-                  <button className="w-full bg-[#FFB800] hover:bg-[#FFA500] text-black rounded-full py-4 px-6 font-black text-[10px] uppercase tracking-widest transition-all shadow-xl shadow-amber-500/10 flex items-center justify-center gap-2 active:scale-95">
-                    <MessageCircle size={16} />
-                    Start Learning Today
-                  </button>
+              </div>
+              <div className="flex items-center gap-3">
+                <Phone size={16} className="text-[#FFB800] shrink-0" />
+                <Link href="tel:+919941987881" className="text-xs md:text-sm text-slate-400 hover:text-white font-medium">
+                  +91 99419 87881
+                </Link>
+              </div>
+              <div className="flex items-center gap-3">
+                <Mail size={16} className="text-[#FFB800] shrink-0" />
+                <Link href="mailto:kumartv1978@gmail.com" className="text-xs md:text-sm text-slate-400 hover:text-white font-medium">
+                  kumartv1978@gmail.com
                 </Link>
               </div>
             </div>
-
           </div>
+
         </div>
+      </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
-          <div className="text-[11px] font-bold text-gray-500 uppercase tracking-widest">
-            © 2026 <span className="text-[#FFB800]">ChessEasy Academy</span>. All Rights Reserved.
-          </div>
-
-          <div className="flex flex-wrap justify-center items-center gap-6 text-[10px] font-black uppercase tracking-widest">
+      {/* ── COPYRIGHT & BAR ── */}
+      <div className="border-t border-white/5 py-8 bg-black/30">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest text-center md:text-left">
+            © 2026 <span className="text-[#FFB800]">KPR CHESS ACADEMY</span>. ALL RIGHTS RESERVED.
+          </p>
+          <div className="flex gap-6 text-[9px] font-black uppercase tracking-widest text-slate-500">
             {["Privacy Policy", "Terms of Use", "Refund Policy"].map((policy) => (
-              <Link key={policy} href="#" className="text-gray-500 hover:text-white transition-colors">
+              <Link key={policy} href="#" className="hover:text-white transition-colors">
                 {policy}
               </Link>
             ))}

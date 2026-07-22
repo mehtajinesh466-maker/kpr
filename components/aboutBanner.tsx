@@ -16,7 +16,7 @@ export default function AboutBanner() {
         <div className="absolute inset-0 z-0">
           <Image
             src="/bg4.jpg" // Replace with an academy or strategy themed chess image
-            alt="ChessEasy Mission Background"
+            alt="KPR Chess Mission Background"
             fill
             className="object-cover opacity-50 grayscale"
             priority
@@ -44,8 +44,8 @@ export default function AboutBanner() {
           >
             <div className="flex items-center gap-3 text-[11px] font-black tracking-[0.3em] uppercase">
               <Link href="/" className="text-white hover:text-slate-300 transition-colors">Home</Link>
-              <ChevronRight size={12} className="text-[#FFB800]" />
-              <span className="text-[#FFB800]">Our Story</span>
+              <ChevronRight size={12} className="text-[#7A0C0C]" />
+              <span className="text-[#7A0C0C]">Our Story</span>
             </div>
           </motion.div>
 
@@ -58,10 +58,10 @@ export default function AboutBanner() {
           >
             <h1 className="text-5xl md:text-7xl lg:text-[90px] font-black tracking-tighter leading-none uppercase flex items-center justify-center">
               <span className="text-white italic font-medium">THE</span>
-              <span className="text-[#FFB800] not-italic ml-3">MISSION.</span>
+              <span className="text-[#7A0C0C] not-italic ml-3">MISSION.</span>
             </h1>
             <p className="text-slate-300 font-bold uppercase tracking-[0.3em] md:tracking-[0.5em] text-[10px] md:text-xs max-w-4xl mx-auto leading-relaxed">
-              Redefining <span className="text-white">Wellness</span> Through <br className="hidden md:block" />
+              Redefining <span className="text-white">Success</span> Through <br className="hidden md:block" />
               Strategic Intelligence & Mental Endurance.
             </p>
           </motion.div>
@@ -77,7 +77,7 @@ export default function AboutBanner() {
             className="absolute top-[28%] left-[7%] bg-[#1e293b]/40 backdrop-blur-xl p-5 rounded-[30px] border border-white/10 shadow-2xl flex items-center gap-4"
           >
             <div className="p-3 bg-white/5 border border-white/10 rounded-2xl">
-              <Target className="text-[#FFB800] w-6 h-6" />
+              <Target className="text-[#7A0C0C] w-6 h-6" />
             </div>
             <div className="text-left">
               <p className="text-white/40 text-[8px] font-black uppercase tracking-widest leading-none mb-1">Vision</p>
@@ -91,8 +91,8 @@ export default function AboutBanner() {
             transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
             className="absolute bottom-[28%] left-[12%] bg-[#1e293b]/40 backdrop-blur-xl p-5 rounded-[30px] border border-white/10 shadow-2xl flex items-center gap-4"
           >
-            <div className="p-3 bg-[#5D3FD3]/20 border border-[#5D3FD3]/40 rounded-2xl">
-              <Brain className="text-[#5D3FD3] w-6 h-6" />
+            <div className="p-3 bg-white/5 border border-white/10 rounded-2xl">
+              <Brain className="text-[#7A0C0C] w-6 h-6" />
             </div>
             <div className="text-left">
               <p className="text-white/40 text-[8px] font-black uppercase tracking-widest leading-none mb-1">Methodology</p>
@@ -107,11 +107,11 @@ export default function AboutBanner() {
             className="absolute top-[32%] right-[8%] bg-[#1e293b]/40 backdrop-blur-xl p-5 rounded-[30px] border border-white/10 shadow-2xl flex items-center gap-4"
           >
             <div className="p-3 bg-white/5 border border-white/10 rounded-2xl">
-              <Globe className="text-[#FFB800] w-6 h-6" />
+              <Globe className="text-[#7A0C0C] w-6 h-6" />
             </div>
             <div className="text-left">
               <p className="text-white/40 text-[8px] font-black uppercase tracking-widest leading-none mb-1">Established</p>
-              <p className="text-white font-bold text-xs uppercase tracking-tight">Kottayam Global</p>
+              <p className="text-white font-bold text-xs uppercase tracking-tight">Chennai Centers</p>
             </div>
           </motion.div>
         </div>

@@ -112,17 +112,17 @@ export default function LeadGenLanding() {
        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
   
   {/* Trial Class Button */}
-  <Link href="https://pages.razorpay.com/chesseasy-trial">
+  <Link href="/contact">
     <ButtonPill
-      className="text-lg px-10 py-4 font-bold shadow-xl shadow-[#FFB800]/30 hover:shadow-2xl hover:shadow-[#FFB800]/50 hover:-translate-y-0.5 transition-all duration-300"
+      className="text-lg px-10 py-4 font-bold shadow-xl shadow-red-900/20 bg-[#7A0C0C] text-[#FFB800] border border-[#FFB800]/20 hover:shadow-2xl hover:shadow-[#FFB800]/30 hover:-translate-y-0.5 transition-all duration-300"
     >
-      Book ₹99 Trial Class Now
+      Book Free Trial Class Now
     </ButtonPill>
   </Link>
 
   {/* WhatsApp Button */}
   <a
-    href="https://wa.me/919876543210?text=Hi%20I%20want%20to%20know%20more%20about%20your%20chess%20classes"
+    href="https://wa.me/919941987881?text=Hi%20I%20want%20to%20know%20more%20about%20your%20chess%20classes"
     target="_blank"
     rel="noopener noreferrer"
     className="group flex items-center justify-center gap-3 px-8 py-4 rounded-full border border-white/10 hover:border-white/30 text-white font-bold text-sm uppercase tracking-widest transition-all hover:bg-white/5"
@@ -139,12 +139,12 @@ export default function LeadGenLanding() {
         {/* Social Proof */}
         <div className="flex items-center justify-center lg:justify-start gap-10 pt-6 border-t border-white/10">
           <div>
-            <p className="text-3xl font-black text-white">1000+</p>
+            <p className="text-3xl font-black text-white">2000+</p>
             <p className="text-xs text-slate-500 font-bold uppercase tracking-widest">Students Trained</p>
           </div>
           <div className="w-px h-12 bg-white/10" />
           <div>
-            <p className="text-3xl font-black text-white">30+</p>
+            <p className="text-3xl font-black text-white">15+</p>
             <p className="text-xs text-slate-500 font-bold uppercase tracking-widest">FIDE Rated Coaches</p>
           </div>
         </div>
@@ -183,7 +183,7 @@ export default function LeadGenLanding() {
   <div className="max-w-7xl mx-auto">
     <div className="text-center mb-12 md:mb-16 space-y-4">
       <h2 className="text-3xl md:text-5xl font-black tracking-tighter text-slate-900 leading-tight">
-        Why Parents Trust <span className="text-[#FFB800]">ChessEasy</span>
+        Why Parents Trust <span className="text-[#7A0C0C]">KPR Chess Academy</span>
       </h2>
       <p className="text-slate-600 text-lg max-w-2xl mx-auto">
         Everything your child needs to fall in love with chess and improve fast

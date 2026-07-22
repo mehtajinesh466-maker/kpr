@@ -248,7 +248,7 @@ export default function AchievementsPage() {
       className="absolute inset-0 opacity-10"
       style={{
         backgroundImage:
-          "radial-gradient(#FFB800 1px, transparent 1px)",
+          "radial-gradient(#7A0C0C 1px, transparent 1px)",
         backgroundSize: "20px 20px",
       }}
     />
@@ -261,7 +261,7 @@ export default function AchievementsPage() {
         <div className="text-center lg:text-left max-w-2xl">
 
           <PillBadge icon={Sparkles}>
-            Join Chesseasy Academy
+            Join KPR Chess Academy
           </PillBadge>
 
           <h2 className="mt-4 text-3xl md:text-4xl lg:text-5xl font-black leading-tight tracking-tight text-white">

@@ -1,58 +1,61 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ChevronRight, Zap, Sparkles } from "lucide-react";
+import { ChevronRight, Sparkles, PhoneCall } from "lucide-react";
+import Link from "next/link";
 
 export function CompactCTA() {
   return (
-    <section className="py-12 px-6">
+    <section className="py-12 px-6 font-sans">
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="max-w-5xl mx-auto bg-slate-900 rounded-[3rem] p-8 md:p-12 relative overflow-hidden shadow-2xl shadow-purple-900/20"
+        className="max-w-6xl mx-auto bg-[#0B0202] rounded-full p-4 pl-6 pr-4 relative overflow-hidden shadow-2xl shadow-red-950/40 border border-white/5"
       >
-        {/* Background Decorative Glow */}
-        <div className="absolute top-0 right-0 w-64 h-64 bg-purple-600/20 blur-[100px] -z-10" />
-        <div className="absolute bottom-0 left-0 w-48 h-48 bg-pink-500/10 blur-[80px] -z-10" />
-
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 relative z-10">
+        {/* Chessboard dot pattern */}
+        <div className="absolute inset-0 opacity-[0.04] pointer-events-none" 
+             style={{ backgroundImage: `radial-gradient(white 1.5px, transparent 1.5px)`, backgroundSize: '24px 24px' }} />
+        
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-4 relative z-10">
           
-          {/* Text Content */}
-          <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/10 backdrop-blur-md">
-              <Sparkles size={12} className="text-[#FFB800]" />
-              <span className="text-[10px] font-black text-white uppercase tracking-widest">Limited Slots Available</span>
+          {/* LEFT: STAR BADGE + TITLE & DESCRIPTION */}
+          <div className="flex items-center gap-5 text-center lg:text-left flex-col lg:flex-row">
+            {/* Spark Star Icon Badge */}
+            <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center shrink-0 hidden md:flex">
+              <Sparkles size={20} className="text-[#FFB800]" />
             </div>
             
-            <h2 className="text-2xl md:text-4xl font-black text-white tracking-tighter leading-tight">
-              Ready to <span className="text-[#FFB800]">Master</span> the <br />
-              Game of Strategy?
-            </h2>
-            
-            <p className="text-slate-400 font-medium text-sm md:text-base max-w-md">
-              Join 2,000+ students across the globe. No credit card required to start your free demo class.
-            </p>
+            <div className="space-y-1">
+              <h2 className="text-xl md:text-2xl font-[900] text-white tracking-tight leading-none">
+                Ready to <span className="text-[#FFB800]">Master</span> the Board?
+              </h2>
+              <p className="text-slate-500 font-bold text-[10px] md:text-xs">
+                Join KPR Chess Academy. Free trial class available.
+              </p>
+            </div>
           </div>
 
-          {/* Compact Buttons Side */}
-          <div className="flex flex-col sm:flex-row items-center gap-4 shrink-0">
-            <button className="group flex items-center gap-3 bg-[#FFB800] hover:bg-[#FFA500] text-black px-10 py-5 rounded-full font-black text-sm transition-all shadow-xl shadow-amber-200/10 active:scale-95 whitespace-nowrap">
-              BOOK YOUR FREE DEMO
-              <div className="bg-black/10 p-1 rounded-full group-hover:translate-x-1 transition-transform">
-                <ChevronRight size={16} />
+          {/* RIGHT: PHONE PILL + BOOKING BUTTON */}
+          <div className="flex flex-col sm:flex-row items-center gap-4 w-full lg:w-auto">
+            {/* Support Phone Pill */}
+            <div className="flex items-center gap-3 px-5 py-3 rounded-full bg-white/5 border border-white/10 backdrop-blur-md shrink-0 w-full sm:w-auto justify-center">
+              <PhoneCall size={14} className="text-[#FFB800]" />
+              <div className="text-left">
+                <p className="text-[7px] font-black text-slate-500 uppercase tracking-widest leading-none mb-0.5">Support</p>
+                <p className="text-[11px] font-black text-white leading-none">+91 99419 87881</p>
               </div>
-            </button>
-            
-            <div className="flex flex-col items-center sm:items-start">
-               <div className="flex -space-x-2 mb-1">
-                  {[1,2,3].map(i => (
-                    <div key={i} className="w-6 h-6 rounded-full border-2 border-slate-900 bg-slate-700" />
-                  ))}
-                  <div className="w-6 h-6 rounded-full border-2 border-slate-900 bg-[#FFB800] flex items-center justify-center text-[8px] font-black">+2k</div>
-               </div>
-               <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Happy Students</span>
             </div>
+
+            {/* Book Free Demo Button */}
+            <Link href="/contact" className="w-full sm:w-auto">
+              <button className="group w-full flex items-center justify-between sm:justify-center gap-6 bg-[#FFB800] hover:bg-[#FFA500] text-black pl-8 pr-2 py-2 rounded-full font-black text-[11px] uppercase tracking-widest transition-all shadow-xl shadow-amber-500/10 active:scale-95 whitespace-nowrap">
+                Book Free Demo
+                <div className="w-8 h-8 bg-black/10 rounded-full flex items-center justify-center group-hover:translate-x-1 transition-transform">
+                  <ChevronRight size={16} strokeWidth={3} />
+                </div>
+              </button>
+            </Link>
           </div>
 
         </div>

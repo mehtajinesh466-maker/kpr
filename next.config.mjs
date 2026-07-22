@@ -7,13 +7,7 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  experimental: {
-    serverComponentsExternalPackages: ["@prisma/client", "prisma"],
-    outputFileTracingIncludes: {
-      "/api/**/*": ["./node_modules/.prisma/client/**/*"],
-      "/*": ["./node_modules/.prisma/client/**/*"],
-    },
-  },
+
   images: {
     unoptimized: true,
     remotePatterns: [
@@ -31,10 +25,10 @@ const nextConfig = {
           {
             type: 'header',
             key: 'host',
-            value: 'chesseasy.com',  // Your non-www domain
+            value: 'kprchessacademy.com',  // Your non-www domain
           },
         ],
-        destination: 'https://www.chesseasy.com/:path*',
+        destination: 'https://www.kprchessacademy.com/:path*',
         permanent: true,
       },
     ];

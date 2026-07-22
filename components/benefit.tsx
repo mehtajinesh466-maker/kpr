@@ -24,7 +24,7 @@ export function WhyChessMatters() {
          {/* CENTERED HEADING UI */}
         <div className="flex flex-col items-center text-center space-y-6 mb-20">
           <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-slate-50 border border-slate-100 shadow-sm">
-            <Brain size={14} className="text-[#FFB800]" />
+            <Brain size={14} className="text-[#7A0C0C]" />
             <span className="text-xs font-black text-slate-500 uppercase tracking-widest">Cognitive Benefits</span>
           </div>
 
@@ -32,15 +32,14 @@ export function WhyChessMatters() {
             <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tighter leading-none">
               Why Chess
             </h2>
-            <div className="inline-block bg-[#FFB800] text-black px-8 md:px-12 py-3 md:py-5 rounded-[2.5rem] shadow-xl shadow-amber-200/20">
+            <div className="inline-block bg-[#7A0C0C] text-[#FFB800] px-8 md:px-12 py-3 md:py-5 rounded-[2.5rem] shadow-xl shadow-red-950/15">
               <span className="text-3xl md:text-5xl font-black tracking-tighter leading-none">
                 Matters.
               </span>
             </div>
           </div>
           <p className="max-w-2xl mx-auto text-slate-500 font-medium text-lg">
-            Beyond the board, chess builds the mental infrastructure for a successful life. 
-            It's not just a game; it's a brain-boosting superpower.
+            At KPR Chess Academy, we believe chess is a powerful cognitive tool that builds logical thinking, patience, and problem-solving skills for life's challenges.
           </p>
         </div>
 
@@ -53,7 +52,7 @@ export function WhyChessMatters() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.05 }}
-              className="group relative bg-[#FFF9F2] rounded-[2.5rem] border border-[#F3E8D9] p-2 flex flex-col items-center justify-between min-h-[220px] md:min-h-[260px] hover:shadow-xl transition-all duration-500 hover:-translate-y-2"
+              className="group relative bg-[#FCF5F5] rounded-[2.5rem] border border-red-100/50 p-2 flex flex-col items-center justify-between min-h-[220px] md:min-h-[260px] hover:shadow-xl transition-all duration-500 hover:-translate-y-2"
             >
               {/* The White Organic Wave Background inside card */}
               <div className="absolute top-0 left-0 w-full h-2/3 bg-white rounded-t-[2.3rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-0" 

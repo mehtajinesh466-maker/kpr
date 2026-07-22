@@ -62,7 +62,7 @@ import { InteractiveChessBoard } from "@/components/InteractiveChessBoard";
 
 // Add top-level heading for SEO
 {/* Add a visible H1 heading for the homepage */}
-<h1 className="text-4xl font-bold text-center my-8 text-gray-900">Chesseasy Academy</h1>
+<h1 className="text-4xl font-bold text-center my-8 text-gray-900">KPR Chess Academy</h1>
 import { Hero } from "@/components/hero";
 import { AboutUs } from "@/components/about";
 import  CoursesSection  from "@/components/course";
@@ -80,7 +80,7 @@ function AIChatbot() {
     Array<{ text: string; isUser: boolean; timestamp: Date; id: string }>
   >([
     {
-      text: "Hi there! This is your virtual Chess Assistant, Vyaasa, from Chesseasy Academy! How may I assist you?",
+      text: "Hi there! This is your virtual Chess Assistant from KPR Chess Academy! How may I assist you?",
       isUser: false,
       timestamp: new Date(),
       id: "1",
@@ -176,14 +176,14 @@ function AIChatbot() {
       message.includes("where")
     ) {
       return {
-        text: "**Chesseasy Academy Locations**:\n\n🏠 **Main Center**:\n123 Chess Avenue, Mind Complex\nNew Delhi - 110001\n\n🏠 **Branch**:\n456 Strategy Road, Brain Tower\nGurugram - 122002\n\n**Online Classes**: Available worldwide\n**Phone**: +91-9876543210\n\nWe also partner with schools across India!",
+        text: "**KPR Chess Academy Locations**:\n\n🏠 **Mylapore Center**:\nNear Amma Hotel, Alamelu Mangapuram, Chennai, Tamil Nadu\n\n🏠 **Branch**:\nNo-10, Balaji Dental Clinic, Rajesh Nagar, 4th Cross Street, Chennai, Tamil Nadu\n\n**Phone**: +91 99419 87881",
         quickReplies: ["Contact Number", "School Programs", "Online Classes"],
       };
     }
 
     // Default response
     return {
-      text: "I'd be happy to help you with that! At Chesseasy Academy, we specialize in structured chess education with proven results. Could you tell me more about what you're looking for?\n\nYou can ask about:\n• Course details & levels\n• Coaching methodology\n• Fees & schedule\n• Enrollment process\n• Student achievements",
+      text: "I'd be happy to help you with that! At KPR Chess Academy, we specialize in structured chess education with proven results. Could you tell me more about what you're looking for?\n\nYou can ask about:\n• Course details & levels\n• Coaching methodology\n• Fees & schedule\n• Enrollment process\n• Student achievements",
       quickReplies: ["Beginner Course", "Coach Info", "Location"],
     };
   };
@@ -418,7 +418,7 @@ function AIChatbot() {
                   </button>
                 </div>
                 <p className="text-xs text-gray-500 text-center mt-2">
-                  Powered by Chesseasy Academy • Your chess journey starts here
+                  Powered by KPR Chess Academy • Your chess journey starts here
                 </p>
               </div>
             </motion.div>
@@ -1459,19 +1459,19 @@ const testimonials = [
   );
 }
 
-export default function chesseasyHome() {
+export default function kprChessAcademyHome() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "EducationalOrganization",
-    name: "Chesseasy Academy",
-    url: "https://www.chesseasy.com",
-    logo: "https://chesseasy.com/assets/chesseasy-CwFIMgD9.jpg",
+    name: "KPR Chess Academy",
+    url: "https://www.kprchessacademy.com",
+    logo: "https://www.kprchessacademy.com/logo.png",
     description:
-      "Premier chess academy established in 2020, training over 1,200 students from 8+ countries with FIDE-rated coaches using structured curriculum.",
+      "Premier chess academy in Chennai (Mylapore & Pallikaranai) offering structured chess education for all age groups and skill levels under Founder TV Kumar.",
     foundingDate: "2020",
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+91 70129 80842",
+      telephone: "+91 99419 87881",
       contactType: "Customer Service",
       areaServed: "Global",
     },
@@ -1494,16 +1494,16 @@ export default function chesseasyHome() {
     <>
       <Head>
         <title>
-          Chesseasy Academy | Structured Chess Education for All Ages
+          KPR Chess Academy | Structured Chess Education in Chennai
         </title>
         <meta
           name="description"
-          content="Established in 2020, Chesseasy Academy trains learners of all ages with FIDE-rated coaches using a structured curriculum. Join over 1,200 students from 8+ countries."
+          content="KPR Chess Academy offers professional chess coaching in Mylapore and Pallikaranai, Chennai. Join our structured training programs for all age groups and skill levels."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
           property="og:title"
-          content="Chesseasy Academy - Empowering Minds Through Chess"
+          content="KPR Chess Academy - Empowering Minds Through Chess"
         />
         <meta
           property="og:description"

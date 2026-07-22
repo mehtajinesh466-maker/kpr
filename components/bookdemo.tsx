@@ -49,7 +49,7 @@ export function BookDemoModal({ isOpen, onClose }: BookDemoModalProps) {
                       <span className="w-1.5 h-1.5 rounded-full bg-[#FFB800] animate-pulse" />
                       <span className="text-[10px] font-black text-[#FFB800] uppercase tracking-widest">Free Assessment</span>
                    </div>
-                   <h2 className="text-3xl md:text-4xl font-black text-white leading-tight">
+                   <h2 className="text-3xl md:text-5xl font-black text-white leading-tight">
                      Let's Build a <br />
                      <span className="text-[#FFB800]">Grandmaster.</span>
                    </h2>
@@ -57,9 +57,9 @@ export function BookDemoModal({ isOpen, onClose }: BookDemoModalProps) {
 
                 <div className="space-y-4">
                   {[
-                    { icon: <Phone size={18} />, label: "Call Us", val: "+91 70129 80842" },
+                    { icon: <Phone size={18} />, label: "Call Us", val: "+91 99419 87881" },
                     { icon: <MessageCircle size={18} />, label: "WhatsApp", val: "Chat with an Expert" },
-                    { icon: <Mail size={18} />, label: "Support", val: "info@chesseasy.com" },
+                    { icon: <Mail size={18} />, label: "Support", val: "kumartv1978@gmail.com" },
                   ].map((item, i) => (
                     <div key={i} className="flex items-center gap-4 p-4 rounded-3xl bg-white/5 border border-white/5 hover:bg-white/10 transition-colors cursor-pointer group">
                        <div className="w-10 h-10 rounded-2xl bg-[#FFB800] text-black flex items-center justify-center shadow-lg shadow-amber-500/20 group-hover:scale-110 transition-transform">

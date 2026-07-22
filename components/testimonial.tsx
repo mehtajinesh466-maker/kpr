@@ -14,21 +14,21 @@ export function Testimonials() {
       role: "Parent",
       image: "https://i.pravatar.cc/150?u=swathy",
       rating: 5,
-      content: "Chesseasy is one of the best institutions which provides the best coaching for chess. They have professional trainers with first hand experience. I am really satisfied with the quality service.",
+      content: "KPR Chess Academy is one of the best institutions which provides the best coaching for chess. They have professional trainers with first hand experience. I am really satisfied with the quality service.",
     },
     {
       name: "Irfan Mohammed",
       role: "Chess Enthusiast",
       image: "https://i.pravatar.cc/150?u=irfan",
       rating: 5,
-      content: "Wonderful opportunity to learn new openings & different lines in it, end game, middle game strategies with young & well known tutors. Best online academy in Kerala at present.",
+      content: "Wonderful opportunity to learn new openings & different lines in it, end game, middle game strategies with young & well known tutors. Best chess academy in Chennai at present.",
     },
     {
       name: "Ashmi V S",
       role: "Student Parent",
       image: "https://i.pravatar.cc/150?u=ashmi",
       rating: 5,
-      content: "Chess easy online classes are really good. They provide great classes for kids. Keep going and provide the same quality education always.",
+      content: "KPR Chess Academy classes are really good. They provide great classes for kids. Keep going and provide the same quality education always.",
     },
     {
       name: "Rahul Nair",
@@ -64,13 +64,13 @@ export function Testimonials() {
         <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-12 md:mb-16 gap-8">
           <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-4">
             <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-slate-50 border border-slate-100">
-              <Heart className="w-3 h-3 text-[#FFB800] fill-[#FFB800]" />
+              <Heart className="w-3 h-3 text-[#7A0C0C] fill-[#7A0C0C]" />
               <span className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em]">Our Wall of Fame</span>
             </div>
             
             {/* RESPONSIVE HEADING: 3xl Mobile, 5xl Desktop */}
             <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tighter leading-tight md:leading-[1.1]">
-              Voices of our <span className="text-[#FFB800]">Chess</span> <br className="hidden md:block" />
+              Voices of our <span className="text-[#7A0C0C]">Chess</span> <br className="hidden md:block" />
               Community
             </h2>
           </div>
@@ -79,14 +79,14 @@ export function Testimonials() {
           <div className="flex gap-3">
             <button 
               onClick={() => scroll("left")}
-              className="p-3 md:p-4 rounded-full border border-slate-200 bg-white hover:bg-[#FFB800] hover:border-[#FFB800] hover:text-black transition-all active:scale-90 shadow-sm group"
+              className="p-3 md:p-4 rounded-full border border-slate-200 bg-white hover:bg-[#7A0C0C] hover:border-[#7A0C0C] hover:text-[#FFB800] transition-all active:scale-90 shadow-sm group"
               aria-label="Previous"
             >
               <ChevronLeft size={20} className="md:w-6 md:h-6" />
             </button>
             <button 
               onClick={() => scroll("right")}
-              className="p-3 md:p-4 rounded-full border border-slate-200 bg-white hover:bg-[#FFB800] hover:border-[#FFB800] hover:text-black transition-all active:scale-90 shadow-sm group"
+              className="p-3 md:p-4 rounded-full border border-slate-200 bg-white hover:bg-[#7A0C0C] hover:border-[#7A0C0C] hover:text-[#FFB800] transition-all active:scale-90 shadow-sm group"
               aria-label="Next"
             >
               <ChevronRight size={20} className="md:w-6 md:h-6" />
@@ -105,7 +105,7 @@ export function Testimonials() {
               key={idx}
               className="min-w-[85%] sm:min-w-[400px] md:min-w-[calc(50%-16px)] lg:min-w-[calc(33.333%-22px)] snap-center md:snap-start"
             >
-              <div className="h-full bg-slate-50 border border-slate-100 p-8 md:p-10 rounded-[2.5rem] md:rounded-[3.5rem] hover:bg-white hover:shadow-2xl hover:shadow-amber-500/10 transition-all duration-500 flex flex-col justify-between group shadow-sm">
+              <div className="h-full bg-slate-50 border border-slate-100 p-8 md:p-10 rounded-[2.5rem] md:rounded-[3.5rem] hover:bg-white hover:shadow-2xl hover:shadow-red-900/5 transition-all duration-500 flex flex-col justify-between group shadow-sm">
                 <div>
                   <div className="flex justify-between items-start mb-6 md:mb-8">
                     <div className="flex gap-1">
@@ -113,7 +113,7 @@ export function Testimonials() {
                         <Star key={i} size={14} className="fill-[#FFB800] text-[#FFB800]" />
                       ))}
                     </div>
-                    <Quote className="text-slate-200 group-hover:text-[#FFB800] transition-colors" size={32} />
+                    <Quote className="text-slate-200 group-hover:text-[#7A0C0C] transition-colors" size={32} />
                   </div>
 
                   <p className="text-slate-600 text-sm md:text-base font-medium leading-relaxed mb-8 italic">

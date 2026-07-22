@@ -3,59 +3,49 @@ import type React from 'react';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
+import { DemoModal } from '@/components/DemoModal';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: {
-    default: 'Chesseasy Academy',
-    template: '%s | Chesseasy Academy',
+    default: 'KPR Chess Academy',
+    template: '%s | KPR Chess Academy',
   },
   description:
-    'Master chess with Chesseasy Academy. Learn ancient chess strategies combined with modern techniques. Online and offline chess training for all levels at Chesseasy Academy.',
+    'Master chess with KPR Chess Academy in Mylapore & Pallikaranai, Chennai. Structured chess training for all levels under Founder TV Kumar.',
   keywords: [
-    'Chesseasy Academy',
-    'Chesseasy',
-    'Chess Academy',
-    'Learn chess online',
-    'Chess training',
-    'Ancient chess strategies',
-    'Modern chess techniques',
-    'Chess classes',
+    'KPR Chess Academy',
+    'KPR Chess',
+    'Chess Academy Chennai',
+    'Chess coaching Mylapore',
+    'Chess training Pallikaranai',
+    'Learn chess in Chennai',
     'Chess coaching',
   ],
-  metadataBase: new URL('https://www.chesseasy.com'),
+  metadataBase: new URL('https://www.kprchessacademy.com'),
   alternates: {
-    canonical: 'https://www.chesseasy.com',
+    canonical: 'https://www.kprchessacademy.com',
   },
-  authors: [{ name: 'Chesseasy Academy', url: 'https://www.chesseasy.com' }],
-  creator: 'Chesseasy Academy',
-  publisher: 'Chesseasy Academy',
+  authors: [{ name: 'KPR Chess Academy', url: 'https://www.kprchessacademy.com' }],
+  creator: 'KPR Chess Academy',
+  publisher: 'KPR Chess Academy',
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
-    title: 'Chesseasy Academy',
-    description: 'Master chess with Chesseasy Academy. Learn ancient strategies with modern techniques.',
-    url: 'https://www.chesseasy.com',
-    siteName: 'Chesseasy Academy',
-    images: [
-      {
-        url: 'https://chesseasy.com/assets/chesseasy-CwFIMgD9.jpg',
-        width: 800,
-        height: 600,
-        alt: 'Chesseasy Academy Logo',
-      },
-    ],
+    title: 'KPR Chess Academy',
+    description: 'Master chess with KPR Chess Academy. Structured chess training in Chennai under TV Kumar.',
+    url: 'https://www.kprchessacademy.com',
+    siteName: 'KPR Chess Academy',
     locale: 'en_IN',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Chesseasy Academy',
-    description: 'Master chess with Chesseasy Academy. Learn ancient strategies with modern techniques.',
-    images: ['https://chesseasy.com/assets/chesseasy-CwFIMgD9.jpg'],
+    title: 'KPR Chess Academy',
+    description: 'Master chess with KPR Chess Academy. Structured chess training in Chennai under TV Kumar.',
   },
   generator: 'Next.js',
 };
@@ -85,26 +75,25 @@ export default function RootLayout({
               {
                 '@context': 'https://schema.org',
                 '@type': 'EducationalOrganization',
-                name: 'Chesseasy Academy',
-                alternateName: 'International School of Chess',
-                url: 'https://www.chesseasy.com',
-                logo: 'https://chesseasy.com/assets/chesseasy-CwFIMgD9.jpg',
-                description: 'World-class chess training academy combining ancient strategies with modern chess techniques.',
+                name: 'KPR Chess Academy',
+                alternateName: 'KPR Chess Academy Chennai',
+                url: 'https://www.kprchessacademy.com',
+                description: 'World-class chess training academy offering structured coaching in Mylapore and Pallikaranai, Chennai.',
                 address: {
                   '@type': 'PostalAddress',
-                  streetAddress: 'Sector 3',
-                  addressLocality: 'Udaipur',
-                  addressRegion: 'Rajasthan',
-                  postalCode: '313001',
+                  streetAddress: 'Near Amma Hotel, Alamelu Mangapuram, Mylapore',
+                  addressLocality: 'Chennai',
+                  addressRegion: 'Tamil Nadu',
+                  postalCode: '600004',
                   addressCountry: 'IN',
                 },
                 contactPoint: {
                   '@type': 'ContactPoint',
-                  telephone: '+91-',
+                  telephone: '+91 99419 87881',
                   contactType: 'customer service',
-                  email: 'info@chesseasy.com',
+                  email: 'kumartv1978@gmail.com',
                   areaServed: 'IN',
-                  availableLanguage: ['en', 'hi'],
+                  availableLanguage: ['en', 'ta'],
                 },
                 aggregateRating: {
                   '@type': 'AggregateRating',
@@ -115,7 +104,6 @@ export default function RootLayout({
                 },
                 knowsAbout: [
                   'Chess Training',
-                  'Modern Chess Techniques',
                   'Beginner Chess Classes',
                   'Advanced Chess Coaching',
                   'Tournament Preparation'
@@ -123,19 +111,19 @@ export default function RootLayout({
                 foundingDate: '2020',
                 founder: {
                   '@type': 'Person',
-                  name: 'Chesseasy Academy Team'
+                  name: 'TV Kumar'
                 }
               },
               {
                 '@context': 'https://schema.org',
                 '@type': 'SportsOrganization',
-                name: 'Chesseasy Academy',
+                name: 'KPR Chess Academy',
                 sport: 'Chess',
-                description: 'Professional chess training organization offering courses from beginner to advanced levels.',
+                description: 'Professional chess training organization offering courses from beginner to advanced levels in Chennai.',
                 address: {
                   '@type': 'PostalAddress',
-                  addressLocality: 'Udaipur',
-                  addressRegion: 'Rajasthan',
+                  addressLocality: 'Chennai',
+                  addressRegion: 'Tamil Nadu',
                   addressCountry: 'India'
                 }
               },
@@ -145,34 +133,34 @@ export default function RootLayout({
                 mainEntity: [
                   {
                     '@type': 'Question',
-                    name: 'What is Chesseasy Academy?',
+                    name: 'What is KPR Chess Academy?',
                     acceptedAnswer: {
                       '@type': 'Answer',
-                      text: 'Chesseasy Academy is a premier chess training institute that combines ancient strategic principles with modern chess techniques, offering comprehensive online and offline training programs for all skill levels.'
+                      text: 'KPR Chess Academy is a premier chess training institute in Chennai offering comprehensive online and offline training programs for all skill levels under Founder TV Kumar.'
                     }
                   },
                   {
                     '@type': 'Question',
-                    name: 'What makes Chesseasy Academy different?',
+                    name: 'What makes KPR Chess Academy different?',
                     acceptedAnswer: {
                       '@type': 'Answer',
-                      text: 'We integrate timeless strategic wisdom with contemporary chess methodologies, providing a unique holistic approach to chess education that enhances both tactical skills and mental discipline.'
+                      text: 'We offer structured coaching from expert FIDE-rated coaches, personalized learning paths, and regular internal tournaments to cultivate a champion mindset.'
                     }
                   },
                   {
                     '@type': 'Question',
-                    name: 'What courses does Chesseasy Academy offer?',
+                    name: 'What courses does KPR Chess Academy offer?',
                     acceptedAnswer: {
                       '@type': 'Answer',
-                      text: 'We offer comprehensive chess courses including Beginner, Intermediate, Advanced levels, and specialized Tournament Training programs, all designed to cater to different age groups and skill levels.'
+                      text: 'We offer comprehensive chess courses including Beginner, Intermediate, Advanced levels, and specialized Tournament Training programs.'
                     }
                   },
                   {
                     '@type': 'Question',
-                    name: 'Does Chesseasy Academy offer online classes?',
+                    name: 'Does KPR Chess Academy offer online classes?',
                     acceptedAnswer: {
                       '@type': 'Answer',
-                      text: 'Yes, we offer both online and offline classes to accommodate students from different locations and preferences, ensuring quality chess education is accessible to everyone.'
+                      text: 'Yes, we offer both online and offline classes across our Mylapore and Pallikaranai branches in Chennai.'
                     }
                   }
                 ]
@@ -183,12 +171,7 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         {children}
-        {/* <footer style={{ marginTop: '20px', textAlign: 'center', padding: '2rem', backgroundColor: '#f8f9fa' }}>
-          <p>&copy; {new Date().getFullYear()} Chesseasy Academy - International School of Chess. All rights reserved.</p>
-          <p style={{ marginTop: '0.5rem', fontSize: '0.9rem', color: '#666' }}>
-            Combining Ancient Wisdom with Modern Chess Excellence
-          </p>
-        </footer> */}
+        <DemoModal />
       </body>
     </html>
   );

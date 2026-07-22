@@ -26,15 +26,15 @@ export function WhyChooseUs() {
       side: "right",
       title: "Proven Success",
       sub: "Champion Mindset",
-      desc: "A structured curriculum that has consistently produced state and national level title holders.",
+      desc: "A structured curriculum that has consistently produced state and tournament level title holders.",
       icon: <Trophy size={28} />,
       bgColor: "bg-[#4CAF50]", // Emerald
     },
     {
       side: "right",
-      title: "Global Reach",
-      sub: "Online Worldwide",
-      desc: "Based in Kottayam, we deliver high-quality coaching to students globally using professional tools.",
+      title: "Chennai & Beyond",
+      sub: "Online & Offline",
+      desc: "Based in Chennai, we deliver high-quality coaching locally and to students globally using interactive tools.",
       icon: <Globe size={28} />,
       bgColor: "bg-[#9C27B0]", // Purple
     }
@@ -47,7 +47,7 @@ export function WhyChooseUs() {
         {/* 1. CENTERED HEADING UI - Responsive Sizes */}
         <div className="flex flex-col items-center text-center space-y-4 md:space-y-6 mb-12 md:mb-20">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 md:px-6 md:py-2 rounded-full bg-slate-50 border border-slate-100 shadow-sm">
-            <span className="w-2 h-2 bg-[#FFB800] rounded-full animate-pulse" />
+            <span className="w-2 h-2 bg-[#7A0C0C] rounded-full animate-pulse" />
             <span className="text-[10px] md:text-xs font-black text-slate-500 uppercase tracking-widest">Our Edge</span>
           </div>
 
@@ -55,16 +55,16 @@ export function WhyChooseUs() {
             <h2 className="text-3xl lg:text-5xl font-black text-slate-900 tracking-tighter leading-none">
               Why Choose
             </h2>
-            <div className="inline-block bg-[#FFB800] text-black px-6 md:px-12 py-2.5 md:py-5 rounded-[1.5rem] md:rounded-[2.5rem] shadow-xl shadow-amber-200/20">
+            <div className="inline-block bg-[#7A0C0C] text-[#FFB800] px-6 md:px-12 py-2.5 md:py-5 rounded-[1.5rem] md:rounded-[2.5rem] shadow-xl shadow-red-900/10">
               <span className="text-3xl lg:text-5xl font-black tracking-tighter leading-none">
-                ChessEasy
+                KPR Chess
               </span>
             </div>
           </div>
 
           <p className="max-w-2xl mx-auto text-slate-500 font-medium text-sm md:text-lg leading-relaxed">
             We provide the best coaching with a guarantee of improvement, 
-            bringing international standards to your home.
+            bringing international standards to your learning.
           </p>
         </div>
 
@@ -100,19 +100,22 @@ export function WhyChooseUs() {
             viewport={{ once: true }}
             className="relative h-[350px] sm:h-[450px] md:h-[550px] lg:h-[600px] w-full order-1 lg:order-2"
           >
-            <div className="relative h-full w-full rounded-b-[3rem] md:rounded-b-[4rem] overflow-hidden shadow-2xl border-[8px] md:border-[12px] border-slate-50"
+            <div className="relative h-full w-full rounded-b-[3rem] md:rounded-b-[4rem] overflow-hidden shadow-2xl border-[8px] md:border-[12px] border-slate-50 bg-gradient-to-tr from-[#7A0C0C] to-red-950 flex flex-col justify-end p-8 text-white"
                  style={{ WebkitClipPath: "ellipse(100% 85% at 50% 100%)" }}
             >
-              <Image 
-                src="/ach4.jpeg" 
-                alt="Chess Coaching"
+              <Image
+                src="/1.jpg"
+                alt="Why Choose KPR Chess Academy"
                 fill
-                className="object-cover"
-                priority
+                className="object-cover opacity-90"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent z-10" />
+              <div className="relative z-20 text-center w-full">
+                <h3 className="text-3xl font-black text-[#FFB800] tracking-tight">KPR CHESS</h3>
+                <p className="text-xs tracking-widest uppercase opacity-70 mt-2">Mylapore & Pallikaranai</p>
+              </div>
             </div>
-            {/* Background dashed circle - responsive size */}
+            {/* Background dashed circle */}
             <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] md:w-[120%] md:h-[80%] border border-slate-100 rounded-full border-dashed animate-spin-slow opacity-50" />
           </motion.div>
 
@@ -147,9 +150,12 @@ export function WhyChooseUs() {
           viewport={{ once: true }}
           className="mt-12 md:mt-20 flex justify-center"
         >
-          <button className="w-full sm:w-auto bg-slate-900 text-white px-8 md:px-12 py-4 md:py-5 rounded-full font-black text-xs md:text-sm hover:bg-black transition-all shadow-xl active:scale-95 flex items-center justify-center gap-4 group">
+          <button 
+            onClick={() => window.dispatchEvent(new Event("open-demo-modal"))}
+            className="w-full sm:w-auto bg-[#7A0C0C] text-[#FFB800] border border-[#FFB800]/20 px-8 md:px-12 py-4 md:py-5 rounded-full font-black text-xs md:text-sm hover:bg-[#5E0909] transition-all shadow-xl active:scale-95 flex items-center justify-center gap-4 group"
+          >
             BOOK A DEMO CLASS
-            <div className="w-7 h-7 md:w-8 md:h-8 bg-[#FFB800] rounded-full flex items-center justify-center text-black group-hover:translate-x-1 transition-transform">
+            <div className="w-7 h-7 md:w-8 md:h-8 bg-white/10 rounded-full flex items-center justify-center text-[#FFB800] group-hover:translate-x-1 transition-transform">
               <ChevronRight size={18} />
             </div>
           </button>

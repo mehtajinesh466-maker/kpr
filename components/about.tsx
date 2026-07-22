@@ -8,23 +8,23 @@ export function AboutUs() {
   const features = [
     {
       icon: <Users className="w-5 h-5" />,
-      title: "Expert Coaches",
-      desc: "Learn from International and Commonwealth players with elite competitive experience."
+      title: "Specialized Coaching",
+      desc: "Structured syllabus customized for Beginners, Intermediates, and Advanced tournament players."
     },
     {
       icon: <Globe className="w-5 h-5" />,
-      title: "Worldwide Reach",
-      desc: "Based in Kottayam, we provide premium coaching to students across the globe."
+      title: "FIDE Rated Mentors",
+      desc: "Personalized guidance from FIDE-rated professional coaches and active chess tournament veterans."
     },
     {
       icon: <Target className="w-5 h-5" />,
-      title: "Quality Training",
-      desc: "Personalized roadmaps designed for players at every stage of their journey."
+      title: "Modern Infrastructure",
+      desc: "State-of-the-art learning facilities in Mylapore and Pallikaranai, Chennai, with digital toolsets."
     },
     {
       icon: <Trophy className="w-5 h-5" />,
-      title: "Proven Results",
-      desc: "Structured curriculum that has produced state and national level champions."
+      title: "Tournament Play",
+      desc: "Weekly practice games and internal tournaments to hone competitive skills and boost rating points."
     }
   ];
 
@@ -41,29 +41,25 @@ export function AboutUs() {
             transition={{ duration: 0.6 }}
             className="relative w-full lg:w-[45%] flex-shrink-0"
           >
-            {/* Main Image - Curved styling adjusted for responsiveness */}
-            <div className="relative z-10 w-full aspect-[4/5] rounded-tl-[60px] rounded-br-[60px] md:rounded-tl-[120px] md:rounded-br-[120px] overflow-hidden border-[8px] md:border-[12px] border-slate-50 shadow-2xl">
-              <Image 
-                src="/ach4.jpeg" 
-                alt="ChessEasy Coaching"
+            {/* Main Image Frame with 1.jpg */}
+            <div className="relative z-10 w-full aspect-[4/5] rounded-tl-[60px] rounded-br-[60px] md:rounded-tl-[120px] md:rounded-br-[120px] overflow-hidden border-[8px] md:border-[12px] border-slate-50 shadow-2xl bg-gradient-to-tr from-[#7A0C0C] to-red-950 flex flex-col justify-end">
+              <Image
+                src="/mas.jpg"
+                alt="Pathway to Chess Mastery"
                 fill
-                className="object-cover"
-                priority
+                className="object-cover opacity-90"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10" />
+              <div className="relative z-20 text-white/95 p-6">
+                <h3 className="text-2xl font-black tracking-tight text-[#FFB800]">KPR CHESS</h3>
+                <p className="text-xs font-semibold text-white/70">Mylapore & Pallikaranai, Chennai</p>
+              </div>
             </div>
 
-            {/* Floating Achievement Badge - Scales for mobile */}
-            <motion.div 
-              initial={{ rotate: 0 }}
-              whileInView={{ rotate: 12 }}
-              className="absolute -bottom-4 -left-4 z-20 w-20 h-20 md:w-24 md:h-24 bg-[#FFB800] rounded-2xl md:rounded-3xl flex flex-col items-center justify-center shadow-2xl text-white"
-            >
-               <Trophy className="w-7 h-7 md:w-10 md:h-10 text-slate-900" />
-               <span className="text-[9px] md:text-[10px] font-black mt-1 uppercase text-slate-900">Top Rated</span>
-            </motion.div>
+         
             
             {/* Soft decorative background glow */}
-            <div className="absolute -top-10 -right-10 w-48 h-48 md:w-72 md:h-72 bg-purple-100/50 rounded-full blur-3xl -z-10" />
+            <div className="absolute -top-10 -right-10 w-48 h-48 md:w-72 md:h-72 bg-red-100/50 rounded-full blur-3xl -z-10" />
           </motion.div>
 
           {/* RIGHT SIDE: Balanced Content */}
@@ -71,22 +67,20 @@ export function AboutUs() {
             
             <div className="space-y-6">
               <div className="flex items-center gap-3">
-                <div className="w-8 md:w-12 h-[2px] bg-[#FFB800]" />
-                <span className="text-[10px] md:text-xs font-black text-[#FFB800] uppercase tracking-[0.3em]">About ChessEasy</span>
+                <div className="w-8 md:w-12 h-[2px] bg-[#7A0C0C]" />
+                <span className="text-[10px] md:text-xs font-black text-[#7A0C0C] uppercase tracking-[0.3em]">About KPR Chess</span>
               </div>
 
-              {/* HEADING: 3xl on Mobile, 5xl on Desktop */}
-              <h2 className="text-3xl lg:text-5xl font-black text-slate-900 leading-[1.15] md:leading-[1.1] tracking-tighter">
-                When You <span className="inline-block bg-[#FFB800] text-black px-3 md:px-4 py-1 rounded-xl md:rounded-2xl transform -rotate-1 shadow-sm">Need</span> The Best <br className="hidden sm:block" />
-                Online <span className="inline-block bg-[#FFB800] text-black px-3 md:px-4 py-1 rounded-xl md:rounded-2xl transform rotate-1 shadow-sm">Chess Academy</span>
+              <h2 className="text-2xl lg:text-5xl font-black text-slate-900 leading-[1.15] md:leading-[1.1] tracking-tighter">
+                Your Pathway to Chess <span className="inline-block bg-[#7A0C0C] text-[#FFB800] px-3 md:px-4 py-1 rounded-xl md:rounded-2xl transform -rotate-1 shadow-sm">Mastery</span> and Strategic <span className="inline-block bg-[#7A0C0C] text-[#FFB800] px-3 md:px-4 py-1 rounded-xl md:rounded-2xl transform rotate-1 shadow-sm">Success</span>
               </h2>
 
               <div className="space-y-4 max-w-2xl">
                 <p className="text-slate-600 font-medium leading-relaxed text-base md:text-lg">
-                  <strong className="text-slate-900">Chesseasy</strong>, located at Kottayam, Kerala, provides premier online chess coaching classes <span className="text-purple-600 font-bold underline decoration-purple-200 underline-offset-4">Worldwide</span>.
+                  At <strong className="text-slate-900">KPR Chess Academy</strong>, we provide professional, structured chess training designed to expand cognitive limits, build tactical foresight, and cultivate a competitive edge.
                 </p>
                 <p className="text-slate-500 font-medium leading-relaxed text-sm md:text-base">
-                  Our team consists of professional coaches and elite players, including International and Commonwealth competitors, dedicated to nurturing the next generation of grandmasters with quality, levels-based training.
+                  Whether you're a young beginner learning basic coordinates or a competitive tournament player looking to improve FIDE rating ELO points, our custom roadmaps are built to guide you to victory.
                 </p>
               </div>
             </div>
@@ -123,7 +117,7 @@ export function AboutUs() {
                 </button>
                 <div className="flex flex-col pl-1 sm:pl-0">
                     <span className="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-widest">Questions?</span>
-                    <span className="text-sm md:text-base text-slate-900 font-black">support@chesseasy.com</span>
+                    <span className="text-sm md:text-base text-slate-900 font-black">kumartv1978@gmail.com</span>
                 </div>
             </div>
 

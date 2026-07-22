@@ -5,75 +5,49 @@ import { notFound } from "next/navigation";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { ReadingProgress } from "@/components/blog/reading-progress";
-import { CommentsSection } from "@/components/blog/comments-section";
 import { SocialShare } from "@/components/blog/social-share";
-import {
-  getPostBySlug,
-  getRelatedPosts,
-  incrementPostViews,
-} from "@/lib/blog";
+import { staticPosts } from "@/lib/static-posts";
 import { formatReadTime } from "@/lib/read-time";
-import { Calendar, Clock, User, ArrowLeft, MessageCircle } from "lucide-react";
+import { Calendar, Clock, User, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-
-export const dynamic = "force-dynamic";
 
 interface PageProps {
   params: { slug: string };
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  
-  const post = await getPostBySlug(params.slug);
+  const post = staticPosts.find((p) => p.slug === params.slug);
   if (!post) return { title: "Post Not Found" };
-  console.log(post.contentHtml);
 
   return {
-    title: post.metaTitle ?? post.title,
-    description: post.metaDescription ?? post.excerpt ?? undefined,
+    title: post.metaTitle,
+    description: post.metaDescription,
     openGraph: {
-      title: post.metaTitle ?? post.title,
-      description: post.metaDescription ?? post.excerpt ?? undefined,
+      title: post.metaTitle,
+      description: post.metaDescription,
       images: post.featuredImageUrl ? [{ url: post.featuredImageUrl }] : [],
       type: "article",
-      publishedTime: post.publishedAt?.toISOString(),
     },
-    alternates: post.canonicalUrl ? { canonical: post.canonicalUrl } : undefined,
   };
 }
 
-function formatDate(date: Date | null) {
-  if (!date) return "";
-  return date.toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-}
-
-export default async function BlogPostPage({ params }: PageProps) {
-  const post = await getPostBySlug(params.slug);
+export default function BlogPostPage({ params }: PageProps) {
+  const post = staticPosts.find((p) => p.slug === params.slug);
   if (!post) notFound();
 
-  await incrementPostViews(params.slug);
+  // Find related posts (same category or others)
+  const related = staticPosts.filter((p) => p.slug !== post.slug).slice(0, 2);
+  const primaryAuthor = post.authors[0];
+  const primaryCategory = post.categories[0];
 
-  const related = await getRelatedPosts(post.id, 4);
-  const primaryAuthor = post.authors[0]?.author;
-  const primaryCategory = post.categories[0]?.category;
-
-  const serializedComments = post.comments.map((comment) => ({
-    id: comment.id,
-    authorName: comment.authorName,
-    content: comment.content,
-    createdAt: comment.createdAt.toISOString(),
-    replies: comment.replies.map((reply) => ({
-      id: reply.id,
-      authorName: reply.authorName,
-      content: reply.content,
-      createdAt: reply.createdAt.toISOString(),
-    })),
-  }));
+  function formatDate(dateString: string) {
+    return new Date(dateString).toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+  }
 
   return (
     <div className="min-h-screen bg-white">
@@ -81,7 +55,6 @@ export default async function BlogPostPage({ params }: PageProps) {
       <Navbar />
 
       <article id="article-content" className="max-w-4xl mx-auto px-4 sm:px-6 py-12">
-
         <Link href="/blog">
           <Button variant="ghost" className="mb-8 -ml-2 text-gray-600">
             <ArrowLeft className="w-4 h-4 mr-2" />
@@ -90,7 +63,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         </Link>
 
         {primaryCategory && (
-          <span className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-medium">
+          <span className="bg-red-100 text-[#7A0C0C] px-3 py-1 rounded-full text-sm font-medium">
             {primaryCategory.name}
           </span>
         )}
@@ -103,12 +76,7 @@ export default async function BlogPostPage({ params }: PageProps) {
           {primaryAuthor && (
             <div className="flex items-center gap-2">
               <User className="w-4 h-4" />
-              <Link
-                href={`/authors/${primaryAuthor.slug}`}
-                className="hover:text-blue-600"
-              >
-                {primaryAuthor.name}
-              </Link>
+              <span className="text-slate-700 font-semibold">{primaryAuthor.name}</span>
             </div>
           )}
           <div className="flex items-center gap-1">
@@ -119,16 +87,10 @@ export default async function BlogPostPage({ params }: PageProps) {
             <Clock className="w-4 h-4" />
             {formatReadTime(post.readTimeMinutes)}
           </div>
-          {post._count.comments > 0 && (
-            <div className="flex items-center gap-1">
-              <MessageCircle className="w-4 h-4" />
-              {post._count.comments} comments
-            </div>
-          )}
         </div>
 
         {post.featuredImageUrl && (
-          <div className="rounded-2xl overflow-hidden mb-10">
+          <div className="rounded-2xl overflow-hidden mb-10 border border-slate-100">
             <img
               src={post.featuredImageUrl}
               alt={post.featuredImageAlt ?? post.title}
@@ -137,22 +99,22 @@ export default async function BlogPostPage({ params }: PageProps) {
           </div>
         )}
 
-        
+        <div className="prose prose-slate max-w-none mb-12">
+          <RenderedContent html={post.contentHtml} />
+        </div>
 
-        {/* prose scoped only to article body content */}
-       <RenderedContent html={post.contentHtml ?? `<p>${post.excerpt ?? ""}</p>`} />
         <SocialShare title={post.title} />
 
         {primaryAuthor?.bio && (
-          <Card className="mb-12 border border-gray-200">
-            <CardContent className="p-6">
+          <Card className="mb-12 border border-gray-100 shadow-sm rounded-2xl overflow-hidden mt-12">
+            <CardContent className="p-6 bg-slate-50">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold">
+                <div className="w-12 h-12 rounded-full bg-[#7A0C0C]/10 flex items-center justify-center text-[#7A0C0C] font-bold shrink-0">
                   {primaryAuthor.name.charAt(0)}
                 </div>
                 <div>
                   <p className="font-semibold text-gray-900">{primaryAuthor.name}</p>
-                  <p className="text-gray-600 mt-1">{primaryAuthor.bio}</p>
+                  <p className="text-gray-600 mt-1 text-sm">{primaryAuthor.bio}</p>
                 </div>
               </div>
             </CardContent>
@@ -164,10 +126,10 @@ export default async function BlogPostPage({ params }: PageProps) {
             <h2 className="text-2xl font-bold text-slate-900 mb-8">Related Articles</h2>
             <div className="grid sm:grid-cols-2 gap-6">
               {related.map((r) => {
-                const primaryCategory = r.categories[0]?.category;
+                const cat = r.categories[0];
                 return (
                   <Link key={r.id} href={`/blog/${r.slug}`} className="group">
-                    <Card className="border border-slate-100 hover:border-purple-200 hover:shadow-lg transition-all duration-300 rounded-2xl overflow-hidden h-full flex flex-col justify-between bg-white dark:bg-slate-900">
+                    <Card className="border border-slate-100 hover:border-red-200 hover:shadow-lg transition-all duration-300 rounded-2xl overflow-hidden h-full flex flex-col justify-between bg-white">
                       <div className="relative h-44 overflow-hidden bg-slate-50">
                         {r.featuredImageUrl ? (
                           <img
@@ -176,19 +138,19 @@ export default async function BlogPostPage({ params }: PageProps) {
                             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                           />
                         ) : (
-                          <div className="w-full h-full bg-gradient-to-tr from-purple-50 to-indigo-50 flex items-center justify-center">
-                            <span className="text-purple-300 font-semibold text-sm">ChessEasy</span>
+                          <div className="w-full h-full bg-gradient-to-tr from-red-50 to-orange-50 flex items-center justify-center">
+                            <span className="text-red-300 font-semibold text-sm">KPR Chess</span>
                           </div>
                         )}
-                        {primaryCategory && (
-                          <span className="absolute top-4 left-4 bg-purple-600/95 backdrop-blur-sm text-white px-2.5 py-0.5 rounded-full text-[10px] font-bold shadow-sm">
-                            {primaryCategory.name}
+                        {cat && (
+                          <span className="absolute top-4 left-4 bg-[#7A0C0C] text-[#FFB800] border border-[#FFB800]/25 px-2.5 py-0.5 rounded-full text-[10px] font-bold shadow-sm">
+                            {cat.name}
                           </span>
                         )}
                       </div>
                       <CardContent className="p-5 flex-1 flex flex-col justify-between">
                         <div>
-                          <h3 className="font-bold text-slate-900 group-hover:text-purple-600 transition-colors line-clamp-2 text-base md:text-lg mb-2">
+                          <h3 className="font-bold text-slate-900 group-hover:text-[#7A0C0C] transition-colors line-clamp-2 text-base md:text-lg mb-2">
                             {r.title}
                           </h3>
                           <p className="text-xs text-slate-500 line-clamp-2 leading-relaxed mb-4">
@@ -207,8 +169,6 @@ export default async function BlogPostPage({ params }: PageProps) {
             </div>
           </section>
         )}
-
-        <CommentsSection postId={post.id} initialComments={serializedComments} />
       </article>
 
       <Footer />

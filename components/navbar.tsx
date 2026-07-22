@@ -10,8 +10,15 @@ import {
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
 import { NavbarSearch } from "./navbar-search";
+
+export function KPRLogo({ className = "h-8 md:h-10" }: { className?: string }) {
+  return (
+    <div className={`flex items-center gap-2.5 font-sans ${className}`}>
+      <img src="/logo.png" alt="KPR Chess Academy Logo" className="h-full w-auto object-contain" />
+    </div>
+  );
+}
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,49 +33,42 @@ export function Navbar() {
   }, []);
 
   const curriculumItems = [
-    { href: "/chess-coaching-for-beginners", label: "Beginner", icon: "♙" },
+    { href: "/beginner", label: "Beginner", icon: "♙" },
     { href: "/intermediates", label: "Intermediate", icon: "♘" },
     { href: "/advanced", label: "Advanced", icon: "♖" },
-    { href: "/playing-partners", label: "Playing Partners", icon: "♕" },
   ];
 
   const navItems = [
     { href: "/achievements", label: "Achievements" },
     { href: "/blog", label: "Blog" },
-    { href: "/calculators", label: "Calculators" },
     { href: "/gallery", label: "Gallery" },
     { href: "/contact", label: "Contact" },
   ];
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 flex justify-center w-full">
+      <header className="fixed top-0 left-0 right-0 z-40 flex justify-center w-full">
         <motion.nav
           initial={false}
           animate={{
             width: isScrolled ? "92%" : "100%",
             marginTop: isScrolled ? "0.75rem" : "0rem",
-            height: isScrolled ? "4rem" : "5.5rem",
+            height: isScrolled ? "5rem" : "6.5rem",
             borderRadius: isScrolled ? "999px" : "0px",
           }}
           className={`flex items-center justify-between px-3 md:px-8 backdrop-blur-xl border-b transition-all duration-300 max-w-[1440px] ${
             isScrolled
-              ? "bg-white/90 border-slate-200/60 shadow-lg shadow-purple-500/5"
+              ? "bg-white/90 border-slate-200/60 shadow-lg shadow-red-500/5"
               : "bg-white border-transparent"
           }`}
         >
 
           {/* LOGO */}
           <Link href="/" className="flex items-center shrink-0">
-            <Image
-              src="/chesseasy.png"
-              alt="ChessEasy"
-              width={160}
-              height={40}
-              priority
+            <KPRLogo
               className={`transition-all duration-300 ${
-                isScrolled ? "h-6 md:h-8" : "h-8 md:h-10"
-              } w-auto`}
+                isScrolled ? "h-14 md:h-16" : "h-20 md:h-24"
+              }`}
             />
           </Link>
 
@@ -85,8 +85,8 @@ export function Navbar() {
               href="/"
               className={`px-4 py-2 rounded-full text-sm font-bold transition-all ${
                 pathname === "/"
-                  ? "bg-white text-purple-600 shadow-sm ring-1 ring-slate-200/50"
-                  : "text-slate-600 hover:text-purple-500"
+                  ? "bg-white text-red-700 shadow-sm ring-1 ring-slate-200/50"
+                  : "text-slate-600 hover:text-red-600"
               }`}
             >
               Home
@@ -97,8 +97,8 @@ export function Navbar() {
               href="/about"
               className={`px-4 py-2 rounded-full text-sm font-bold transition-all ${
                 pathname === "/about"
-                  ? "bg-white text-purple-600 shadow-sm ring-1 ring-slate-200/50"
-                  : "text-slate-600 hover:text-purple-500"
+                  ? "bg-white text-red-700 shadow-sm ring-1 ring-slate-200/50"
+                  : "text-slate-600 hover:text-red-600"
               }`}
             >
               About Us
@@ -109,8 +109,8 @@ export function Navbar() {
               <button
                 className={`px-4 py-2 rounded-full text-sm font-bold flex items-center gap-1 transition-all ${
                   pathname.startsWith("/curriculum")
-                    ? "bg-white text-purple-600 shadow-sm ring-1 ring-slate-200/50"
-                    : "text-slate-600 hover:text-purple-500"
+                    ? "bg-white text-red-700 shadow-sm ring-1 ring-slate-200/50"
+                    : "text-slate-600 hover:text-red-600"
                 }`}
               >
                 Curriculum <ChevronDown size={14} />
@@ -125,14 +125,14 @@ export function Navbar() {
                       href={item.href}
                       className={`flex items-center gap-2.5 px-3 py-2 rounded-xl transition-all group/item ${
                         pathname === item.href
-                          ? "bg-purple-50 text-purple-700"
+                          ? "bg-red-50 text-red-700"
                           : "text-slate-700 hover:bg-amber-50 hover:text-amber-700"
                       }`}
                     >
                       <div
                         className={`w-7 h-7 rounded-lg flex items-center justify-center text-sm transition-all ${
                           pathname === item.href
-                            ? "bg-purple-100"
+                            ? "bg-red-100"
                             : "bg-slate-100 group-hover/item:bg-amber-100"
                         }`}
                       >
@@ -152,8 +152,8 @@ export function Navbar() {
                 href={item.href}
                 className={`px-4 py-2 rounded-full text-sm font-bold transition-all ${
                   pathname === item.href
-                    ? "bg-white text-purple-600 shadow-sm ring-1 ring-slate-200/50"
-                    : "text-slate-600 hover:text-purple-500"
+                    ? "bg-white text-red-700 shadow-sm ring-1 ring-slate-200/50"
+                    : "text-slate-600 hover:text-red-600"
                 }`}
               >
                 {item.label}
@@ -163,11 +163,10 @@ export function Navbar() {
 
           {/* RIGHT SIDE */}
           <div className="flex items-center gap-2 md:gap-4">
-            <NavbarSearch />
             
-            <Link
-              href="/contact"
-              className={`group flex items-center bg-[#FFB800] hover:bg-[#FFA500] text-black rounded-full font-black transition-all duration-300 active:scale-95 shadow-md shadow-amber-200/30 ${
+            <button
+              onClick={() => window.dispatchEvent(new Event("open-demo-modal"))}
+              className={`group flex items-center bg-[#7A0C0C] hover:bg-[#5E0909] text-[#FFB800] border border-[#FFB800]/20 rounded-full font-black transition-all duration-300 active:scale-95 shadow-md shadow-red-950/20 ${
                 isScrolled
                   ? "px-3 py-1.5 md:px-5 md:py-2"
                   : "px-4 py-2 md:px-7 md:py-3"
@@ -176,10 +175,10 @@ export function Navbar() {
               <span className="uppercase tracking-wider text-[9px] md:text-xs whitespace-nowrap">
                 Book a Demo
               </span>
-              <div className="hidden md:flex ml-2 bg-white/40 p-1 rounded-full group-hover:translate-x-1 transition-transform">
-                <ChevronRight size={14} className="text-black" />
+              <div className="hidden md:flex ml-2 bg-white/10 p-1 rounded-full group-hover:translate-x-1 transition-transform">
+                <ChevronRight size={14} className="text-[#FFB800]" />
               </div>
-            </Link>
+            </button>
 
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -201,22 +200,13 @@ export function Navbar() {
             className="fixed inset-0 z-[70] bg-white flex flex-col"
           >
             <div className="flex items-center justify-between px-6 h-20 border-b">
-              <Image
-                src="/chesseasy.png"
-                alt="Logo"
-                width={120}
-                height={30}
-                className="h-7 w-auto"
-              />
+              <KPRLogo className="h-12" />
               <button onClick={() => setIsOpen(false)}>
                 <X />
               </button>
             </div>
 
             <div className="flex-1 overflow-y-auto px-8 py-10 space-y-6">
-              <div className="pb-4 border-b border-slate-100">
-                <NavbarSearch />
-              </div>
 
               <Link href="/" onClick={() => setIsOpen(false)} className="block text-2xl font-black">
                 Home
@@ -278,19 +268,21 @@ export function Navbar() {
             </div>
 
             <div className="p-6 border-t bg-slate-50">
-              <Link
-                href="/contact"
-                onClick={() => setIsOpen(false)}
-                className="block text-center bg-[#FFB800] py-4 rounded-xl font-black"
+              <button
+                onClick={() => {
+                  setIsOpen(false);
+                  window.dispatchEvent(new Event("open-demo-modal"));
+                }}
+                className="w-full text-center bg-[#7A0C0C] text-[#FFB800] border border-[#FFB800]/20 py-4 rounded-xl font-black"
               >
                 BOOK A DEMO
-              </Link>
+              </button>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      <div className="h-[5.5rem]" />
+      <div className="h-[6.5rem]" />
     </>
   );
 }
