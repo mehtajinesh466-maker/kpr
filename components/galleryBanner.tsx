@@ -15,7 +15,7 @@ export default function GalleryBanner() {
         {/* 1. BACKGROUND LAYER */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/chess.jpg" // Ensure this path is correct in your public folder
+            src="/bg9.webp" // Ensure this path is correct in your public folder
             alt="Chess Background"
             fill
             className="object-cover opacity-20 grayscale"

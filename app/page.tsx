@@ -1516,7 +1516,7 @@ export default function kprChessAcademyHome() {
         />
       </Head>
 
-      <div className="min-h-screen bg-white overflow-hidden">
+      <div className="min-h-screen bg-white overflow-x-hidden w-full">
         <header>
           <Navbar />
           <Hero/>

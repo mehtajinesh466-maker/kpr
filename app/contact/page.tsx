@@ -39,7 +39,7 @@ export default function ContactPage() {
   const [submitStatus, setSubmitStatus] = useState(null);
 
   return (
-    <div className="min-h-screen bg-white relative">
+    <div className="min-h-screen bg-white relative overflow-x-hidden w-full">
       <Navbar />
 
      <ContactBanner/>

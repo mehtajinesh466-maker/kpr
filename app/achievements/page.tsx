@@ -14,6 +14,8 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { Achievements } from "@/components/ach";
 import { Testimonials } from "@/components/testimonial";
+import AchievementBanner from "@/components/achBanner";
+import { CompactCTA } from "@/components/cta";
 
 // --- Sub-components for clean structure ---
 
@@ -28,11 +30,11 @@ const SectionHeading = ({ main, highlight, sub }: { main: string, highlight: str
   <div className="flex flex-col items-center text-center space-y-6 mb-16">
     <div className="flex flex-wrap items-center justify-center gap-4">
       <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tighter leading-none">{main}</h2>
-      <div className="inline-block bg-[#FFB800] text-black px-8 py-3 rounded-[2rem] shadow-xl shadow-amber-200/20">
+      <div className="inline-block bg-[#7A0C0C] text-[#FFB800] px-6 md:px-10 py-2.5 md:py-3.5 rounded-[1.5rem] md:rounded-[2rem] shadow-xl shadow-red-950/15">
         <span className="text-3xl md:text-5xl font-black tracking-tighter leading-none">{highlight}</span>
       </div>
     </div>
-    <p className="max-w-2xl mx-auto text-slate-500 font-medium text-lg">{sub}</p>
+    <p className="max-w-2xl mx-auto text-slate-500 font-medium text-sm md:text-lg leading-relaxed">{sub}</p>
   </div>
 );
 
@@ -51,42 +53,10 @@ export default function AchievementsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white font-sans text-slate-900">
+    <div className="min-h-screen bg-white font-sans text-slate-900 overflow-x-hidden w-full">
         <Navbar/>
       
-      {/* 1. HERO SECTION (High Fidelity Technical Banner) */}
-      <section className="relative w-full h-[80vh] md:h-[90vh] flex items-center justify-center overflow-hidden bg-[#020617]">
-        <div className="absolute inset-0 z-0">
-          <Image src="/bg7.jpg" alt="Trophy" fill className="object-cover opacity-20 grayscale" priority />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_#020617_90%)]" />
-          <div className="absolute inset-0 opacity-[0.15] pointer-events-none" style={{ backgroundImage: `radial-gradient(white 1px, transparent 1px)`, backgroundSize: '35px 35px' }} />
-        </div>
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 text-center -mt-16">
-          <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} className="inline-flex items-center bg-[#1e293b]/40 backdrop-blur-md rounded-full px-6 py-2 border border-white/5 mb-10">
-            <Trophy size={14} className="text-[#FFB800] mr-2" />
-            <span className="text-[10px] font-black text-white uppercase tracking-[0.3em]">Excellence Showcased</span>
-          </motion.div>
-          <motion.h1 initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="text-5xl md:text-8xl lg:text-[100px] font-black tracking-tighter leading-none uppercase text-white mb-8">
-            <span className="italic font-normal">CELEBRATING</span> <br/>
-            <span className="text-[#FFB800]">EXCELLENCE.</span>
-          </motion.h1>
-          <p className="text-slate-400 font-bold uppercase tracking-[0.4em] text-[10px] md:text-xs max-w-3xl mx-auto leading-relaxed mb-10">
-            Showcasing the achievements, milestones, <br className="hidden md:block"/> & success stories of our students worldwide.
-          </p>
-          <Link href="/contact">
-            <button className="bg-[#FFB800] text-black px-12 py-5 rounded-full font-black text-sm uppercase tracking-widest shadow-2xl hover:scale-105 transition-all active:scale-95">
-              Join The Academy
-            </button>
-          </Link>
-        </div>
-        {/* Organic Wave Transition */}
-        <div className="absolute bottom-[-1px] left-0 w-full z-20 pointer-events-none">
-          <svg viewBox="0 0 1440 120" preserveAspectRatio="none" className="w-full h-[80px] md:h-[150px]">
-            <path d="M0,80 C180,110 360,60 540,85 C720,110 900,55 1080,80 C1260,105 1440,75 1440,75 V120 H0 Z" fill="white" fillOpacity="0.12"/>
-            <path d="M0,100 C120,80 240,115 360,100 C480,85 600,120 720,100 C840,80 960,115 1080,100 C1200,85 1320,115 1440,100 V120 H0 Z" fill="white"/>
-          </svg>
-        </div>
-      </section>
+      <AchievementBanner />
 
       {/* 2. ACHIEVEMENT HIGHLIGHTS (Large Stat Cards) */}
       <section className="py-24 bg-white">
@@ -137,35 +107,35 @@ export default function AchievementsPage() {
             title: "Beginner",
             range: "800 - 1000",
             desc: "Chess fundamentals, piece movement and basic checkmates.",
-            color: "from-blue-500 to-cyan-500",
+            color: "from-slate-700 to-slate-900",
           },
           {
             icon: "♘",
             title: "Developing",
             range: "1000 - 1300",
             desc: "Tactics, forks, pins, skewers and board awareness.",
-            color: "from-pink-500 to-rose-500",
+            color: "from-red-900 to-red-950",
           },
           {
             icon: "♗",
             title: "Strategic",
             range: "1300 - 1600",
             desc: "Positional understanding and opening preparation.",
-            color: "from-purple-500 to-violet-500",
+            color: "from-[#7A0C0C] to-red-900",
           },
           {
             icon: "♖",
             title: "Competitive",
             range: "1600 - 1900",
             desc: "Tournament preparation and advanced calculations.",
-            color: "from-orange-500 to-amber-500",
+            color: "from-[#7A0C0C] to-[#5E0909]",
           },
           {
             icon: "♕",
             title: "Elite",
             range: "1900+",
             desc: "Master-level thinking and competitive excellence.",
-            color: "from-[#FFB800] to-yellow-500",
+            color: "from-[#FFB800] to-amber-500",
           },
         ].map((item, i) => (
           <motion.div
@@ -224,8 +194,8 @@ export default function AchievementsPage() {
                <motion.div key={i} whileHover={{ scale: 0.98 }} onClick={() => setSelectedImg(`/${img}`)}
                 className="relative aspect-square rounded-[2rem] overflow-hidden cursor-pointer group border-4 border-slate-50">
                   <Image src={`/${img}`} alt="Gallery" fill className="object-cover group-hover:scale-110 transition-transform" />
-                  <div className="absolute inset-0 bg-[#FFB800]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <Camera size={30} className="text-white" />
+                  <div className="absolute inset-0 bg-[#7A0C0C]/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <Camera size={30} className="text-[#FFB800]" />
                   </div>
                </motion.div>
              ))}
@@ -233,73 +203,8 @@ export default function AchievementsPage() {
         </div>
       </section>
 
-      <Testimonials/>
-
-     {/* COMPACT CTA */}
-<section className="py-12 md:py-16 px-4 sm:px-6 bg-white">
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    className="relative max-w-6xl mx-auto overflow-hidden rounded-[28px] md:rounded-[36px] bg-slate-950"
-  >
-    {/* Pattern */}
-    <div
-      className="absolute inset-0 opacity-10"
-      style={{
-        backgroundImage:
-          "radial-gradient(#7A0C0C 1px, transparent 1px)",
-        backgroundSize: "20px 20px",
-      }}
-    />
-
-    <div className="relative z-10 px-6 py-10 md:px-10 md:py-12">
-
-      <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-
-        {/* Left */}
-        <div className="text-center lg:text-left max-w-2xl">
-
-          <PillBadge icon={Sparkles}>
-            Join KPR Chess Academy
-          </PillBadge>
-
-          <h2 className="mt-4 text-3xl md:text-4xl lg:text-5xl font-black leading-tight tracking-tight text-white">
-            Start Your Journey To
-            <span className="block text-[#FFB800]">
-              Chess Excellence
-            </span>
-          </h2>
-
-          <p className="mt-3 text-sm md:text-base text-slate-400 max-w-xl">
-            Learn from experienced coaches, compete with confidence,
-            and build the strategic mindset needed for success.
-          </p>
-
-        </div>
-
-        {/* Right */}
-        <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
-
-          <Link href="/contact">
-            <button className="w-full sm:w-auto bg-[#FFB800] text-black px-8 py-4 rounded-full font-black text-xs uppercase tracking-[0.15em] hover:scale-105 transition-all">
-              Book Free Demo
-            </button>
-          </Link>
-
-          <Link href="/courses">
-            <button className="w-full sm:w-auto border border-white/15 text-white px-8 py-4 rounded-full font-black text-xs uppercase tracking-[0.15em] hover:bg-white hover:text-black transition-all">
-              Explore Programs
-            </button>
-          </Link>
-
-        </div>
-
-      </div>
-
-    </div>
-  </motion.div>
-</section>
+      <Testimonials />
+      <CompactCTA />
       <Footer/>
 
       {/* LIGHTBOX MODAL */}

@@ -15,7 +15,7 @@ export default function AchievementBanner() {
         {/* 1. IMMERSIVE BACKGROUND LAYER */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/chess-victory.jpg" // Replace with a trophy or celebration themed chess image
+            src="/chess.jpg" // Replace with a trophy or celebration themed chess image
             alt="Chess Achievement Background"
             fill
             className="object-cover opacity-20 grayscale"

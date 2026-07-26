@@ -17,7 +17,7 @@ export function DemoModal() {
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-6 bg-slate-950/80 backdrop-blur-md">
+      <div className="fixed inset-0 z-[100] overflow-y-auto bg-slate-950/80 backdrop-blur-md p-4 md:p-6 flex items-center justify-center min-h-screen">
         
         {/* Backdrop click close */}
         <div className="absolute inset-0" onClick={() => setIsOpen(false)} />
@@ -27,7 +27,7 @@ export function DemoModal() {
           initial={{ opacity: 0, scale: 0.95, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
-          className="relative bg-white w-full max-w-5xl rounded-[3rem] md:rounded-[4rem] shadow-2xl border border-slate-100 overflow-hidden grid grid-cols-1 lg:grid-cols-12 z-10"
+          className="relative bg-white w-full max-w-4xl rounded-[2rem] lg:rounded-[3rem] shadow-2xl border border-slate-100 overflow-hidden grid grid-cols-1 lg:grid-cols-12 z-10 my-8"
         >
           {/* Close Button */}
           <button 
@@ -38,7 +38,7 @@ export function DemoModal() {
           </button>
 
           {/* LEFT PANEL: DARK DOTTED DETAIL PANEL */}
-          <div className="lg:col-span-5 bg-[#0B0202] text-white p-8 md:p-12 flex flex-col justify-between relative overflow-hidden">
+          <div className="hidden lg:flex lg:col-span-5 bg-[#0B0202] text-white p-8 lg:p-12 flex-col justify-between relative overflow-hidden">
             {/* White/Gold Dot Grid Background */}
             <div 
               className="absolute inset-0 opacity-[0.08] pointer-events-none"
@@ -107,7 +107,7 @@ export function DemoModal() {
           </div>
 
           {/* RIGHT PANEL: CLEAN WHITE FORM */}
-          <div className="lg:col-span-7 p-8 md:p-12 flex flex-col justify-center">
+          <div className="col-span-1 lg:col-span-7 p-6 sm:p-8 lg:p-12 flex flex-col justify-center">
             <h3 className="text-2xl font-[900] text-slate-900 tracking-tight mb-8 border-b-2 border-[#7A0C0C] pb-2 w-fit">
               Send an Inquiry
             </h3>

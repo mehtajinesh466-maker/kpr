@@ -6,18 +6,18 @@ import Link from "next/link";
 
 export function CompactCTA() {
   return (
-    <section className="py-12 px-6 font-sans">
+    <section className="py-12 px-4 md:px-6 font-sans">
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="max-w-6xl mx-auto bg-[#0B0202] rounded-full p-4 pl-6 pr-4 relative overflow-hidden shadow-2xl shadow-red-950/40 border border-white/5"
+        className="w-full max-w-6xl mx-auto bg-[#0B0202] rounded-[2.5rem] lg:rounded-full p-5 sm:p-6 lg:p-4 lg:pl-6 lg:pr-4 relative overflow-hidden shadow-2xl shadow-red-950/40 border border-white/5"
       >
         {/* Chessboard dot pattern */}
         <div className="absolute inset-0 opacity-[0.04] pointer-events-none" 
              style={{ backgroundImage: `radial-gradient(white 1.5px, transparent 1.5px)`, backgroundSize: '24px 24px' }} />
         
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-4 relative z-10">
+        <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-4 relative z-10">
           
           {/* LEFT: STAR BADGE + TITLE & DESCRIPTION */}
           <div className="flex items-center gap-5 text-center lg:text-left flex-col lg:flex-row">
@@ -48,7 +48,7 @@ export function CompactCTA() {
             </div>
 
             {/* Book Free Demo Button */}
-            <Link href="/contact" className="w-full sm:w-auto">
+            <Link href="/contact" className="block w-full sm:inline-block sm:w-auto">
               <button className="group w-full flex items-center justify-between sm:justify-center gap-6 bg-[#FFB800] hover:bg-[#FFA500] text-black pl-8 pr-2 py-2 rounded-full font-black text-[11px] uppercase tracking-widest transition-all shadow-xl shadow-amber-500/10 active:scale-95 whitespace-nowrap">
                 Book Free Demo
                 <div className="w-8 h-8 bg-black/10 rounded-full flex items-center justify-center group-hover:translate-x-1 transition-transform">

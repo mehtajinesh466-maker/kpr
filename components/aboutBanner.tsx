@@ -15,7 +15,7 @@ export default function AboutBanner() {
         {/* 1. IMMERSIVE BACKGROUND LAYER */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/bg4.jpg" // Replace with an academy or strategy themed chess image
+            src="/bg3.jpg" // Replace with an academy or strategy themed chess image
             alt="KPR Chess Mission Background"
             fill
             className="object-cover opacity-50 grayscale"

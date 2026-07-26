@@ -15,7 +15,7 @@ export default function BlogBanner() {
         {/* 1. IMMERSIVE BACKGROUND LAYER */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/bg4.jpg" // Replace with a library or study-themed chess image
+            src="/bg7.jpg" // Replace with a library or study-themed chess image
             alt="Chess Insights Background"
             fill
             className="object-cover opacity-20 grayscale"
