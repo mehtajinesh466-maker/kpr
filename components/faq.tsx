@@ -32,7 +32,7 @@ export function FAQ() {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-white overflow-hidden">
+    <section className="relative py-16 md:py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* HEADING UI - RESPONSIVE SIZES */}
@@ -108,7 +108,7 @@ export function FAQ() {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="w-full lg:w-2/5 lg:sticky lg:top-32 order-1 lg:order-2"
+            className="relative w-full lg:w-2/5 lg:sticky lg:top-32 order-1 lg:order-2"
           >
             <div className="relative aspect-[4/5] rounded-tl-[60px] rounded-br-[60px] md:rounded-tl-[100px] md:rounded-br-[100px] overflow-hidden border-[8px] md:border-[12px] border-slate-50 shadow-2xl">
               <Image 
