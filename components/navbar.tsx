@@ -6,6 +6,7 @@ import {
   X,
   ChevronRight,
   ChevronDown,
+  LogIn,
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -162,8 +163,21 @@ export function Navbar() {
           </div>
 
           {/* RIGHT SIDE */}
-          <div className="flex items-center gap-2 md:gap-4">
-            
+          <div className="flex items-center gap-2 md:gap-3">
+            <a
+              href="https://app.meetchess.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`group flex items-center gap-1.5 border border-slate-200/80 hover:border-red-600/50 text-slate-700 hover:text-red-700 bg-slate-50/80 hover:bg-red-50 rounded-full font-bold transition-all duration-300 active:scale-95 shadow-xs ${
+                isScrolled
+                  ? "px-3 py-1.5 text-xs md:px-4 md:py-2"
+                  : "px-3.5 py-2 text-xs md:px-4.5 md:py-2.5"
+              }`}
+            >
+              <LogIn size={15} className="text-red-600 group-hover:scale-110 transition-transform shrink-0" />
+              <span className="text-[11px] md:text-xs tracking-wide font-bold whitespace-nowrap">MeetChess Login</span>
+            </a>
+
             <button
               onClick={() => window.dispatchEvent(new Event("open-demo-modal"))}
               className={`group flex items-center bg-[#7A0C0C] hover:bg-[#5E0909] text-[#FFB800] border border-[#FFB800]/20 rounded-full font-black transition-all duration-300 active:scale-95 shadow-md shadow-red-950/20 ${
@@ -267,7 +281,17 @@ export function Navbar() {
               ))}
             </div>
 
-            <div className="p-6 border-t bg-slate-50">
+            <div className="p-6 border-t bg-slate-50 space-y-3">
+              <a
+                href="https://app.meetchess.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsOpen(false)}
+                className="w-full flex items-center justify-center gap-2 bg-slate-900 text-white py-3.5 rounded-xl font-bold text-sm hover:bg-slate-800 transition-colors shadow-md"
+              >
+                <LogIn size={18} className="text-red-500" />
+                <span>MEETCHESS LOGIN</span>
+              </a>
               <button
                 onClick={() => {
                   setIsOpen(false);
