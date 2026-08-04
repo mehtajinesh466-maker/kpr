@@ -175,7 +175,7 @@ export function Navbar() {
               }`}
             >
               <LogIn size={15} className="text-red-600 group-hover:scale-110 transition-transform shrink-0" />
-              <span className="text-[11px] md:text-xs tracking-wide font-bold whitespace-nowrap">MeetChess Login</span>
+              <span className="text-[11px] md:text-xs tracking-wide font-bold whitespace-nowrap">ONLINE CLASS Login</span>
             </a>
 
             <button
@@ -290,7 +290,7 @@ export function Navbar() {
                 className="w-full flex items-center justify-center gap-2 bg-slate-900 text-white py-3.5 rounded-xl font-bold text-sm hover:bg-slate-800 transition-colors shadow-md"
               >
                 <LogIn size={18} className="text-red-500" />
-                <span>MEETCHESS LOGIN</span>
+                <span>ONLINE CLASS LOGIN</span>
               </a>
               <button
                 onClick={() => {
