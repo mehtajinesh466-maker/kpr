@@ -24,6 +24,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import ContactBanner from "@/components/contactBanner";
 import { FAQ } from "@/components/faq";
 import { ContactSection } from "@/components/contact";
+import { BranchesSection } from "@/components/branches";
+import { MapSection } from "@/components/map-section";
 import { CompactCTA } from "@/components/contactcta";
 
 /* PARTICLE BACKGROUND */
@@ -45,6 +47,10 @@ export default function ContactPage() {
      <ContactBanner/>
 
       <ContactSection/>
+
+      <BranchesSection />
+
+      <MapSection />
 
       <FAQ/>
       <CompactCTA/>

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Quote, Award, Star, ChevronRight, Facebook, Linkedin, User } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export function FounderSection() {
   const yellow = "#FFB800";
@@ -32,7 +33,7 @@ export function FounderSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
           
-          {/* LEFT: FOUNDER IMAGE (Vertical Pill Style SVG Avatar) */}
+          {/* LEFT: FOUNDER IMAGE (Vertical Pill Style Image) */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -45,14 +46,13 @@ export function FounderSection() {
                  style={{ backgroundImage: `radial-gradient(${yellow} 2px, transparent 2px)`, backgroundSize: '24px 24px' }} />
             
             <div className="relative z-10 aspect-[3/4] rounded-full overflow-hidden border-[8px] md:border-[12px] border-white shadow-2xl shadow-slate-200 bg-gradient-to-tr from-[#7A0C0C] to-red-950 flex items-center justify-center">
-               <div className="flex flex-col items-center justify-center text-white/95">
-                 <svg viewBox="0 0 100 100" className="w-24 h-24 md:w-32 md:h-32 mb-2" fill="none" xmlns="http://www.w3.org/2000/svg">
-                   <circle cx="50" cy="35" r="18" fill="white" opacity="0.9" />
-                   <path d="M15 80 C15 60, 30 55, 50 55 C70 55, 85 60, 85 80" fill="white" opacity="0.9" />
-                   <path d="M35 30 L45 20 L50 25 L55 20 L65 30 L55 27 L50 35 L45 27 Z" fill="#FFB800" />
-                 </svg>
-                 <span className="font-black text-sm tracking-wider uppercase text-[#FFB800]">KPR Chief Coach</span>
-               </div>
+              {/* Replace the src path below with your own image asset */}
+              <Image
+                src="/16.jpeg"
+                alt="TV Kumar - Chief Coach"
+                fill
+                className="object-cover opacity-100 hover:scale-105 transition-transform duration-500 rounded-full"
+              />
             </div>
 
             {/* FLOATING EXPERIENCE BADGE */}

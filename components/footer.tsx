@@ -27,32 +27,12 @@ export function Footer() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-[#7A0C0C]/5 rounded-full blur-[120px] pointer-events-none -z-10" />
       <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-[#FFB800]/2 rounded-full blur-[100px] pointer-events-none -z-10" />
 
-      {/* ── TOP NEWSLETTER CTA PANEL ── */}
-      <div className="max-w-7xl mx-auto px-6 pt-16 pb-8 border-b border-white/5">
-        <div className="bg-gradient-to-r from-red-950/20 to-slate-900/40 border border-white/5 rounded-[2.5rem] p-8 md:p-10 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-2xl">
-          <div className="space-y-2 text-center lg:text-left">
-            <h3 className="text-xl md:text-2xl font-black text-white tracking-tight">Stay updated with KPR Academy</h3>
-            <p className="text-xs md:text-sm text-slate-400 font-medium">Subscribe to receive weekly chess tactical sheets, tournament schedules, and news.</p>
-          </div>
-          <div className="w-full lg:w-auto flex flex-col sm:flex-row gap-3 items-center shrink-0">
-            <input 
-              type="email" 
-              placeholder="Enter your email address" 
-              className="w-full sm:w-80 bg-black/40 border border-white/10 rounded-full px-6 py-4 text-xs font-bold text-white placeholder-slate-500 focus:outline-none focus:border-[#FFB800] transition-colors"
-            />
-            <button className="w-full sm:w-auto bg-[#7A0C0C] text-[#FFB800] border border-[#FFB800]/20 hover:bg-[#5E0909] px-8 py-4 rounded-full font-black text-xs uppercase tracking-wider transition-all duration-300 shadow-lg active:scale-95">
-              Subscribe
-            </button>
-          </div>
-        </div>
-      </div>
-
       {/* ── MAIN FOOTER CONTENT ── */}
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
           
           {/* Column 1: Brand Info */}
-          <div className="lg:col-span-4 space-y-6">
+          <div className="lg:col-span-3 space-y-6">
             <Link href="/" className="inline-block">
               <KPRLogo className="h-12" />
             </Link>
@@ -114,8 +94,31 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Column 4: Contact details */}
-          <div className="lg:col-span-4 space-y-6">
+          {/* Column 4: Our Branches */}
+          <div className="lg:col-span-2 space-y-6">
+            <h4 className="text-white text-xs font-black uppercase tracking-[0.2em] flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#7A0C0C]" /> Our Branches
+            </h4>
+            <ul className="space-y-3.5">
+              {[
+                "Kovilambakkam",
+                "Medavakkam",
+                "Perumbakkam",
+                "Sholinganallur",
+                "Siruseri",
+                "Thoraipakkam"
+              ].map((branch) => (
+                <li key={branch}>
+                  <Link href="/contact#branches" className="text-xs md:text-sm text-slate-400 hover:text-[#FFB800] transition-colors font-medium">
+                    {branch}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 5: Contact details */}
+          <div className="lg:col-span-3 space-y-6">
             <h4 className="text-white text-xs font-black uppercase tracking-[0.2em] flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#7A0C0C]" /> Address & Info
             </h4>

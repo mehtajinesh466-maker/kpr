@@ -104,7 +104,7 @@ export function WhyChooseUs() {
                  style={{ WebkitClipPath: "ellipse(100% 85% at 50% 100%)" }}
             >
               <Image
-                src="/1.jpg"
+                src="/20.jpeg"
                 alt="Why Choose KPR Chess Academy"
                 fill
                 className="object-cover opacity-90"

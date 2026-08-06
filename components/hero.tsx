@@ -37,7 +37,7 @@ export function Hero() {
           <div className="w-full h-full rounded-[4rem] overflow-hidden border-4 border-white/20 shadow-2xl shadow-black/50 bg-gradient-to-tr from-[#7A0C0C] to-red-950 flex flex-col items-center justify-center text-white text-center">
             {/* Replace the src path below with your own image asset */}
             <Image
-              src="/4.jpeg" 
+              src="/23.jpeg" 
               alt="KPR Chess Academy Left Illustration"
               fill
               className="object-cover opacity-100 hover:scale-105 transition-transform duration-500 rounded-[4rem]"
@@ -92,7 +92,7 @@ export function Hero() {
           <div className="w-full h-full rounded-[4rem] overflow-hidden border-4 border-white/20 shadow-2xl shadow-black/50 bg-gradient-to-tr from-slate-900 to-slate-950 flex flex-col items-center justify-center text-white text-center">
             {/* Replace the src path below with your own image asset */}
             <Image
-              src="/2.jpeg" 
+              src="/22.jpeg" 
               alt="KPR Chess Academy Right Illustration"
               fill
               className="object-cover opacity-100 hover:scale-105 transition-transform duration-500 rounded-[4rem]"

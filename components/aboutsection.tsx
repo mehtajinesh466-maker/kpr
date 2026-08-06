@@ -31,7 +31,7 @@ export function AboutUs() {
               className="absolute top-0 left-0 w-[80%] h-[75%] rounded-[3rem] overflow-hidden border-[12px] border-slate-50 shadow-2xl z-10 bg-gradient-to-br from-[#7A0C0C] to-red-950 flex flex-col justify-between"
             >
               <Image
-                src="/bg3.jpg"
+                src="/17.jpeg"
                 alt="Mylapore Chess Center"
                 fill
                 className="object-cover opacity-80"
@@ -56,7 +56,7 @@ export function AboutUs() {
               className="absolute bottom-0 right-0 w-[65%] h-[55%] rounded-[3rem] overflow-hidden border-[10px] border-white shadow-[0_20px_50px_rgba(0,0,0,0.2)] z-20 bg-slate-900 flex flex-col justify-between"
             >
               <Image
-                src="/3.jpeg"
+                src="/21.jpeg"
                 alt="Pallikaranai Chess Center"
                 fill
                 className="object-cover opacity-85"

@@ -190,14 +190,19 @@ export default function AchievementsPage() {
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading main="Awards" highlight="Gallery" sub="Capturing the moments of triumph and recognition across various events." />
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-             {["ach1.jpeg", "ach2.jpeg", "ach3.jpeg", "ach4.jpeg"].map((img, i) => (
-               <motion.div key={i} whileHover={{ scale: 0.98 }} onClick={() => setSelectedImg(`/${img}`)}
-                className="relative aspect-square rounded-[2rem] overflow-hidden cursor-pointer group border-4 border-slate-50">
-                  <Image src={`/${img}`} alt="Gallery" fill className="object-cover group-hover:scale-110 transition-transform" />
-                  <div className="absolute inset-0 bg-[#7A0C0C]/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <Camera size={30} className="text-[#FFB800]" />
-                  </div>
-               </motion.div>
+             {[
+               "/19.jpeg", // Customize first image path here
+               "/21.jpeg", // Customize second image path here
+               "/22.jpeg", // Customize third image path here
+               "/23.jpeg"  // Customize fourth image path here
+             ].map((imgSrc, i) => (
+                <motion.div key={i} whileHover={{ scale: 0.98 }} onClick={() => setSelectedImg(imgSrc)}
+                 className="relative aspect-square rounded-[2rem] overflow-hidden cursor-pointer group border-4 border-slate-50">
+                   <Image src={imgSrc} alt={`Award Gallery Image ${i + 1}`} fill className="object-cover group-hover:scale-110 transition-transform" />
+                   <div className="absolute inset-0 bg-[#7A0C0C]/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                     <Camera size={30} className="text-[#FFB800]" />
+                   </div>
+                </motion.div>
              ))}
           </div>
         </div>

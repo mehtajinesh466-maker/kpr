@@ -44,7 +44,7 @@ export function AboutUs() {
             {/* Main Image Frame with 1.jpg */}
             <div className="relative z-10 w-full aspect-[4/5] rounded-tl-[60px] rounded-br-[60px] md:rounded-tl-[120px] md:rounded-br-[120px] overflow-hidden border-[8px] md:border-[12px] border-slate-50 shadow-2xl bg-gradient-to-tr from-[#7A0C0C] to-red-950 flex flex-col justify-end">
               <Image
-                src="/mas.jpg"
+                src="/11.jpeg"
                 alt="Pathway to Chess Mastery"
                 fill
                 className="object-cover opacity-90"

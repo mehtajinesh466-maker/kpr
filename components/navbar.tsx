@@ -43,6 +43,7 @@ export function Navbar() {
     { href: "/achievements", label: "Achievements" },
     { href: "/blog", label: "Blog" },
     { href: "/gallery", label: "Gallery" },
+    { href: "/contact#branches", label: "Branches" },
     { href: "/contact", label: "Contact" },
   ];
 
