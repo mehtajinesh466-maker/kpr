@@ -13,13 +13,12 @@ export const metadata: Metadata = {
     template: '%s | KPR Chess Academy',
   },
   description:
-    'Master chess with KPR Chess Academy in Mylapore & Pallikaranai, Chennai. Structured chess training for all levels under Founder TV Kumar.',
+    'Master chess with KPR Chess Academy in Pallikaranai, Chennai. Structured chess training for all levels under Founder TV Kumar.',
   keywords: [
     'KPR Chess Academy',
     'KPR Chess',
     'Chess Academy Chennai',
-    'Chess coaching Mylapore',
-    'Chess training Pallikaranai',
+    'Chess coaching Pallikaranai',
     'Learn chess in Chennai',
     'Chess coaching',
   ],
@@ -78,13 +77,13 @@ export default function RootLayout({
                 name: 'KPR Chess Academy',
                 alternateName: 'KPR Chess Academy Chennai',
                 url: 'https://www.kprchessacademy.com',
-                description: 'World-class chess training academy offering structured coaching in Mylapore and Pallikaranai, Chennai.',
+                description: 'World-class chess training academy offering structured coaching in Pallikaranai, Chennai.',
                 address: {
                   '@type': 'PostalAddress',
-                  streetAddress: 'Near Amma Hotel, Alamelu Mangapuram, Mylapore',
+                  streetAddress: 'F-3 S G HOMES, No.10, RAJESH NAGAR, PALLIKARANAI',
                   addressLocality: 'Chennai',
                   addressRegion: 'Tamil Nadu',
-                  postalCode: '600004',
+                  postalCode: '600100',
                   addressCountry: 'IN',
                 },
                 contactPoint: {
@@ -160,7 +159,7 @@ export default function RootLayout({
                     name: 'Does KPR Chess Academy offer online classes?',
                     acceptedAnswer: {
                       '@type': 'Answer',
-                      text: 'Yes, we offer both online and offline classes across our Mylapore and Pallikaranai branches in Chennai.'
+                      text: 'Yes, we offer both online and offline classes at our Pallikaranai Main Branch in Chennai.'
                     }
                   }
                 ]

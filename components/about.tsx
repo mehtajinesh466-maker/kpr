@@ -19,7 +19,7 @@ export function AboutUs() {
     {
       icon: <Target className="w-5 h-5" />,
       title: "Modern Infrastructure",
-      desc: "State-of-the-art learning facilities in Mylapore and Pallikaranai, Chennai, with digital toolsets."
+      desc: "State-of-the-art learning facilities in Pallikaranai, Chennai, with digital toolsets."
     },
     {
       icon: <Trophy className="w-5 h-5" />,
@@ -52,7 +52,7 @@ export function AboutUs() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10" />
               <div className="relative z-20 text-white/95 p-6">
                 <h3 className="text-2xl font-black tracking-tight text-[#FFB800]">KPR CHESS</h3>
-                <p className="text-xs font-semibold text-white/70">Mylapore & Pallikaranai, Chennai</p>
+                <p className="text-xs font-semibold text-white/70">Pallikaranai, Chennai</p>
               </div>
             </div>
 

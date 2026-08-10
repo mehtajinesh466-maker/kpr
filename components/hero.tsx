@@ -64,7 +64,7 @@ export function Hero() {
             transition={{ delay: 0.3 }}
             className="text-slate-200 text-lg md:text-xl font-medium leading-relaxed opacity-90 drop-shadow-md"
           >
-            Structured chess coaching in Mylapore & Pallikaranai, Chennai. Develop critical logic, tournament confidence, and positional mastery under FIDE-rated coaches.
+            Structured chess coaching in Pallikaranai, Chennai. Develop critical logic, tournament confidence, and positional mastery under FIDE-rated coaches.
           </motion.p>
 
           {/* THE AMBER/YELLOW CTA */}

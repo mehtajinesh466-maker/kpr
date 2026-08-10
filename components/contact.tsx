@@ -62,7 +62,7 @@ export function ContactSection() {
                   {
                     icon: <MapPin size={20} className="text-[#FFB800]" />,
                     title: "HEADQUARTERS",
-                    detail: "KPR Chess Academy, Mylapore & Pallikaranai, Chennai",
+                    detail: "KPR Chess Academy, Pallikaranai, Chennai",
                     color: "bg-amber-950/20 border-amber-500/20"
                   }
                 ].map((channel, i) => (

@@ -93,7 +93,7 @@ export function FounderSection() {
 
             <div className="space-y-4 md:space-y-6 text-slate-500 font-medium leading-relaxed text-sm md:text-base text-center lg:text-left">
                <p>
-                 With deep dedication to the game, <strong className="text-slate-900 font-black italic">TV Kumar</strong> established KPR Chess Academy to bring international-level coaching to the doorsteps of aspiring players in Chennai, with specialized branches in Mylapore and Pallikaranai.
+                  With deep dedication to the game, <strong className="text-slate-900 font-black italic">TV Kumar</strong> established KPR Chess Academy to bring international-level coaching to the doorsteps of aspiring players in Chennai, with our main branch in Pallikaranai.
                </p>
                <p className="hidden md:block">
                  His vision drives our structured curriculum, ensuring that strategic intelligence, mental endurance, and the joy of the game remain at the core of everything we teach to our players.

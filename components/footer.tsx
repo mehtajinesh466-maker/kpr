@@ -126,8 +126,8 @@ export function Footer() {
               <div className="flex items-start gap-3">
                 <MapPin size={16} className="text-[#FFB800] shrink-0 mt-0.5" />
                 <div className="text-xs leading-relaxed text-slate-400 font-medium">
-                  <p className="mb-1"><strong className="text-white">Mylapore:</strong> Near Amma Hotel, Alamelu Mangapuram, Chennai</p>
-                  <p><strong className="text-white">Pallikaranai:</strong> No-10, Balaji Dental Clinic, Rajesh Nagar, 4th Cross Street, Chennai</p>
+                  <p className="mb-1"><strong className="text-white">Pallikaranai Main Branch:</strong></p>
+                  <p>F-3 S G HOMES, No.10, RAJESH NAGAR, PALLIKARANAI, CHENNAI 600100</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">

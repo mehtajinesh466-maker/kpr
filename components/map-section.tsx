@@ -4,26 +4,13 @@ import { useState } from "react";
 import { MapPin, Phone, Clock, Sparkles } from "lucide-react";
 
 export function MapSection() {
-  const [activeTab, setActiveTab] = useState<"mylapore" | "pallikaranai">("mylapore");
-
-  const locations = {
-    mylapore: {
-      title: "Mylapore Head Office",
-      address: "Near Amma Hotel, Alamelu Mangapuram, Mylapore, Chennai - 600004",
-      phone: "+91 99419 87881",
-      hours: "Mon - Sun: 9:00 AM - 8:00 PM",
-      mapUrl: "https://maps.google.com/maps?q=KPR%20Chess%20Academy,%20Alamelu%20Mangapuram,%20Mylapore,%20Chennai&t=&z=15&ie=UTF8&iwloc=&output=embed"
-    },
-    pallikaranai: {
-      title: "Pallikaranai Branch",
-      address: "No-10, Balaji Dental Clinic, Rajesh Nagar, 4th Cross Street, Pallikaranai, Chennai - 600100",
-      phone: "+91 99419 87881",
-      hours: "Mon - Sun: 9:00 AM - 8:00 PM",
-      mapUrl: "https://maps.google.com/maps?q=KPR%20Chess%20Academy,%20Rajesh%20Nagar,%204th%20Cross%20Street,%20Pallikaranai,%20Chennai&t=&z=15&ie=UTF8&iwloc=&output=embed"
-    }
+  const activeLoc = {
+    title: "Pallikaranai Main Branch",
+    address: "F-3 S G HOMES, No.10, RAJESH NAGAR, PALLIKARANAI, CHENNAI - 600100",
+    phone: "+91 99419 87881",
+    hours: "Mon - Sun: 9:00 AM - 8:00 PM",
+    mapUrl: "https://maps.google.com/maps?q=KPR%20Chess%20Academy,%20F-3%20S%20G%20HOMES,%20No.10,%20Rajesh%20Nagar,%20Pallikaranai,%20Chennai&t=&z=15&ie=UTF8&iwloc=&output=embed"
   };
-
-  const activeLoc = locations[activeTab];
 
   return (
     <section className="py-20 px-6 bg-white overflow-hidden font-sans border-t border-slate-100">
@@ -37,32 +24,8 @@ export function MapSection() {
             Our <span className="text-[#7A0C0C]">Headquarters</span>
           </h2>
           <p className="text-slate-600 text-sm md:text-base font-medium">
-            Visit our primary training centers. Choose a location below to view details and get directions.
+            Visit our primary training center below to view details and get directions.
           </p>
-        </div>
-
-        {/* Location Switcher Tabs */}
-        <div className="flex justify-center gap-4 mb-10">
-          <button
-            onClick={() => setActiveTab("mylapore")}
-            className={`px-6 py-3 rounded-full text-sm font-bold transition-all duration-300 ${
-              activeTab === "mylapore"
-                ? "bg-[#7A0C0C] text-[#FFB800] shadow-lg shadow-red-950/20"
-                : "bg-slate-100 text-slate-600 hover:bg-slate-200"
-            }`}
-          >
-            Mylapore H.Q.
-          </button>
-          <button
-            onClick={() => setActiveTab("pallikaranai")}
-            className={`px-6 py-3 rounded-full text-sm font-bold transition-all duration-300 ${
-              activeTab === "pallikaranai"
-                ? "bg-[#7A0C0C] text-[#FFB800] shadow-lg shadow-red-950/20"
-                : "bg-slate-100 text-slate-600 hover:bg-slate-200"
-            }`}
-          >
-            Pallikaranai Center
-          </button>
         </div>
 
         {/* Map & details card container */}

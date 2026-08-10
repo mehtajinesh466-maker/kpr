@@ -32,7 +32,7 @@ export function AboutUs() {
             >
               <Image
                 src="/17.jpeg"
-                alt="Mylapore Chess Center"
+                alt="Pallikaranai Main Branch"
                 fill
                 className="object-cover opacity-80"
               />
@@ -42,8 +42,8 @@ export function AboutUs() {
                 <span className="text-[10px] font-black text-white/50 uppercase tracking-widest">KPR CREST</span>
               </div>
               <div className="relative z-20 space-y-2 p-8">
-                <h3 className="text-3xl font-black text-white tracking-tight leading-none">Mylapore</h3>
-                <p className="text-xs text-white/60">Chennai Center</p>
+                <h3 className="text-3xl font-black text-white tracking-tight leading-none">Main Branch</h3>
+                <p className="text-xs text-white/60">Pallikaranai</p>
               </div>
             </motion.div>
 
@@ -66,8 +66,8 @@ export function AboutUs() {
                 <Medal size={36} className="text-[#FFB800] opacity-90" />
               </div>
               <div className="relative z-20 space-y-1 p-6">
-                <h4 className="text-xl font-black text-[#FFB800] tracking-tight leading-none">Pallikaranai</h4>
-                <p className="text-[10px] text-slate-400">Balaji Dental Clinic Road</p>
+                <h4 className="text-xl font-black text-[#FFB800] tracking-tight leading-none">Rajesh Nagar</h4>
+                <p className="text-[10px] text-slate-400">F-3 S G Homes</p>
               </div>
             </motion.div>
 
@@ -98,7 +98,7 @@ export function AboutUs() {
               </h2>
 
               <p className="text-slate-600 font-medium leading-relaxed text-lg">
-                Located in <strong className="text-slate-900 italic">Mylapore and Pallikaranai, Chennai</strong>, we aim to provide top-level chess coaching classes for Beginners, Intermediates, and Advanced players.
+                Located in <strong className="text-slate-900 italic">Pallikaranai, Chennai</strong>, we aim to provide top-level chess coaching classes for Beginners, Intermediates, and Advanced players.
               </p>
               
               <p className="text-slate-500 font-medium leading-relaxed">

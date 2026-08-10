@@ -92,7 +92,7 @@ export default function BeginnersPage() {
               transition={{ delay: 0.2 }}
               className="text-slate-600 font-medium text-sm md:text-base max-w-xl mx-auto lg:mx-0 leading-relaxed"
             >
-              Our beginner coaching at Mylapore and Pallikaranai is designed specifically for young learners taking their first steps on the board. Zero experience needed.
+              Our beginner coaching at Pallikaranai is designed specifically for young learners taking their first steps on the board. Zero experience needed.
             </motion.p>
 
             <motion.div 
@@ -173,7 +173,7 @@ export default function BeginnersPage() {
               Built For <span className="text-[#7A0C0C]">Complete Starters</span>
             </h2>
             <p className="text-slate-500 text-xs md:text-sm font-medium leading-relaxed">
-              Our beginner coaching at Mylapore and Pallikaranai is designed specifically for young learners taking their first steps on the board.
+              Our beginner coaching at Pallikaranai is designed specifically for young learners taking their first steps on the board.
             </p>
           </div>
 
@@ -392,7 +392,7 @@ export default function BeginnersPage() {
             Your <span className="text-[#7A0C0C] bg-gradient-to-r from-red-500 to-red-700 bg-clip-text text-transparent">First Move?</span>
           </h2>
           <p className="text-slate-400 text-xs md:text-sm font-medium leading-relaxed max-w-xl mx-auto">
-            Begin your child's strategic learning today. Visit KPR Chess Academy at Mylapore or Pallikaranai, or book a free trial online.
+            Begin your child's strategic learning today. Visit KPR Chess Academy at Pallikaranai, or book a free trial online.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
             <Link href="/contact" className="w-full sm:w-auto">

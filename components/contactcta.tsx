@@ -32,7 +32,7 @@ export function CompactCTA() {
                 Ready to <span style={{ color: yellow }}>Master</span> the Board?
               </h3>
               <p className="text-slate-400 text-xs md:text-sm font-medium opacity-80">
-                Begin your chess journey at Mylapore or Pallikaranai under FIDE Rated mentors.
+                Begin your chess journey at Pallikaranai under FIDE Rated mentors.
               </p>
             </div>
           </div>

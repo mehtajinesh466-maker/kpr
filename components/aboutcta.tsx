@@ -35,7 +35,7 @@ export function AboutCTA() {
                 With A <span className="text-[#FFB800]">Smart Choice.</span>
               </h2>
               <p className="text-slate-400 text-sm font-medium">
-                Empower your child's logic and planning capabilities under expert FIDE guidelines in Mylapore and Pallikaranai.
+                Empower your child's logic and planning capabilities under expert FIDE guidelines in Pallikaranai.
               </p>
             </div>
 

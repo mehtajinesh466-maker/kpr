@@ -176,7 +176,7 @@ function AIChatbot() {
       message.includes("where")
     ) {
       return {
-        text: "**KPR Chess Academy Locations**:\n\n🏠 **Mylapore Center**:\nNear Amma Hotel, Alamelu Mangapuram, Chennai, Tamil Nadu\n\n🏠 **Branch**:\nNo-10, Balaji Dental Clinic, Rajesh Nagar, 4th Cross Street, Chennai, Tamil Nadu\n\n**Phone**: +91 99419 87881",
+        text: "**KPR Chess Academy Location**:\n\n🏠 **Pallikaranai Main Branch**:\nF-3 S G HOMES, No.10, RAJESH NAGAR, PALLIKARANAI, CHENNAI 600100\n\n**Phone**: +91 99419 87881",
         quickReplies: ["Contact Number", "School Programs", "Online Classes"],
       };
     }
@@ -1467,7 +1467,7 @@ export default function kprChessAcademyHome() {
     url: "https://www.kprchessacademy.com",
     logo: "https://www.kprchessacademy.com/logo.png",
     description:
-      "Premier chess academy in Chennai (Mylapore & Pallikaranai) offering structured chess education for all age groups and skill levels under Founder TV Kumar.",
+      "Premier chess academy in Chennai (Pallikaranai) offering structured chess education for all age groups and skill levels under Founder TV Kumar.",
     foundingDate: "2020",
     contactPoint: {
       "@type": "ContactPoint",
@@ -1498,7 +1498,7 @@ export default function kprChessAcademyHome() {
         </title>
         <meta
           name="description"
-          content="KPR Chess Academy offers professional chess coaching in Mylapore and Pallikaranai, Chennai. Join our structured training programs for all age groups and skill levels."
+          content="KPR Chess Academy offers professional chess coaching in Pallikaranai, Chennai. Join our structured training programs for all age groups and skill levels."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta

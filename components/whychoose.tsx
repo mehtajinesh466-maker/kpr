@@ -112,7 +112,7 @@ export function WhyChooseUs() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent z-10" />
               <div className="relative z-20 text-center w-full">
                 <h3 className="text-3xl font-black text-[#FFB800] tracking-tight">KPR CHESS</h3>
-                <p className="text-xs tracking-widest uppercase opacity-70 mt-2">Mylapore & Pallikaranai</p>
+                <p className="text-xs tracking-widest uppercase opacity-70 mt-2">Pallikaranai, Chennai</p>
               </div>
             </div>
             {/* Background dashed circle */}

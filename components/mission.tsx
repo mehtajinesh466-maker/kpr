@@ -83,7 +83,7 @@ export function MissionVision() {
                   Our <span className="text-[#FFB800]">Vision</span>
                 </h3>
                 <p className="text-white/90 text-base md:text-lg leading-relaxed font-medium">
-                  To build a premier chess training ecosystem in Mylapore and Pallikaranai, developing strategic thinking as a vital cognitive life skill for the next generation.
+                  To build a premier chess training ecosystem in Pallikaranai, developing strategic thinking as a vital cognitive life skill for the next generation.
                 </p>
               </div>
 
