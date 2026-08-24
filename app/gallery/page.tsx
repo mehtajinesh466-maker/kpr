@@ -16,6 +16,11 @@ export default function GalleryPage() {
   const [activeFilter, setActiveFilter] = useState("all");
 
   const images = [
+    { id: 14, category: "achievements", src: "/ach1.jpeg" },
+    { id: 15, category: "achievements", src: "/ach2.jpeg" },
+    { id: 16, category: "achievements", src: "/ach3.jpeg" },
+    { id: 17, category: "achievements", src: "/ach4.jpeg" },
+    { id: 18, category: "achievements", src: "/ach5.jpeg" },
     { id: 1, category: "achievements", src: "/11.jpeg" },
     { id: 2, category: "students", src: "/12.jpeg" },
     { id: 3, category: "achievements", src: "/13.jpeg" },

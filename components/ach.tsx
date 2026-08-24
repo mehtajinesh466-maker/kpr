@@ -1,64 +1,32 @@
 "use client";
 
-import { useRef } from "react";
 import { motion } from "framer-motion";
-import { Medal, ChevronRight, ChevronLeft, Trophy } from "lucide-react";
+import { Medal, ChevronRight, Trophy } from "lucide-react";
 import Image from "next/image";
 
 export function Achievements() {
-  const scrollRef = useRef<HTMLDivElement>(null);
-
   const achievements = [
     {
-      name: "Under-14 Championship",
-      title: "1st Place Gold Medal",
-      description: "Secured top honours in the Chennai Junior Academy League with an unbeaten match streak.",
-      tag: "Academy Gold",
-      image: "/ach1.jpeg",
+      name: "Viruthika",
+      title: "Under-10 Girls Champion",
+      description: "Clinched the Championship in the Under-10 Girls category at the 15th Tamil Nadu State Level Chess Tournament.",
+      tag: "State Champion",
+      image: "/viruthika.jpg",
       bgColor: "bg-[#7A0C0C]",
       waveColor: "#7A0C0C",
       icon: "🏆"
     },
     {
-      name: "National School Games",
-      title: "Top 10 Performance",
-      description: "Recognized academy students placing in the national rankings representing South Chennai.",
-      tag: "National Tier",
-      image: "/ach2.jpeg",
+      name: "Sreenikesh Arunprasath",
+      title: "Under-10 Boys Champion",
+      description: "Won 1st Place with a perfect score of 6/6 at the 3rd OMR Chess Club 1st State Level Chess Tournament 2026.",
+      tag: "State Champion",
+      image: "/sreenikesh.jpg",
       bgColor: "bg-slate-900",
       waveColor: "#0f172a",
-      icon: "🏅"
+      icon: "🏆"
     },
-    {
-      name: "International Open",
-      title: "Top 3 Academy Finish",
-      description: "Represented Chennai at the Dubai Junior Open, securing notable podium finishes.",
-      tag: "Global Rank",
-      image: "/ach3.jpeg",
-      bgColor: "bg-[#7A0C0C]",
-      waveColor: "#7A0C0C",
-      icon: "⭐"
-    },
-    {
-      name: "District Chess Meet",
-      title: "District Champion",
-      description: "Dominant chess tournament run, capturing primary youth categories decisively.",
-      tag: "District #1",
-      image: "/ach4.jpeg",
-      bgColor: "bg-slate-900",
-      waveColor: "#0f172a",
-      icon: "♕"
-    }
   ];
-
-  const scroll = (direction: "left" | "right") => {
-    if (scrollRef.current) {
-      const { scrollLeft, clientWidth } = scrollRef.current;
-      const scrollAmount = window.innerWidth < 768 ? clientWidth : clientWidth / 1.5;
-      const scrollTo = direction === "left" ? scrollLeft - scrollAmount : scrollLeft + scrollAmount;
-      scrollRef.current.scrollTo({ left: scrollTo, behavior: "smooth" });
-    }
-  };
 
   return (
     <section className="py-16 md:py-24 bg-white overflow-hidden">
@@ -84,41 +52,19 @@ export function Achievements() {
               </div>
             </div>
           </div>
-
-          {/* SCROLL BUTTONS */}
-          <div className="flex gap-3">
-            <button 
-              onClick={() => scroll("left")}
-              className="p-3 md:p-4 rounded-full border border-slate-200 bg-white hover:bg-[#7A0C0C] hover:border-[#7A0C0C] hover:text-[#FFB800] transition-all active:scale-90 shadow-sm"
-              aria-label="Scroll Left"
-            >
-              <ChevronLeft size={20} className="md:w-6 md:h-6" />
-            </button>
-            <button 
-              onClick={() => scroll("right")}
-              className="p-3 md:p-4 rounded-full border border-slate-200 bg-white hover:bg-[#7A0C0C] hover:border-[#7A0C0C] hover:text-[#FFB800] transition-all active:scale-90 shadow-sm"
-              aria-label="Scroll Right"
-            >
-              <ChevronRight size={20} className="md:w-6 md:h-6" />
-            </button>
-          </div>
         </div>
 
-        {/* HORIZONTAL SCROLLABLE GRID */}
-        <div 
-          ref={scrollRef}
-          className="flex overflow-x-auto gap-5 md:gap-8 pb-12 snap-x snap-mandatory no-scrollbar scroll-smooth"
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-        >
+        {/* STATIC 2-COLUMN GRID */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pb-12">
           {achievements.map((item, idx) => (
             <motion.div
               key={idx}
-              className="min-w-[90%] sm:min-w-[450px] md:min-w-[calc(50%-16px)] lg:min-w-[calc(33.333%-22px)] snap-center md:snap-start"
+              className="w-full"
             >
               <div className="flex flex-col bg-white rounded-[2rem] border border-slate-100 transition-all relative group h-full overflow-hidden hover:shadow-2xl hover:-translate-y-1 duration-300">
                 
                 {/* TOP HEADER BOX WITH GRADIENT & IMAGE */}
-                <div className="relative h-[220px] overflow-hidden shrink-0 border-b border-slate-100 bg-slate-900">
+                <div className="relative h-[320px] overflow-hidden shrink-0 border-b border-slate-100 bg-slate-900">
                   <Image 
                     src={item.image} 
                     alt={item.name} 
