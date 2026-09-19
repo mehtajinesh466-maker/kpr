@@ -2,109 +2,167 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { MessageCircle, ChevronRight } from "lucide-react";
-import Link from "next/link";
+import {
+  ChevronRight,
+  Play,
+  Award,
+  TrendingUp,
+  Trophy,
+  Monitor,
+  Star,
+} from "lucide-react";
 
 export function Hero() {
+  const features = [
+    {
+      icon: Award,
+      title: "Expert Coaching",
+      subtitle: "Rated & Certified Coach",
+    },
+    {
+      icon: TrendingUp,
+      title: "All Age Groups",
+      subtitle: "Under 10 to Adults",
+    },
+    {
+      icon: Trophy,
+      title: "Tournaments",
+      subtitle: "Regular Practice & Events",
+    },
+    {
+      icon: Monitor,
+      title: "Online & Offline",
+      subtitle: "Flexible Learning Options",
+    },
+    {
+      icon: Star,
+      title: "Proven Results",
+      subtitle: "Better Performance, Stronger Mind",
+    },
+  ];
+
   return (
-    <section className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-slate-900 px-6 py-20">
-      
-      {/* 1. BACKGROUND IMAGE LAYER */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/chess.jpeg" // Replace with your high-res chess background
-          alt="Chess Background"
-          fill
-          priority
-          className="object-cover"
-        />
-        {/* Dark Overlay to make text pop */}
-        <div className="absolute inset-0 bg-black/70 backdrop-blur-[2px]" />
+    <section className="relative w-full bg-[#0A0D12] text-white overflow-hidden">
+      {/* ================= HERO MAIN CONTAINER ================= */}
+      <div className="relative min-h-[580px] md:min-h-[660px] lg:min-h-[720px] w-full flex items-center justify-center pt-24 pb-16 px-6 md:px-12 lg:px-20">
         
-        {/* Subtle radial glow to maintain the "focal point" feel */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[50%] rounded-full bg-amber-500/10 blur-[140px]" />
-      </div>
+        {/* 1. BACKGROUND IMAGE & OVERLAYS */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/hero_chess_bg.jpg"
+            alt="Chess Academy Background"
+            fill
+            priority
+            className="object-cover object-center opacity-95"
+          />
+          {/* Dark gradient on the left half to keep text readable while keeping king & knight pieces visible on right */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0A0D12] via-[#0A0D12]/80 to-transparent md:w-[65%]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0D12] via-transparent to-[#0A0D12]/40" />
+        </div>
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
-        
-        {/* 2. LEFT SIDE IMAGE PLACEHOLDER */}
-        <motion.div
-          initial={{ opacity: 0, x: -50, rotate: -5 }}
-          animate={{ opacity: 1, x: 0, rotate: -3 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="hidden lg:block w-72 h-[480px] relative shrink-0"
-        >
-          <div className="w-full h-full rounded-[4rem] overflow-hidden border-4 border-white/20 shadow-2xl shadow-black/50 bg-gradient-to-tr from-[#7A0C0C] to-red-950 flex flex-col items-center justify-center text-white text-center">
-            {/* Replace the src path below with your own image asset */}
-            <Image
-              src="/23.jpeg" 
-              alt="KPR Chess Academy Left Illustration"
-              fill
-              className="object-cover opacity-100 hover:scale-105 transition-transform duration-500 rounded-[4rem]"
-            />
-          </div>
-        </motion.div>
-
-        {/* 3. CENTER CONTENT */}
-        <div className="flex-1 flex flex-col items-center text-center space-y-8 max-w-3xl">
+        {/* 2. HERO CONTENT GRID */}
+        <div className="relative z-10 w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          
+          {/* LEFT CONTENT */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="lg:col-span-7 space-y-6 text-left"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-5xl font-black text-white tracking-tighter leading-[1.1]">
-              Empower Your Mind With <br />
-              <span className="text-[#7A0C0C] block mt-2">KPR Chess Academy</span>
+            {/* Tagline */}
+            <div className="inline-block">
+              <span className="text-[#E2B76D] text-xs md:text-sm font-bold tracking-[0.25em] uppercase flex items-center gap-2">
+                BUILD A STRONGER MIND
+              </span>
+            </div>
+
+            {/* Main Headline */}
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-white leading-[1.12]">
+              Master Chess, <br />
+              Build Your{" "}
+              <span className="text-[#E2B76D]">
+                Future
+              </span>
             </h1>
+
+            {/* Paragraph Text */}
+            <p className="text-slate-300 text-base md:text-lg max-w-xl leading-relaxed font-normal opacity-90">
+              KPR Chess Academy offers expert coaching for all age groups, from
+              beginners to advanced players. Learn the game, improve your
+              thinking, and achieve your goals — on and off the board.
+            </p>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-wrap items-center gap-4 pt-4">
+              <button
+                onClick={() => window.dispatchEvent(new Event("open-demo-modal"))}
+                className="group bg-gradient-to-r from-[#E2B76D] to-[#D4A352] hover:from-[#d9a851] hover:to-[#c4923f] text-slate-950 font-bold px-7 py-3.5 rounded-full flex items-center gap-3 shadow-xl shadow-amber-900/20 transition-all hover:scale-105 active:scale-95 cursor-pointer text-sm md:text-base"
+              >
+                <div className="bg-slate-950/10 p-1 rounded-full group-hover:translate-x-0.5 transition-transform">
+                  <ChevronRight size={18} className="text-slate-950" />
+                </div>
+                <span>Join Our Classes</span>
+              </button>
+
+              <button
+                onClick={() => window.dispatchEvent(new Event("open-demo-modal"))}
+                className="group border border-white/30 hover:border-white/60 bg-white/5 hover:bg-white/10 text-white font-semibold px-7 py-3.5 rounded-full flex items-center gap-2.5 backdrop-blur-md transition-all hover:scale-105 active:scale-95 cursor-pointer text-sm md:text-base"
+              >
+                <div className="w-7 h-7 rounded-full border border-white/40 flex items-center justify-center bg-white/10 group-hover:bg-white/20 transition-colors">
+                  <Play size={14} className="fill-white text-white ml-0.5" />
+                </div>
+                <span>Watch Video</span>
+              </button>
+            </div>
           </motion.div>
 
-          <motion.p 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-            className="text-slate-200 text-lg md:text-xl font-medium leading-relaxed opacity-90 drop-shadow-md"
+          {/* RIGHT FLOATING CURSIVE OVERLAY */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.3 }}
+            className="lg:col-span-5 relative h-full flex items-start justify-end pointer-events-none"
           >
-            Structured chess coaching in Pallikaranai, Chennai. Develop critical logic, tournament confidence, and positional mastery under FIDE-rated coaches.
-          </motion.p>
+            <div className="absolute top-2 right-2 md:top-6 md:right-8 lg:top-10 lg:right-12 text-right transform -rotate-3 select-none">
+              <p className="font-script text-4xl sm:text-5xl md:text-6xl text-white/95 leading-tight drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]">
+                Better Moves <br />
+                <span className="pl-6 block text-[#E2B76D]">Bigger Dreams</span>
+              </p>
+            </div>
+          </motion.div>
 
-          {/* THE AMBER/YELLOW CTA */}
-          <Link href="/contact" className="w-full sm:w-auto">
-            <motion.button
-              whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(122, 12, 12, 0.4)" }}
-              whileTap={{ scale: 0.95 }}
-              className="group w-full bg-[#7A0C0C] text-[#FFB800] border border-[#FFB800]/20 px-12 py-5 rounded-full font-black text-xl shadow-xl transition-all flex items-center justify-center gap-3"
-            >
-              Book Free Demo
-              <div className="bg-white/10 p-1 rounded-full group-hover:translate-x-1 transition-transform">
-                  <ChevronRight size={20} className="text-[#FFB800]" />
-              </div>
-            </motion.button>
-          </Link>
         </div>
-
-        {/* 4. RIGHT SIDE IMAGE PLACEHOLDER */}
-        <motion.div
-          initial={{ opacity: 0, x: 50, rotate: 5 }}
-          animate={{ opacity: 1, x: 0, rotate: 3 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="hidden lg:block w-72 h-[480px] relative shrink-0"
-        >
-          <div className="w-full h-full rounded-[4rem] overflow-hidden border-4 border-white/20 shadow-2xl shadow-black/50 bg-gradient-to-tr from-slate-900 to-slate-950 flex flex-col items-center justify-center text-white text-center">
-            {/* Replace the src path below with your own image asset */}
-            <Image
-              src="/22.jpeg" 
-              alt="KPR Chess Academy Right Illustration"
-              fill
-              className="object-cover opacity-100 hover:scale-105 transition-transform duration-500 rounded-[4rem]"
-            />
-          </div>
-        </motion.div>
       </div>
 
-     
-
-      {/* Bottom Fade gradient for smooth scroll transition */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-950 to-transparent pointer-events-none" />
+      {/* ================= BOTTOM 5-FEATURE HIGHLIGHTS RIBBON ================= */}
+      <div className="w-full bg-[#0D1117] border-t border-b border-white/10 py-6 px-4 md:px-8">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-0 divide-y lg:divide-y-0 lg:divide-x divide-white/10">
+          {features.map((item, index) => {
+            const IconComponent = item.icon;
+            return (
+              <div
+                key={index}
+                className={`flex items-center gap-3.5 ${
+                  index !== 0 ? "pt-4 lg:pt-0 lg:pl-6" : ""
+                }`}
+              >
+                <div className="w-10 h-10 rounded-full border border-white/15 bg-white/5 flex items-center justify-center shrink-0 text-[#E2B76D]">
+                  <IconComponent size={20} />
+                </div>
+                <div className="flex flex-col">
+                  <h4 className="text-white font-bold text-sm tracking-wide leading-tight">
+                    {item.title}
+                  </h4>
+                  <p className="text-slate-400 text-xs mt-0.5 font-normal">
+                    {item.subtitle}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
     </section>
   );
 }

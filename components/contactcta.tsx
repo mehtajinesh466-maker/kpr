@@ -53,14 +53,15 @@ export function CompactCTA() {
             </Link>
 
             {/* MAIN PILL BUTTON */}
-            <Link href="/contact" className="w-full sm:w-auto">
-              <button className="group w-full flex items-center justify-center gap-4 bg-[#7A0C0C] hover:bg-[#5E0909] text-[#FFB800] border border-[#FFB800]/20 px-10 py-3 md:py-2.5 rounded-full font-black text-xs uppercase tracking-widest transition-all active:scale-95 shadow-xl shadow-red-950/20">
-                Book Free Demo
-                <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center group-hover:translate-x-1 transition-transform">
-                  <ChevronRight size={20} className="text-[#FFB800]" />
-                </div>
-              </button>
-            </Link>
+            <button 
+              onClick={() => window.dispatchEvent(new Event("open-demo-modal"))}
+              className="group w-full sm:w-auto flex items-center justify-center gap-4 bg-[#7A0C0C] hover:bg-[#5E0909] text-[#FFB800] border border-[#FFB800]/20 px-10 py-3 md:py-2.5 rounded-full font-black text-xs uppercase tracking-widest transition-all active:scale-95 shadow-xl shadow-red-950/20 cursor-pointer"
+            >
+              Book Free Demo
+              <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center group-hover:translate-x-1 transition-transform">
+                <ChevronRight size={20} className="text-[#FFB800]" />
+              </div>
+            </button>
           </div>
 
         </div>

@@ -55,14 +55,15 @@ export function AboutCTA() {
 
           {/* RIGHT: ACTION PILL */}
           <div className="shrink-0 w-full md:w-auto">
-            <Link href="/contact" className="block w-full">
-              <button className="group w-full flex items-center justify-center gap-4 bg-[#7A0C0C] hover:bg-[#5E0909] text-[#FFB800] border border-[#FFB800]/20 pl-10 pr-3 py-3 rounded-full font-black text-xs uppercase tracking-[0.2em] transition-all shadow-xl shadow-red-950/20 active:scale-95">
-                Book Free Demo
-                <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center group-hover:translate-x-1 transition-transform">
-                  <ChevronRight size={24} className="text-[#FFB800]" />
-                </div>
-              </button>
-            </Link>
+            <button 
+              onClick={() => window.dispatchEvent(new Event("open-demo-modal"))}
+              className="group w-full flex items-center justify-center gap-4 bg-[#7A0C0C] hover:bg-[#5E0909] text-[#FFB800] border border-[#FFB800]/20 pl-10 pr-3 py-3 rounded-full font-black text-xs uppercase tracking-[0.2em] transition-all shadow-xl shadow-red-950/20 active:scale-95 cursor-pointer"
+            >
+              Book Free Demo
+              <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center group-hover:translate-x-1 transition-transform">
+                <ChevronRight size={24} className="text-[#FFB800]" />
+              </div>
+            </button>
           </div>
 
         </div>

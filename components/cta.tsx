@@ -48,14 +48,15 @@ export function CompactCTA() {
             </div>
 
             {/* Book Free Demo Button */}
-            <Link href="/contact" className="block w-full sm:inline-block sm:w-auto">
-              <button className="group w-full flex items-center justify-between sm:justify-center gap-6 bg-[#FFB800] hover:bg-[#FFA500] text-black pl-8 pr-2 py-2 rounded-full font-black text-[11px] uppercase tracking-widest transition-all shadow-xl shadow-amber-500/10 active:scale-95 whitespace-nowrap">
-                Book Free Demo
-                <div className="w-8 h-8 bg-black/10 rounded-full flex items-center justify-center group-hover:translate-x-1 transition-transform">
-                  <ChevronRight size={16} strokeWidth={3} />
-                </div>
-              </button>
-            </Link>
+            <button 
+              onClick={() => window.dispatchEvent(new Event("open-demo-modal"))}
+              className="group w-full sm:w-auto flex items-center justify-between sm:justify-center gap-6 bg-[#FFB800] hover:bg-[#FFA500] text-black pl-8 pr-2 py-2 rounded-full font-black text-[11px] uppercase tracking-widest transition-all shadow-xl shadow-amber-500/10 active:scale-95 whitespace-nowrap cursor-pointer"
+            >
+              Book Free Demo
+              <div className="w-8 h-8 bg-black/10 rounded-full flex items-center justify-center group-hover:translate-x-1 transition-transform">
+                <ChevronRight size={16} strokeWidth={3} />
+              </div>
+            </button>
           </div>
 
         </div>

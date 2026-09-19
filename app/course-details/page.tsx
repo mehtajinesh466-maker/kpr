@@ -112,13 +112,12 @@ export default function LeadGenLanding() {
        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
   
   {/* Trial Class Button */}
-  <Link href="/contact">
-    <ButtonPill
-      className="text-lg px-10 py-4 font-bold shadow-xl shadow-red-900/20 bg-[#7A0C0C] text-[#FFB800] border border-[#FFB800]/20 hover:shadow-2xl hover:shadow-[#FFB800]/30 hover:-translate-y-0.5 transition-all duration-300"
-    >
-      Book Free Trial Class Now
-    </ButtonPill>
-  </Link>
+  <ButtonPill
+    onClick={() => window.dispatchEvent(new Event("open-demo-modal"))}
+    className="text-lg px-10 py-4 font-bold shadow-xl shadow-red-900/20 bg-[#7A0C0C] text-[#FFB800] border border-[#FFB800]/20 hover:shadow-2xl hover:shadow-[#FFB800]/30 hover:-translate-y-0.5 transition-all duration-300 cursor-pointer"
+  >
+    Book Free Trial Class Now
+  </ButtonPill>
 
   {/* WhatsApp Button */}
   <a

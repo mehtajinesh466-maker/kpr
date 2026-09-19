@@ -4,19 +4,32 @@ import { useState, useEffect } from "react";
 import {
   Menu,
   X,
-  ChevronRight,
   ChevronDown,
   LogIn,
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { NavbarSearch } from "./navbar-search";
 
-export function KPRLogo({ className = "h-8 md:h-10" }: { className?: string }) {
+export function KPRLogo({ className = "h-9 md:h-11" }: { className?: string }) {
   return (
-    <div className={`flex items-center gap-2.5 font-sans ${className}`}>
-      <img src="/logo.png" alt="KPR Chess Academy Logo" className="h-full w-auto object-contain" />
+    <div className={`flex items-center gap-3 font-sans ${className}`}>
+      <img
+        src="/logo.png"
+        alt="KPR Chess Academy Logo"
+        className="h-full w-auto object-contain shrink-0"
+        onError={(e) => {
+          e.currentTarget.style.display = "none";
+        }}
+      />
+      <div className="flex flex-col text-left justify-center">
+        <span className="font-extrabold text-white text-sm md:text-base tracking-wider uppercase leading-tight">
+          KPR CHESS ACADEMY
+        </span>
+        <span className="text-[10px] md:text-[11px] text-[#E2B76D] font-semibold tracking-widest leading-none mt-0.5 opacity-90">
+          Learn <span className="text-white/30 font-normal">|</span> Improve <span className="text-white/30 font-normal">|</span> Compete
+        </span>
+      </div>
     </div>
   );
 }
@@ -49,98 +62,91 @@ export function Navbar() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-40 flex justify-center w-full">
+      <header className="fixed top-0 left-0 right-0 z-50 flex justify-center w-full">
         <motion.nav
           initial={false}
           animate={{
             width: isScrolled ? "92%" : "100%",
             marginTop: isScrolled ? "0.75rem" : "0rem",
-            height: isScrolled ? "5rem" : "6.5rem",
+            height: isScrolled ? "4.75rem" : "5.5rem",
             borderRadius: isScrolled ? "999px" : "0px",
           }}
-          className={`flex items-center justify-between px-3 md:px-8 backdrop-blur-xl border-b transition-all duration-300 max-w-[1440px] ${
+          className={`flex items-center justify-between px-4 md:px-8 backdrop-blur-xl transition-all duration-300 max-w-[1440px] mx-auto ${
             isScrolled
-              ? "bg-white/90 border-slate-200/60 shadow-lg shadow-red-500/5"
-              : "bg-white border-transparent"
+              ? "bg-[#0A0D12]/90 border border-white/20 shadow-2xl shadow-black/90"
+              : "bg-[#0A0D12]/80 border-b border-white/10"
           }`}
         >
-
           {/* LOGO */}
           <Link href="/" className="flex items-center shrink-0">
             <KPRLogo
               className={`transition-all duration-300 ${
-                isScrolled ? "h-14 md:h-16" : "h-20 md:h-24"
+                isScrolled ? "h-8 md:h-9" : "h-10 md:h-12"
               }`}
             />
           </Link>
 
           {/* DESKTOP NAV */}
           <div
-            className={`hidden lg:flex items-center mx-2 ${
+            className={`hidden lg:flex items-center space-x-1 xl:space-x-2 transition-all duration-300 ${
               isScrolled
-                ? "bg-slate-100/80 rounded-full p-1 border border-slate-200/50"
+                ? "bg-white/5 rounded-full px-2 py-1 border border-white/10"
                 : ""
             }`}
           >
             {/* HOME */}
             <Link
               href="/"
-              className={`px-4 py-2 rounded-full text-sm font-bold transition-all ${
+              className={`px-3 py-1.5 text-sm font-semibold transition-all relative ${
                 pathname === "/"
-                  ? "bg-white text-red-700 shadow-sm ring-1 ring-slate-200/50"
-                  : "text-slate-600 hover:text-red-600"
+                  ? "text-[#E2B76D] font-bold border-b-2 border-[#E2B76D]"
+                  : "text-slate-200 hover:text-[#E2B76D]"
               }`}
             >
               Home
             </Link>
 
-            {/* ABOUT US — second */}
+            {/* ABOUT US */}
             <Link
               href="/about"
-              className={`px-4 py-2 rounded-full text-sm font-bold transition-all ${
+              className={`px-3 py-1.5 text-sm font-semibold transition-all relative ${
                 pathname === "/about"
-                  ? "bg-white text-red-700 shadow-sm ring-1 ring-slate-200/50"
-                  : "text-slate-600 hover:text-red-600"
+                  ? "text-[#E2B76D] font-bold border-b-2 border-[#E2B76D]"
+                  : "text-slate-200 hover:text-[#E2B76D]"
               }`}
             >
-              About Us
+              About
             </Link>
 
-            {/* CURRICULUM DROPDOWN — third, compact size + color on hover */}
+            {/* CURRICULUM DROPDOWN */}
             <div className="relative group">
               <button
-                className={`px-4 py-2 rounded-full text-sm font-bold flex items-center gap-1 transition-all ${
-                  pathname.startsWith("/curriculum")
-                    ? "bg-white text-red-700 shadow-sm ring-1 ring-slate-200/50"
-                    : "text-slate-600 hover:text-red-600"
+                className={`px-3 py-1.5 text-sm font-semibold flex items-center gap-1 transition-all ${
+                  pathname.startsWith("/curriculum") ||
+                  pathname === "/beginner" ||
+                  pathname === "/intermediates" ||
+                  pathname === "/advanced"
+                    ? "text-[#E2B76D] font-bold border-b-2 border-[#E2B76D]"
+                    : "text-slate-200 hover:text-[#E2B76D]"
                 }`}
               >
-                Curriculum <ChevronDown size={14} />
+                Curriculum <ChevronDown size={14} className="group-hover:rotate-180 transition-transform duration-200" />
               </button>
 
               <div className="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                {/* Compact: w-52, tight padding, small icons */}
-                <div className="w-52 bg-white rounded-2xl border border-slate-200 shadow-xl p-1.5">
+                <div className="w-52 bg-[#121720] rounded-2xl border border-white/15 shadow-2xl p-2 text-white">
                   {curriculumItems.map((item) => (
                     <Link
                       key={item.href}
                       href={item.href}
-                      className={`flex items-center gap-2.5 px-3 py-2 rounded-xl transition-all group/item ${
+                      className={`flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all ${
                         pathname === item.href
-                          ? "bg-red-50 text-red-700"
-                          : "text-slate-700 hover:bg-amber-50 hover:text-amber-700"
+                          ? "bg-[#E2B76D]/20 text-[#E2B76D] font-bold"
+                          : "text-slate-200 hover:bg-white/10 hover:text-[#E2B76D]"
                       }`}
                     >
-                      <div
-                        className={`w-7 h-7 rounded-lg flex items-center justify-center text-sm transition-all ${
-                          pathname === item.href
-                            ? "bg-red-100"
-                            : "bg-slate-100 group-hover/item:bg-amber-100"
-                        }`}
-                      >
-                        {item.icon}
-                      </div>
-                      <span className="font-semibold text-sm">{item.label}</span>
+                      <span className="text-base">{item.icon}</span>
+                      <span className="text-sm font-medium">{item.label}</span>
                     </Link>
                   ))}
                 </div>
@@ -152,10 +158,10 @@ export function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`px-4 py-2 rounded-full text-sm font-bold transition-all ${
+                className={`px-3 py-1.5 text-sm font-semibold transition-all relative ${
                   pathname === item.href
-                    ? "bg-white text-red-700 shadow-sm ring-1 ring-slate-200/50"
-                    : "text-slate-600 hover:text-red-600"
+                    ? "text-[#E2B76D] font-bold border-b-2 border-[#E2B76D]"
+                    : "text-slate-200 hover:text-[#E2B76D]"
                 }`}
               >
                 {item.label}
@@ -163,41 +169,28 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* RIGHT SIDE */}
+          {/* RIGHT SIDE BUTTONS */}
           <div className="flex items-center gap-2 md:gap-3">
             <a
               href="https://app.meetchess.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className={`group flex items-center gap-1.5 border border-slate-200/80 hover:border-red-600/50 text-slate-700 hover:text-red-700 bg-slate-50/80 hover:bg-red-50 rounded-full font-bold transition-all duration-300 active:scale-95 shadow-xs ${
-                isScrolled
-                  ? "px-3 py-1.5 text-xs md:px-4 md:py-2"
-                  : "px-3.5 py-2 text-xs md:px-4.5 md:py-2.5"
-              }`}
+              className="hidden sm:flex items-center gap-1.5 border border-white/20 hover:border-[#E2B76D]/60 text-slate-200 hover:text-white bg-white/5 hover:bg-white/10 px-3.5 py-2 rounded-full text-xs font-bold transition-all duration-200"
             >
-              <LogIn size={15} className="text-red-600 group-hover:scale-110 transition-transform shrink-0" />
-              <span className="text-[11px] md:text-xs tracking-wide font-bold whitespace-nowrap">ONLINE CLASS Login</span>
+              <LogIn size={14} className="text-[#E2B76D]" />
+              <span className="uppercase tracking-wider">Online Login</span>
             </a>
 
             <button
               onClick={() => window.dispatchEvent(new Event("open-demo-modal"))}
-              className={`group flex items-center bg-[#7A0C0C] hover:bg-[#5E0909] text-[#FFB800] border border-[#FFB800]/20 rounded-full font-black transition-all duration-300 active:scale-95 shadow-md shadow-red-950/20 ${
-                isScrolled
-                  ? "px-3 py-1.5 md:px-5 md:py-2"
-                  : "px-4 py-2 md:px-7 md:py-3"
-              }`}
+              className="bg-gradient-to-r from-[#E2B76D] to-[#D4A352] hover:from-[#d9a851] hover:to-[#c4923f] text-slate-950 px-5 py-2 md:px-6 md:py-2.5 rounded-full font-black text-xs md:text-sm uppercase tracking-wider transition-all duration-200 shadow-md shadow-amber-900/20 hover:scale-105 active:scale-95 flex items-center gap-1.5 cursor-pointer"
             >
-              <span className="uppercase tracking-wider text-[9px] md:text-xs whitespace-nowrap">
-                Book a Demo
-              </span>
-              <div className="hidden md:flex ml-2 bg-white/10 p-1 rounded-full group-hover:translate-x-1 transition-transform">
-                <ChevronRight size={14} className="text-[#FFB800]" />
-              </div>
+              <span>Join Now</span>
             </button>
 
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 text-slate-700 hover:bg-slate-100 rounded-full lg:hidden"
+              className="p-2 text-slate-200 hover:bg-white/10 rounded-full lg:hidden"
             >
               {isOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
@@ -212,30 +205,40 @@ export function Navbar() {
             initial={{ opacity: 0, x: "100%" }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
-            className="fixed inset-0 z-[70] bg-white flex flex-col"
+            className="fixed inset-0 z-[70] bg-[#0A0D12] text-white flex flex-col"
           >
-            <div className="flex items-center justify-between px-6 h-20 border-b">
-              <KPRLogo className="h-12" />
-              <button onClick={() => setIsOpen(false)}>
-                <X />
+            <div className="flex items-center justify-between px-6 h-20 border-b border-white/10">
+              <KPRLogo className="h-10" />
+              <button onClick={() => setIsOpen(false)} className="p-2 text-white">
+                <X size={24} />
               </button>
             </div>
 
-            <div className="flex-1 overflow-y-auto px-8 py-10 space-y-6">
-
-              <Link href="/" onClick={() => setIsOpen(false)} className="block text-2xl font-black">
+            <div className="flex-1 overflow-y-auto px-8 py-8 space-y-6">
+              <Link
+                href="/"
+                onClick={() => setIsOpen(false)}
+                className={`block text-xl font-bold ${
+                  pathname === "/" ? "text-[#E2B76D]" : "text-slate-200"
+                }`}
+              >
                 Home
               </Link>
 
-              <Link href="/about" onClick={() => setIsOpen(false)} className="block text-2xl font-black">
+              <Link
+                href="/about"
+                onClick={() => setIsOpen(false)}
+                className={`block text-xl font-bold ${
+                  pathname === "/about" ? "text-[#E2B76D]" : "text-slate-200"
+                }`}
+              >
                 About Us
               </Link>
 
-              {/* CURRICULUM MOBILE ACCORDION */}
               <div>
                 <button
                   onClick={() => setCurriculumOpen(!curriculumOpen)}
-                  className="w-full flex justify-between text-2xl font-black"
+                  className="w-full flex justify-between text-xl font-bold text-slate-200"
                 >
                   Curriculum
                   <ChevronDown
@@ -249,7 +252,7 @@ export function Navbar() {
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      className="overflow-hidden mt-4 pl-4 space-y-3"
+                      className="overflow-hidden mt-3 pl-4 space-y-3"
                     >
                       {curriculumItems.map((item) => (
                         <Link
@@ -259,9 +262,9 @@ export function Navbar() {
                             setIsOpen(false);
                             setCurriculumOpen(false);
                           }}
-                          className="flex items-center gap-3 text-lg font-semibold text-slate-600 hover:text-amber-600 transition-colors"
+                          className="flex items-center gap-3 text-base font-medium text-slate-300 hover:text-[#E2B76D]"
                         >
-                          <span className="text-xl">{item.icon}</span>
+                          <span>{item.icon}</span>
                           {item.label}
                         </Link>
                       ))}
@@ -275,22 +278,24 @@ export function Navbar() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className="block text-2xl font-black"
+                  className={`block text-xl font-bold ${
+                    pathname === item.href ? "text-[#E2B76D]" : "text-slate-200"
+                  }`}
                 >
                   {item.label}
                 </Link>
               ))}
             </div>
 
-            <div className="p-6 border-t bg-slate-50 space-y-3">
+            <div className="p-6 border-t border-white/10 bg-[#0E131B] space-y-3">
               <a
                 href="https://app.meetchess.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}
-                className="w-full flex items-center justify-center gap-2 bg-slate-900 text-white py-3.5 rounded-xl font-bold text-sm hover:bg-slate-800 transition-colors shadow-md"
+                className="w-full flex items-center justify-center gap-2 bg-white/10 text-white py-3.5 rounded-xl font-bold text-sm hover:bg-white/20 transition-colors"
               >
-                <LogIn size={18} className="text-red-500" />
+                <LogIn size={18} className="text-[#E2B76D]" />
                 <span>ONLINE CLASS LOGIN</span>
               </a>
               <button
@@ -298,16 +303,14 @@ export function Navbar() {
                   setIsOpen(false);
                   window.dispatchEvent(new Event("open-demo-modal"));
                 }}
-                className="w-full text-center bg-[#7A0C0C] text-[#FFB800] border border-[#FFB800]/20 py-4 rounded-xl font-black"
+                className="w-full text-center bg-gradient-to-r from-[#E2B76D] to-[#D4A352] text-slate-950 py-4 rounded-xl font-black uppercase tracking-wider text-sm shadow-lg"
               >
-                BOOK A DEMO
+                JOIN NOW
               </button>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-
-      <div className="h-[6.5rem]" />
     </>
   );
 }

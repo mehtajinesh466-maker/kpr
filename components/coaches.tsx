@@ -136,14 +136,15 @@ const coaches = [
           viewport={{ once: true }}
           className="mt-12 md:mt-20 flex justify-center"
         >
-          <Link href="/contact" className="w-full sm:w-auto">
-            <button className="w-full bg-[#7A0C0C] text-[#FFB800] border border-[#FFB800]/20 px-8 md:px-12 py-4 md:py-5 rounded-full font-black text-xs md:text-sm transition-all shadow-xl active:scale-95 flex items-center justify-center gap-4 group">
-                BOOK A TRIAL WITH OUR COACHES
-                <div className="w-7 h-7 md:w-8 md:h-8 bg-white/10 rounded-full flex items-center justify-center text-black group-hover:translate-x-1 transition-transform">
-                  <ChevronRight size={18} className="text-[#FFB800]" />
-                </div>
-            </button>
-          </Link>
+          <button 
+            onClick={() => window.dispatchEvent(new Event("open-demo-modal"))}
+            className="w-full sm:w-auto bg-[#7A0C0C] text-[#FFB800] border border-[#FFB800]/20 px-8 md:px-12 py-4 md:py-5 rounded-full font-black text-xs md:text-sm transition-all shadow-xl active:scale-95 flex items-center justify-center gap-4 group cursor-pointer"
+          >
+              BOOK A TRIAL WITH OUR COACHES
+              <div className="w-7 h-7 md:w-8 md:h-8 bg-white/10 rounded-full flex items-center justify-center text-black group-hover:translate-x-1 transition-transform">
+                <ChevronRight size={18} className="text-[#FFB800]" />
+              </div>
+          </button>
         </motion.div>
 
       </div>
