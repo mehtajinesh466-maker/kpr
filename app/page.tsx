@@ -64,6 +64,7 @@ import { InteractiveChessBoard } from "@/components/InteractiveChessBoard";
 {/* Add a visible H1 heading for the homepage */}
 <h1 className="text-4xl font-bold text-center my-8 text-gray-900">KPR Chess Academy</h1>
 import { Hero } from "@/components/hero";
+import { ProgramsSection } from "@/components/ProgramsSection";
 import { AboutUs } from "@/components/about";
 import  CoursesSection  from "@/components/course";
 import { Testimonials } from "@/components/testimonial";
@@ -1520,8 +1521,8 @@ export default function kprChessAcademyHome() {
         <header>
           <Navbar />
           <Hero/>
+          <ProgramsSection/>
           <AboutUs/>
-          <CoursesSection/>
           <Achievements/>
           <Testimonials/>
           <WhyChooseUs/>
