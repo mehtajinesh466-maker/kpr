@@ -73,8 +73,8 @@ export function Navbar() {
           }}
           className={`flex items-center justify-between px-4 md:px-8 backdrop-blur-xl transition-all duration-300 max-w-[1440px] mx-auto ${
             isScrolled
-              ? "bg-[#0A0D12]/90 border border-white/20 shadow-2xl shadow-black/90"
-              : "bg-[#0A0D12]/80 border-b border-white/10"
+              ? "bg-[#180508]/92 border border-red-900/30 shadow-2xl shadow-black/90"
+              : "bg-[#140507]/85 border-b border-red-950/40"
           }`}
         >
           {/* LOGO */}
@@ -134,7 +134,7 @@ export function Navbar() {
               </button>
 
               <div className="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                <div className="w-52 bg-[#121720] rounded-2xl border border-white/15 shadow-2xl p-2 text-white">
+                <div className="w-52 bg-[#1A0609] rounded-2xl border border-red-950/60 shadow-2xl p-2 text-white">
                   {curriculumItems.map((item) => (
                     <Link
                       key={item.href}
@@ -205,7 +205,7 @@ export function Navbar() {
             initial={{ opacity: 0, x: "100%" }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
-            className="fixed inset-0 z-[70] bg-[#0A0D12] text-white flex flex-col"
+            className="fixed inset-0 z-[70] bg-[#140507] text-white flex flex-col"
           >
             <div className="flex items-center justify-between px-6 h-20 border-b border-white/10">
               <KPRLogo className="h-10" />
@@ -287,7 +287,7 @@ export function Navbar() {
               ))}
             </div>
 
-            <div className="p-6 border-t border-white/10 bg-[#0E131B] space-y-3">
+            <div className="p-6 border-t border-red-950/40 bg-[#100305] space-y-3">
               <a
                 href="https://app.meetchess.com/"
                 target="_blank"

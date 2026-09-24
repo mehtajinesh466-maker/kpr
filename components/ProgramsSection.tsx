@@ -93,7 +93,7 @@ export function ProgramsSection() {
             </p>
             <div className="pt-2">
               <Link href="/beginner">
-                <button className="bg-[#0D121B] hover:bg-slate-800 text-white font-bold text-sm px-6 py-3.5 rounded-full flex items-center gap-2.5 transition-all shadow-md hover:scale-105 active:scale-95 cursor-pointer">
+                <button className="bg-[#1A0508] hover:bg-[#2D0A0F] text-white font-bold text-sm px-6 py-3.5 rounded-full flex items-center gap-2.5 transition-all shadow-md shadow-amber-950/20 hover:scale-105 active:scale-95 cursor-pointer">
                   <span>Explore All Classes</span>
                   <ArrowRight size={16} />
                 </button>
@@ -133,7 +133,7 @@ export function ProgramsSection() {
         </div>
 
         {/* ================= BOTTOM CTA BANNER ================= */}
-        <div className="w-full bg-[#081017] text-white rounded-2xl p-5 sm:p-6 md:p-7 border border-white/10 shadow-xl flex flex-col lg:flex-row items-center justify-between gap-6 relative overflow-hidden">
+        <div className="w-full bg-gradient-to-r from-[#1A0609] via-[#140507] to-[#20070C] text-white rounded-2xl p-5 sm:p-6 md:p-7 border border-red-950/50 shadow-xl shadow-amber-950/20 flex flex-col lg:flex-row items-center justify-between gap-6 relative overflow-hidden">
           {/* LEFT INFO + THUMBNAIL */}
           <div className="flex items-center gap-5">
             {/* THUMBNAIL */}

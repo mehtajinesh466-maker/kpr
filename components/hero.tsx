@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import {
   ChevronRight,
-  Play,
+  GraduationCap,
   Award,
   TrendingUp,
   Trophy,
@@ -42,7 +42,7 @@ export function Hero() {
   ];
 
   return (
-    <section className="relative w-full bg-[#0A0D12] text-white overflow-hidden">
+    <section className="relative w-full bg-[#140507] text-white overflow-hidden">
       {/* ================= HERO MAIN CONTAINER ================= */}
       <div className="relative min-h-[580px] md:min-h-[660px] lg:min-h-[720px] w-full flex items-center justify-center pt-24 pb-16 px-6 md:px-12 lg:px-20">
         
@@ -55,9 +55,9 @@ export function Hero() {
             priority
             className="object-cover object-center opacity-95"
           />
-          {/* Dark gradient on the left half to keep text readable while keeping king & knight pieces visible on right */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0A0D12] via-[#0A0D12]/80 to-transparent md:w-[65%]" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0D12] via-transparent to-[#0A0D12]/40" />
+          {/* Deep reddish gradient on the left half to keep text readable while keeping king & pieces visible on right */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#140507] via-[#140507]/80 to-transparent md:w-[65%]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#140507] via-transparent to-[#140507]/40" />
         </div>
 
         {/* 2. HERO CONTENT GRID */}
@@ -105,38 +105,28 @@ export function Hero() {
                 <span>Join Our Classes</span>
               </button>
 
-              <button
-                onClick={() => window.dispatchEvent(new Event("open-demo-modal"))}
-                className="group border border-white/30 hover:border-white/60 bg-white/5 hover:bg-white/10 text-white font-semibold px-7 py-3.5 rounded-full flex items-center gap-2.5 backdrop-blur-md transition-all hover:scale-105 active:scale-95 cursor-pointer text-sm md:text-base"
+              <a
+                href="https://app.meetchess.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group border border-white/30 hover:border-[#E2B76D]/60 bg-white/5 hover:bg-white/10 text-white font-semibold px-7 py-3.5 rounded-full flex items-center gap-2.5 backdrop-blur-md transition-all hover:scale-105 active:scale-95 cursor-pointer text-sm md:text-base"
               >
-                <div className="w-7 h-7 rounded-full border border-white/40 flex items-center justify-center bg-white/10 group-hover:bg-white/20 transition-colors">
-                  <Play size={14} className="fill-white text-white ml-0.5" />
+                <div className="w-7 h-7 rounded-full border border-white/40 flex items-center justify-center bg-white/10 group-hover:bg-[#E2B76D]/20 group-hover:border-[#E2B76D]/60 transition-colors">
+                  <GraduationCap size={15} className="text-[#E2B76D]" />
                 </div>
-                <span>Watch Video</span>
-              </button>
+                <span>Classroom</span>
+              </a>
             </div>
           </motion.div>
 
-          {/* RIGHT FLOATING CURSIVE OVERLAY */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.3 }}
-            className="lg:col-span-5 relative h-full flex items-start justify-end pointer-events-none"
-          >
-            <div className="absolute top-2 right-2 md:top-6 md:right-8 lg:top-10 lg:right-12 text-right transform -rotate-3 select-none">
-              <p className="font-script text-4xl sm:text-5xl md:text-6xl text-white/95 leading-tight drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]">
-                Better Moves <br />
-                <span className="pl-6 block text-[#E2B76D]">Bigger Dreams</span>
-              </p>
-            </div>
-          </motion.div>
+          {/* RIGHT VISUAL SPACER */}
+          <div className="lg:col-span-5 pointer-events-none" />
 
         </div>
       </div>
 
       {/* ================= BOTTOM 5-FEATURE HIGHLIGHTS RIBBON ================= */}
-      <div className="w-full bg-[#0D1117] border-t border-b border-white/10 py-6 px-4 md:px-8">
+      <div className="w-full bg-[#0F0305] border-t border-b border-red-950/40 py-6 px-4 md:px-8">
         <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-0 divide-y lg:divide-y-0 lg:divide-x divide-white/10">
           {features.map((item, index) => {
             const IconComponent = item.icon;
