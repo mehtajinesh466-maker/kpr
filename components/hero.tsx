@@ -95,15 +95,17 @@ export function Hero() {
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap items-center gap-4 pt-4">
-              <button
-                onClick={() => window.dispatchEvent(new Event("open-demo-modal"))}
+              <a
+                href="https://omrchess.chessplay.io/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group bg-gradient-to-r from-[#E2B76D] to-[#D4A352] hover:from-[#d9a851] hover:to-[#c4923f] text-slate-950 font-bold px-7 py-3.5 rounded-full flex items-center gap-3 shadow-xl shadow-amber-900/20 transition-all hover:scale-105 active:scale-95 cursor-pointer text-sm md:text-base"
               >
                 <div className="bg-slate-950/10 p-1 rounded-full group-hover:translate-x-0.5 transition-transform">
                   <ChevronRight size={18} className="text-slate-950" />
                 </div>
-                <span>Join Our Classes</span>
-              </button>
+                <span>KPR ONLINE CLASS</span>
+              </a>
 
               <a
                 href="https://app.meetchess.com/"
@@ -114,7 +116,7 @@ export function Hero() {
                 <div className="w-7 h-7 rounded-full border border-white/40 flex items-center justify-center bg-white/10 group-hover:bg-[#E2B76D]/20 group-hover:border-[#E2B76D]/60 transition-colors">
                   <GraduationCap size={15} className="text-[#E2B76D]" />
                 </div>
-                <span>Classroom</span>
+                <span>Classroom 1</span>
               </a>
             </div>
           </motion.div>
