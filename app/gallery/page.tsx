@@ -48,7 +48,6 @@ export default function GalleryPage() {
   return (
     <div className="min-h-screen bg-white font-sans overflow-x-hidden">
       <Navbar />
-      <GalleryBanner />
 
       {/* ── GALLERY SECTION ── */}
       <section className="py-16 md:py-24 bg-white">
