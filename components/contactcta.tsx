@@ -13,7 +13,7 @@ export function CompactCTA() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="max-w-6xl mx-auto bg-[#0B0202] rounded-[2.5rem] md:rounded-full p-6 md:p-2 md:pl-10 md:pr-2 relative overflow-hidden shadow-2xl border border-white/5"
+        className="max-w-6xl mx-auto bg-[#2E0406] rounded-[2.5rem] md:rounded-full p-6 md:p-2 md:pl-10 md:pr-2 relative overflow-hidden shadow-2xl shadow-red-950/40 border border-red-800/40"
       >
         {/* Technical Background Details */}
         <div className="absolute top-0 right-0 w-64 h-full bg-red-600/10 blur-[80px] -z-10" />

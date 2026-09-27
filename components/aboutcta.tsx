@@ -13,7 +13,7 @@ export function AboutCTA() {
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
-        className="max-w-5xl mx-auto bg-[#0B0202] rounded-[4rem] md:rounded-[4rem] p-8 md:pl-12 md:pr-4 relative overflow-hidden shadow-2xl shadow-red-900/20"
+        className="max-w-5xl mx-auto bg-[#2E0406] rounded-[4rem] md:rounded-[4rem] p-8 md:pl-12 md:pr-4 relative overflow-hidden shadow-2xl shadow-red-950/40 border border-red-800/40"
       >
         {/* Technical Background Details */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-red-600/10 blur-[100px] -z-10" />

@@ -11,7 +11,7 @@ export function CompactCTA() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="w-full max-w-6xl mx-auto bg-[#0B0202] rounded-[2.5rem] lg:rounded-full p-5 sm:p-6 lg:p-4 lg:pl-6 lg:pr-4 relative overflow-hidden shadow-2xl shadow-red-950/40 border border-white/5"
+        className="w-full max-w-6xl mx-auto bg-[#2E0406] rounded-[2.5rem] lg:rounded-full p-5 sm:p-6 lg:p-4 lg:pl-6 lg:pr-4 relative overflow-hidden shadow-2xl shadow-red-950/40 border border-red-800/40"
       >
         {/* Chessboard dot pattern */}
         <div className="absolute inset-0 opacity-[0.04] pointer-events-none" 

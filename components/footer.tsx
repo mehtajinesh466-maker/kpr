@@ -22,10 +22,10 @@ export function KPRLogo({ className = "h-8 md:h-10" }: { className?: string }) {
 
 export function Footer() {
   return (
-    <footer className="bg-[#0B0202] text-slate-300 relative overflow-hidden border-t border-red-950/30 font-sans">
+    <footer className="bg-[#180204] text-slate-300 relative overflow-hidden border-t border-red-900/40 font-sans">
       {/* Background Decorative Glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-[#7A0C0C]/5 rounded-full blur-[120px] pointer-events-none -z-10" />
-      <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-[#FFB800]/2 rounded-full blur-[100px] pointer-events-none -z-10" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[550px] h-[550px] bg-[#7A0C0C]/15 rounded-full blur-[120px] pointer-events-none -z-10" />
+      <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-[#FFB800]/5 rounded-full blur-[100px] pointer-events-none -z-10" />
 
       {/* ── MAIN FOOTER CONTENT ── */}
       <div className="max-w-7xl mx-auto px-6 py-16">
@@ -149,7 +149,7 @@ export function Footer() {
       </div>
 
       {/* ── COPYRIGHT & BAR ── */}
-      <div className="border-t border-white/5 py-8 bg-black/30">
+      <div className="border-t border-red-950/40 py-8 bg-[#100102]">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest text-center md:text-left">
             © 2026 <span className="text-[#FFB800]">KPR CHESS ACADEMY</span>. ALL RIGHTS RESERVED.
