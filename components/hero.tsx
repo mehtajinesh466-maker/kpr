@@ -80,11 +80,10 @@ export function Hero() {
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-white leading-[1.12]">
-              Master Chess, <br />
-              Build Your{" "}
+            <h1 className="text-4xl sm:text-5xl md:text-5xl font-black tracking-tight text-white leading-[1.12]">
+              Precision in Every Calculation, <br />
               <span className="text-[#E2B76D]">
-                Future
+                Excellence in Every Move
               </span>
             </h1>
 
